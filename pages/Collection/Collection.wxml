@@ -1,0 +1,31 @@
+<!--pages/Collection/Collection.wxml-->
+<view class="promotion" wx:for='{{collection}}'>
+    <view class='chose-all' bindtap='checked' data-show='{{item.show}}' data-index='{{index}}'>
+      <view class='chose {{item.show ?"chose-01":""}}'  >
+        <image style='width:43rpx;height:31rpx;' src='../image/chose.png'></image>
+      </view>
+    </view>
+    <navigator url='../goodsDetail/goodsDetail?id={{[item.goods_id,item.is_type]}}'>
+        <view class="list">
+            <view class="image">
+                <image class='image_main' src="{{item.cover}}"></image>
+                <image class="image_small" wx:if="{{item.is_type==1}}" src="../image/promto.png"></image>
+            </view>
+        </view>
+        <view class="title">
+                <view class="promotion_main">{{item.goods_name}}</view>
+                <view class="promotion_button">
+                    <text class="promotion_price">￥{{item.goods_activity_price}}</text>
+                </view>
+        </view>
+    </navigator>
+</view>
+<view class='bottom'>
+      <view class='chose-all' bindtap='selected'>
+           <view class='chose {{show ?"chose-01":""}}'>
+                <image style='width:43rpx;height:31rpx;' src='../image/chose.png'></image>
+           </view>
+      </view>     
+      <view class='choices' bindtap='selected'>全选</view>
+      <view class='choices' bindtap='del'>删除</view>
+</view>

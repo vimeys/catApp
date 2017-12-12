@@ -1,0 +1,10 @@
+<!--pages/fmanufacturer/fmanufacturer.wxml-->
+<navigator url='../Appeal/Appeal' class='top-b'>投诉</navigator>
+<view class='all' wx:for="{{list}}">
+      <view class='all-image'>
+            <view class='all-image-quan'>
+                 <image src='{{item.factory_drawing_image}}'></image>
+            </view>
+            <text class='all-text' bindtap='call' data-mobile='{{item.mobile}}'>拨打电话：{{item.mobile}}</text>
+      </view>
+</view>

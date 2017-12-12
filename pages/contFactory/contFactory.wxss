@@ -1,0 +1,52 @@
+/* pages/fmanufacturer/fmanufacturer.wxss */
+page{
+    border-top: 2rpx #eee solid;
+}
+.top{
+    padding: 20rpx 40rpx 0rpx 40rpx;
+    margin: 0rpx 0rpx 10rpx 0rpx;
+    font-size: 32rpx;
+    color: #171717;
+}
+.top-b-all{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.top-b{
+    line-height: 90rpx;
+    height: 90rpx;
+    width: 90rpx;
+    background-color: #00a79e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    position: fixed;
+    bottom:50rpx;
+    right:30rpx;
+}
+.all{
+    border-bottom: 10rpx #eee solid;
+    padding-bottom: 80rpx;
+}
+.all-image{
+    padding-top: 40rpx;
+    margin: auto;
+    text-align: center;
+}
+.all-image-quan{
+    display: flex;
+    justify-content: center;
+}
+.all-image image{
+    width: 670rpx;
+    height: 400rpx;
+    margin-bottom: 50rpx;
+}
+.all-text{
+    font-size: 32rpx;
+    border-radius: 40rpx;
+    padding: 10rpx 30rpx 10rpx 30rpx;
+    background-color: #00a79e;
+    color: #fff;
+}

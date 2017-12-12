@@ -1,0 +1,58 @@
+/* pages/belief/belief.wxss */
+page{
+    background-color: #eee;
+}
+.body{
+    padding-top: 20rpx;
+    font-size: 22rpx;
+    color: #414141;
+}
+.body-news{
+    margin: 0 20rpx 0 20rpx;
+}
+.body-news-top{
+    position: relative;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1rpx #eee solid;
+    padding-top: 20rpx;
+    display: flex;
+}
+.name{
+    margin-left: 20rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.body-text{
+    font-size: 30rpx;
+}
+.body-news{
+    margin-top: 20rpx;
+    padding: 0 20rpx 0 20rpx;
+    background-color: #fff;
+}
+.yuan{
+    position: absolute;
+    top: 20rpx;
+    right: 0rpx;
+    border-radius: 50%;
+    width: 30rpx;
+    height: 30rpx;
+    background-color: #ea3900;
+}
+.body-time{
+    color: #b0b0b0;
+    padding-top: 20rpx;
+    padding-bottom: 40rpx;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.body-img image{
+  border-radius: 100rpx;
+}
+.body-time-time{
+    margin-right: 20rpx;
+}

@@ -1,0 +1,16 @@
+<!--pages/payWay/payWay.wxml-->
+<view class="main">
+    <view class="total wexin ">
+        <view>
+              <image src="../image/wei.png"></image>
+        </view>
+        <view class="{{chose==1?'chose':''}}" bindtap="click" data-type="1"><image src="../image/chose.png"></image></view>
+    </view>
+    <view class="total union">
+        <view>
+             <image src="../image/bank.png"></image>
+        </view>
+        <view class="{{chose==3?'chose':''}}" bindtap="click" data-type="3"><image src="../image/chose.png"></image></view>
+    </view>
+    <view class="fix " bindtap="confirm">确认</view>
+</view>

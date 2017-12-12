@@ -1,0 +1,25 @@
+<!--pages/Appeal/Appeal.wxml-->
+<view class='Appeal'>
+      <view class='text-T'>
+           <view class='text'>
+                <textarea style='height:260rpx;' placeholder='问题描述' bindinput='text'></textarea>
+           </view>
+      </view>
+      <view class='title'>
+            <view class='title-text'>三包合同/合格证</view>
+            <view class='img' wx:if="{{three_img}}">
+                  <image src='{{three_img?three_img:""}}'></image>
+            </view>
+            <view class='Kamishi' wx:if="{{!three_img}}" bindtap="takePhoto" style='margin-top:80rpx;'>上传三包合同/合格证图片</view>
+            <view class='Kamishi' wx:if="{{three_img}}"  bindtap="takePhoto">重新上传</view>
+      </view>
+      <view class='title'>
+            <view class='title-text'>破损零件图片</view>
+            <view class='img' wx:if="{{parts_img}}">
+                  <image src='{{parts_img?parts_img:""}}'></image>
+            </view>
+            <view class='Kamishi' wx:if="{{!parts_img}}" bindtap="parts_up" style='margin-top:80rpx;'>上传破损零件图片</view>
+            <view class='Kamishi' wx:if="{{parts_img}}"  bindtap="parts_up">重新上传</view>                                                      
+      </view>
+      <view class='bottom' bindtap='submit'>提交</view>
+</view>

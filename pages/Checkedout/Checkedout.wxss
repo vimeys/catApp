@@ -1,0 +1,143 @@
+/* pages/Checkedout/Checkedout.wxss */
+.site-top{
+    padding: 0 20rpx 30rpx 20rpx;
+    border-bottom: 10rpx #f0f0f0 solid;
+    margin-top: 20rpx;
+    font-size: 36rpx;
+    color: #171717;
+    display: flex;
+    justify-content: space-between;
+}
+.site-top-iamge{
+    padding: 0 30rpx 0 10rpx ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-top-buttom-all{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.site-top-buttom{
+  flex:1
+}
+.site-top-buttom-text{
+    margin-top: 10rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+}
+/*粘贴复制的商品信息那块*/
+.promotion{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+  
+}
+.list{
+    display: flex;
+    margin-left: 20rpx;
+}
+.image{
+    width: 200rpx;
+    height: 200rpx;
+    position: relative;
+}
+.image .image_main{
+    width: 200rpx;
+    height: 200rpx;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 10;
+}
+.image .image_small{
+    width: 54rpx;
+    height: 54rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+.title{
+    padding-right: 40rpx;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20rpx;
+    margin-top: 6rpx;
+    border-bottom: 1px solid #eee;
+    font-size: 36rpx;
+}
+.title .promotion_main{
+    width: 470rpx;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size: 36rpx;
+}
+.promotion_Standard{
+    font-size: 32rpx;
+    color: #6e6e6e;
+}
+.title .promotion_scale{
+    font-size: 28rpx;
+    color:#ff9388;
+}
+.promotion_price{
+    color:#EA4736;
+    font-size: 32rpx;
+}
+/*结束*/
+.site-belief{
+    padding: 0 20rpx 0 20rpx;
+}
+.site-belief-a{
+    line-height: 100rpx;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.site-belief-a{
+    border-bottom: 2rpx #f0f0f0 solid;
+
+}
+.margin100{
+    margin-bottom: 100rpx;
+}
+.site-bottom{
+    width: 750rpx;
+    line-height: 98rpx;
+    background-color: #ffffff;
+    border-top: 2rpx #f0f0f0 solid;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 13;
+}
+.site-bottom-Useless{
+    margin-right: 30rpx;
+    color: #171717;
+}
+.site-bottom-buttom{
+    width: 243rpx;
+    color: #ffffff;
+    background-color: #ea3900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*商品数量*/
+.pNum{
+    font-size: 32rpx;
+}
+/*改*/
+.promotion_button{
+  display: flex;
+  justify-content: space-between;
+}

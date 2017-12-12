@@ -1,0 +1,61 @@
+<!--pages/Checkedout/Checkedout.wxml-->
+<view class='site'>
+     <view class='site-top'>
+           <view class='site-top-iamge'>
+                <image style='width:49rpx;height:61rpx;' src='../image/dizhi.png'></image>
+           </view>
+           <view class='site-top-buttom'>
+                 <view class='site-top-buttom-all'>
+                       <view class='site-top-buttom-name'>收货人：{{Data.store_user_name}}</view>
+                       <view class='site-top-buttom-number'>{{Data.mobile}}</view>
+                 </view>
+                 <view class='site-top-buttom-text'>{{Data.province}}{{Data.city}}{{Data.area}}{{Data.township}}{{Data.address}}</view>
+           </view>
+     </view>
+    <block wx:for="{{Data.goods}}">
+        <view class="promotion">
+            <view class="list">
+                <view class="image">
+                    <image class='image_main' src="{{item.cover}}"></image>
+                    <image class="image_small" src="../image/promto.png"></image>
+                </view>
+            </view>
+            <view class="title">
+                <view>
+                    <view class="promotion_main">{{item.goods_name}}</view>
+                    <view class='promotion_Standard' wx:if="{{item.is_type==1}}">{{item.spec}}</view>
+                    <!--<view class='promotion_scale'>降价50%</view>-->
+                </view>
+                <view class="promotion_button">
+                    <text class="promotion_price">￥{{item.buy_price}}</text>
+                    <text class="pNum"> X{{item.buy_number}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+
+     <view class='site-belief'>
+           <view class='site-belief-a'>
+                 <view class='site-belief-a-a'>购买数量</view>
+                 <view class='site-belief-a-b'>{{Data.goods_sum}}</view>
+           </view>
+           <view class='site-belief-a'>
+                 <view class='site-belief-a-a'>会员等级</view>
+                 <view class='site-belief-a-b'>{{Data.level_name}}会员</view>
+           </view>
+           <view class='site-belief-a margin100'>
+                 <view class='site-belief-a-a'>服务费总计</view>
+                 <view class='site-belief-a-b'>￥{{Data.service_charge*Data.goods_sum}}.00</view>
+           </view>
+           <!--<view class='site-belief-a'>-->
+                 <!--<view class='site-belief-a-a'>合计</view>-->
+                 <!--<view class='site-belief-a-b'>￥{{total}}</view>-->
+           <!--</view>-->
+     </view>
+     <view class='site-bottom'>
+           <view class='site-bottom-Useless'>合计：{{Data.all_price}}</view>
+           <view class='site-bottom-buttom' bindtap="confirm">提交订单</view>
+     </view>
+</view>
+
+

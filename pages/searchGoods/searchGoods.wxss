@@ -1,0 +1,117 @@
+/* pages/searchGoods/searchGoods.wxss */
+ @import "../../template/inputSearch.wxss"; 
+
+/*导航条*/
+.nav{
+    margin-top: 20rpx;
+    width: 100%;
+    height: 60rpx;
+    display: flex;
+    border-bottom: 1px solid #cccccc;
+}
+.nav view{
+    margin: 0 40rpx;
+    color:#818181;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    height: 60rpx;
+}
+ .nav .choose{
+    color:#Ea3900;
+}
+.item{
+    width: 100%;
+    display: flex;
+    flex-wrap:  wrap;
+}
+.list{
+    width: 49%;
+    margin-top: 30rpx;
+}
+.list:nth-child(2n+1){
+    margin-right: 2%;
+}
+.image{
+    width: 100%;
+    height: 365rpx;
+    position: relative;
+}
+.image image:last-child{
+    width: 80rpx;
+    height: 80rpx;
+    z-index: 11;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.image image:first-child{
+    width: 100%;
+    height: 365rpx;
+    position: absolute;
+    z-index: 10;
+    top:0;
+    left: 0;
+}
+
+.title{
+    width: 340rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 40rpx;
+    height: 40rpx;
+    font-size: 32rpx;
+    color: #1a1a1a;
+    margin-top: 25rpx;
+    margin-left: 20rpx;
+}
+.name{
+    display: inline-block;
+    overflow: hidden;
+    font-size: 24rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    padding: 0rpx 10rpx 0rpx 10rpx;
+    color: #EA4736;
+    border: 2rpx #EA4736 solid;
+    border-radius: 20rpx;
+}
+.price{
+    line-height: 40rpx;
+    margin-top: 25rpx;
+    margin-left: 20rpx;
+}
+.new_price{
+    font-size: 36rpx;
+    color: #cd0000;
+    margin-right: 25rpx;
+}
+.del_price{
+    font-size: 24rpx;
+    text-decoration: line-through;
+    color:#b0b0bb
+}
+.sales{
+    font-size: 24rpx;
+    color:#1a1a1a;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+}
+
+
+.nothing{width: 100%;
+    margin-top: 100rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nothing image{
+    width: 500rpx;
+    height: 364rpx;
+    margin:  0 auto;
+}
+.nothing view{
+    text-align: center;
+    font-size: 30rpx;
+    color:#00a79e;
+    margin-top: 100rpx;
+}

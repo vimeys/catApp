@@ -1,0 +1,121 @@
+/* pages/Further/Further.wxss */
+
+@import "../../template/inputSearch.wxss";
+@import "../../template/TBD.wxss";
+.search input{
+    line-height: 90rpx;
+    width: 450rpx;
+    display: inline-block;
+    padding-left: 20rpx;
+}
+.search{
+    background: #fff;
+}
+.search .input{
+    margin-bottom: 20rpx;
+    margin-top: 20rpx;
+    background-color: #eee;
+    border-radius: 40rpx;
+}
+
+
+
+
+.ding{
+  background-color: #fafafa;
+}
+
+/*.chanping-top{*/
+    /*line-height: 88rpx;*/
+    /*border-bottom: 10rpx #eee solid;*/
+    /*font-size: 36rpx;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+/*}*/
+/*.chanping-top-left{*/
+    /*color: #EA4736;*/
+    /*padding-left: 20rpx;*/
+    /*display: flex;*/
+/*}*/
+/*.chanping-top-right{*/
+    /*padding-right: 20rpx;*/
+    /*display: flex;*/
+/*}*/
+/*.chanping-title{*/
+    /*line-height: 60rpx;*/
+    /*border-bottom: 2rpx #eee solid;*/
+    /*font-size: 32rpx;*/
+    /*display: flex;*/
+/*}*/
+/*.chanping-title>view{*/
+    /*padding: 0 30rpx 0 30rpx;*/
+/*}*/
+/*.xuanzhong{*/
+    /*color: #EA4736;*/
+/*}*/
+
+/*.promotion{*/
+    /*width: 100%;*/
+    /*margin-top: 20rpx;*/
+    /*margin-bottom: 20rpx;*/
+/*}*/
+/*.list{*/
+    /*display: flex;*/
+/*}*/
+/*.image{*/
+    /*width: 200rpx;*/
+    /*height: 200rpx;*/
+    /*position: relative;*/
+/*}*/
+/*.image .image_main{*/
+    /*width: 200rpx;*/
+    /*height: 200rpx;*/
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left: 0;*/
+    /*z-index: 10;*/
+/*}*/
+/*.image .image_small{*/
+    /*width: 54rpx;*/
+    /*height: 54rpx;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*z-index: 100;*/
+/*}*/
+/*.title .promotion_main{*/
+    /*font-size: 36rpx;*/
+/*}*/
+/*.title .promotion_scale{*/
+    /*font-size: 28rpx;*/
+    /*color:#ff9388;*/
+/*}*/
+
+/*.promotion_price{*/
+    /*color:#EA4736;*/
+    /*font-size: 32rpx;*/
+/*}*/
+/*.promotion_price_del{*/
+    /*color:#989898;*/
+    /*font-size: 22rpx;*/
+    /*margin-left: 5rpx;*/
+/*}*/
+/*.promotion_num{*/
+    /*color:#989898;*/
+    /*font-size: 22rpx;*/
+    /*!* margin-left: 80rpx; *!*/
+/*}*/
+/*.name-name{*/
+    /*margin-right: 20rpx;*/
+    /*padding: 0rpx 10rpx 0rpx 10rpx;*/
+    /*font-size: 22rpx;*/
+    /*color: #EA4736;*/
+    /*border: 2rpx #EA4736 solid;*/
+    /*border-radius: 20rpx;*/
+/*}*/
+/*冯川改*/
+.promotion_button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

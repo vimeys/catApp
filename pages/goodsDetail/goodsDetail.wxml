@@ -1,0 +1,152 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<swiper class="swiper" indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+    <block wx:for="{{img}}">
+        <swiper-item >
+            <image src="{{item}}" class="slide-image" width="100%" height="150"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<!--活动价-->
+<view class="goods_title" wx:if="{{promotion}}">
+    <view class="title">{{goodsName}}</view>
+    <text class='chang-name'>{{factory}}-{{brand}}</text>
+    <view class="main">
+        <text class="new_price">活动价：￥{{goodsPrice}}</text>
+        <text class="del_price">原价：{{goodsDelPrice}}</text>
+        <text class="sales">销量：{{goodsSales}}</text>
+    </view>
+</view>
+
+
+<!--普通-->
+<view class="goods_title" wx:if="{{normal}}">
+    <view class="title">{{goodsName}}</view>
+    <text class='chang-name'>{{factory}}-{{brand}}</text>
+    <view class="main">
+        <text class="new_price">售价：¥{{goodsDelPrice}}</text>
+        <text class="sales">销量：{{goodsSales}}</text>
+    </view>
+</view>
+
+
+
+<!--众筹-->
+<view class="TBD" wx:if="{{TBD}}">
+    <view class='one-all'>
+         <text class='one'>众筹中.剩{{day}}天</text>
+    </view>
+    <view class="title">{{goodsName}}</view>
+    <text class='chang-name'>{{factory}}-{{brand}}</text>
+    <view class="progress">
+        <progress percent="{{percentage_funding}}" color="#00a79e" stroke-width="10" style="width: 600rpx; display: inline-block"/><text class="point">{{percentage_funding}}%</text>
+    </view>
+    <view class="TBD_people">{{crowd_raise_number}}人支持/已筹{{Raise_the_total_price}}万</view>
+</view>
+
+<view style="margin-bottom: 100rpx;margin-top: 30rpx">
+    <block wx:for="{{goodsImage}}" wx:for-index="index">
+        <image src="{{item}}" style="width: 100%;height:{{height[index]}}rpx" ></image>
+    </block>
+</view>
+<!--活动普通购物车结算-->
+<view class="show-popup" hidden="{{hideShopPopup}}">
+    <view class="popup-mask" bindtap="close"></view>
+    <view class="popup-contents">
+        <view class="pop-goods-info">
+            <view class="pop-img-box">
+                <image src="../image/goods.png" class="goods-thumbnail"/>
+            </view>
+            <view class="pop-goods-des">
+                <view class="pop-goods-title">{{goodsName}}</view>
+                <view class="pop-goods-price">¥{{SIZEID[index].price}}</view>
+            </view>
+            <view class="pop-goods-close" bindtap="close"></view>
+        </view>
+        <view class="size-label-box">
+                <view class="label">规格</view>
+                <view class="label-item-box">
+                    <view class="label-item {{item.active? 'active' : '' }}" wx:for="{{SIZEID}}" wx:for-index="index" wx:key="id" bindtap="chooseSize" data-id="{{item.id}}" data-num="{{index}}">
+                        {{item.spec}}
+                    </view>
+                </view>
+
+        </view>
+        <view class="buy-num-box">
+            <view class="num-label"> 库存剩余：{{goodsStorage}}</view>
+            <view class="num-label">购买数量</view>
+            <view class="num-box">
+                <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+                <view class="num-input">
+                    <input  type="number" value="{{buyNumber}}" bindblur="inputBuy" />
+                </view>
+                <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+            </view>
+        </view>
+        <view class="popup-join-btn" bindtap="joinCart">
+            加入购物车
+        </view>
+
+    </view>
+</view>
+
+<!--众筹购物车-->
+<view class="show-popup" hidden="{{hideShopTBD}}">
+    <view class="popup-mask" bindtap="closeTBD"></view>
+    <view class="popup-contents">
+        <view class="pop-goods-info">
+            <view class="pop-img-box">
+                <image src="../image/goods.png" class="goods-thumbnail"/>
+            </view>
+            <view class="pop-goods-des">
+                <view class="pop-goods-title">{{goodsName}}</view>
+                <view class="pop-goods-price">¥{{goods_crowd_raise_price}}</view>
+            </view>
+            <view class="pop-goods-close" bindtap="closeTBD"></view>
+        </view>
+        <view class="size-label-box">
+                <view class="label">规格</view>
+                <view class="label-item-box">
+                    <view class="label-item active" wx:for="{{SIZEID}}" wx:for-index="index" wx:key="id"  data-name="{{item}}" data-num="{{index}}">
+                        {{item.spec}}
+                    </view>
+                </view>
+            <!--</block>-->
+        </view>
+        <view class="buy-num-box">
+            <view class="num-label"> 库存剩余：{{goodsStorage}}</view>
+            <view class="num-label">购买数量</view>
+            <view class="num-box">
+                <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+                <view class="num-input">
+                    <input  type="number" value="{{buyNumber}}" bindblur="inputBuy" />
+                </view>
+                <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+            </view>
+        </view>
+        <view class="popup-join-btn" bindtap="buyNow">
+            立即购买
+        </view>
+        <!--<view class="popup-join-btn"  wx:if="{{TBD}}"  bindtap="joinCart">-->
+            <!--立即购买-->
+        <!--</view>-->
+    </view>
+</view>
+
+
+<view class="bar fix" wx:if="{{promotion||normal}}">
+    <view class="cart" bindtap="goCart" data-type="storage">
+        <image src="../image/cartBlock.png"></image>
+        <view>购物车</view>
+    </view>
+
+    <view class="collect" bindtap="storage" data-type="{{storage}}">
+        <image src="{{storageImage}}"></image>
+        <view class="">{{storageWord}}</view>
+    </view>
+    <view class="joinCart" bindtap="getSize">加入购物车</view>
+</view>
+<view class="fix fixed " wx:if="{{TBD}}" bindtap="getSizeTBD">
+    立即购买
+</view>

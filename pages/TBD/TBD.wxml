@@ -1,0 +1,24 @@
+<!--pages/TBD/TBD.wxml-->
+<!--<include src="../../template/search.wxml"/>-->
+<include src="../../template/inputSearch.wxml"/>
+<view class='ding' style='height:120rpx;'></view>
+<block wx:for="{{Data}}">
+    <view class="promotion" bindtap="goodsDetail" data-type="{{item.id}}" data-name="{{item.is_type}}">
+        <view class="list">
+            <view class="image">
+                <image class='image_main' src="{{item.cover}}"></image>
+                <image class="image_small" src="../image/TBD.png"></image>
+            </view>
+            <view class="title">
+                <view class="promotion_all">
+                    <view class="TbD_main">{{item.goods_name}}</view>
+                    <view class="progress"><progress percent="{{item.percentage_funding}}" color="#00a79e" stroke-width="7" style="width: 380rpx; display: inline-block" /><text class="point">{{item.percentage_funding}}%</text></view>
+                    <view class="TbD_people">{{item.crowd_raise_number}}人支持/已筹{{item.Raise_the_total_price}}万</view>
+                </view>
+                <view class="promotion_button">
+                    <text class="promotion_price">{{item.goods_crowd_raise_price}}元起</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,27 @@
+<!-- 活动商品的列表页面 -->
+
+<template name="promotion_minus">
+    <block wx:for="{{promotion}}">
+        <view class="promotion" bindtap="goodsDetail" data-type="{{item.id}}" data-name="{{item.is_type}}">
+            <view class="list">
+                <view class="image">
+                    <image class='image_main' src="{{item.cover}}"></image>
+                    <image class="image_small" src="../image/promto.png"></image>
+                </view>
+                <view class="title">
+                    <view class="promotion_all">
+                        <view class="promotion_main">{{item.goods_name}}</view>
+                        <view class="promotion_scale"><text class='name-name'>{{item.factory}}—{{item.brand}}</text>降价{{item.percentage_discount}}%</view>
+                    </view>
+                    <view class="promotion_button">
+                        <view>
+                            <text class="promotion_price">￥{{item.goods_activity_price}}</text>
+                            <text class="promotion_price_del">￥{{item.goods_shopping_price}}</text>
+                        </view>
+                        <text class="promotion_num">销量：{{item.goods_sales}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</template>

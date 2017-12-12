@@ -1,0 +1,17 @@
+/* pages/news/news.wxss */
+page{
+    background-color: #eee;
+}
+.all{
+    font-size: 30rpx;
+    padding: 20rpx 40rpx 20rpx 40rpx;
+    background-color: #fff;
+}
+.text{
+    text-indent:60rpx;
+}
+.time{
+    margin-top: 50rpx;
+    display: flex;
+    flex-direction: row-reverse;
+}

@@ -1,0 +1,10 @@
+<!--pages/Brandmanagement/Brandmanagement.wxml-->
+<view class='all'>
+      <view class='all-image' wx:for="{{list}}">
+            <view class='all-image-quan'>
+                 <image src='{{item.image}}'></image>
+            </view>
+            <navigator url='../FactoryBrand/FactoryBrand?id={{item.factory_id}}' class='all-text'>进入厂家品牌列表</navigator>
+      </view>
+     
+</view>

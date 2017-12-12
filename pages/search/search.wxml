@@ -1,0 +1,26 @@
+<!--pages/search/search.wxml-->
+
+<include src="../../template/inputSearch.wxml"/>
+<view class="margin"></view>
+<view wx:if="{{showSearch}}" style="border-bottom: 1px solid #ccc">
+    <view class="item">
+        <view class="num">{{index}}</view>
+        <view class="goods">
+            <block wx:for="{{searchData}}">
+                <view class="goods_list {{choose==true?'choose':''}}" bindtap="click" data-type="{{item.id}}">{{item.name}}</view>
+            </block>
+        </view>
+    </view>
+</view>
+<view class="scroll">
+    <block wx:for="{{json}}" wx:for-item="item" wx:for-index="index">
+        <view class="item">
+            <view class="num">{{index}}</view>
+            <view class="goods">
+                <block wx:for="{{item}}">
+                    <view class="goods_list {{choose==true?'choose':''}}" bindtap="click" data-type="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>

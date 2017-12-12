@@ -1,0 +1,39 @@
+<include src="../../template/search.wxml"/>
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height: 420rpx">
+  <block wx:for="{{img}}" class="swiper" wx:for-item="item">
+    <swiper-item>
+      <image src="{{item.image}}" class="slide-image" width="100%" height="420rpx" bindtap="hrefProduct"data-type="{{item.brand_id}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="border"></view>
+<view class="main">
+  <view class="main_name">
+    <image src="../image/hot.png"></image>
+    <text class="main_title">活动商品</text>
+  </view>
+  <view class="main_more" bindtap="pMore">更多</view>
+</view>
+ <import src="../../template/promotion"/>
+ <template is="promotion_minus" data="{{promotion}}"></template>
+ <improt></improt>
+<view class="AD">
+    <scroll-view scroll-x style="height:200rpx" class="scroll">
+
+        <block wx:for="{{scroll}}">
+            <view id="green" class="scroll-view-item bc_green">
+                <image src="{{item.image}}" data-type="{{item.is_type}}" bindtap="href"></image>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+<view class="TBD">
+  <view class="TBD_name">
+    <image src="../image/hot.png"></image>
+    <text class="TBD_title">众筹商品</text>
+  </view>
+  <view class="TBD_more" bindtap="tMore">更多</view>
+</view>
+ <import src="../../template/TBD" />
+ <template is="TBD" data="{{TBD}}"></template>

@@ -1,0 +1,65 @@
+<!--pages/brand/brand.wxml-->
+<view bindtap="hide">
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+    <view>tsldfjalsdfjalks</view>
+</view>
+<view wx:if="{{listShow}}" class="model">
+    <view class="model_name">厂商品牌</view>
+    <view class="list">
+        <view class="goods choose">安尔达电动车</view>
+        <view class="goods">小米电动车</view>
+        <view class="goods">小米电动车</view>
+        <view class="goods">小米电动车</view>
+        <view class="goods">小米电动电动撒打发似的车</view>
+    </view>
+</view>
+<view class="fix" catchtap="more">
+    品牌生产厂商所有品牌
+</view>

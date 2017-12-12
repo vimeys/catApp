@@ -1,0 +1,202 @@
+<!--pages/Reviseda/Reviseda.wxml-->
+<view class='all'>
+      <view class='all-a'>
+            <view class='all-a-title'>
+             <!-- 订单状态 -->
+                  <!-- 待付款 -->
+                  <view class='all-a-title-le' wx:if="{{order.status == 0}}">
+                        <view class='all-a-title-left' >
+                            <view class='all-a-title-left-top'>待付款</view>
+                            <view class='all-a-title-left-bottom'>
+                                    <view class='all-a-title-left-bottom-text'>订单剩余时间</view>
+                                    <view class='all-a-title-left-bottom-time'>48：00：00</view>
+                            </view>
+                        </view>
+                        <view class='all-a-title-right'>
+                                <image style='width:190rpx;height:190rpx;' src='../image/Supplement.png'></image>
+                        </view>
+                  </view>
+                   <!-- 待发货 -->
+                   <view class='all-a-title-le' wx:if="{{order.status == 1}}">
+                        <view class='all-a-title-left'>
+                            <view class='all-a-title-left-top'>待发货</view>
+                            <view class='all-a-title-left-bottom'>
+                                    <view class='all-a-title-left-bottom-text'>订单等待发货中请您耐心等待</view>
+                            </view>
+                        </view>
+                        <view class='all-a-title-right'>
+                                <image style='width:190rpx;height:190rpx;' src='../image/Waiting.png'></image>
+                        </view>
+                  </view>
+                   <!-- 待收货 -->
+                   <view class='all-a-title-le' wx:if="{{order.status == 2}}">
+                        <view class='all-a-title-left'>
+                            <view class='all-a-title-left-top'>待收货</view>
+                            <view class='all-a-title-left-bottom'>
+                                    <view class='all-a-title-left-bottom-text'>您的订单已经在路上请你注意签收</view>
+                            </view>
+                        </view>
+                        <view class='all-a-title-right'>
+                                <image style='width:220rpx;height:190rpx;' src='../image/shouhuo.png'></image>
+                        </view>
+                  </view>
+                   <!-- 完成 -->
+                  <view class='all-a-title-le' wx:if="{{order.status == 3}}">
+                        <view class='all-a-title-left'>
+                            <view class='all-a-title-left-top'>已完成</view>
+                            <view class='all-a-title-left-bottom'>
+                                    <view class='all-a-title-left-bottom-text'>商品已经签收，请注意查看</view>
+                            </view>
+                        </view>
+                        <view class='all-a-title-right'>
+                                <image style='width:190rpx;height:190rpx;' src='../image/wan.png'></image>
+                        </view>
+                  </view>
+               <!-- 订单状态结束 -->
+            </view>
+            <view class='Ruined'>
+                  <view class='Ruined-all'>
+                        <view class='Ruined-all-name'>{{order.user_name}}</view>
+                        <view class='Ruined-all-number'>{{order.mobile}}</view>
+                  </view>
+                  <view class='Ruined-two'>收货地址</view>
+                  <view class='Ruined-Detail'>{{order.province}}-{{order.city}}-{{order.areas}}-{{order.township}}-{{order.dress}}</view>
+            </view>
+            <!-- 付款之前 -->
+            <view class='shopping' wx:if="{{order.status == 0}}">
+                 <view class='number'>订单号：{{order.order_sn}}</view>
+                 <view class='body-a' wx:for="{{order.sub_order}}">
+                        <view class='body-a-top'>
+                              <view class='body-a-top-changzi'>{{item.factory}}-</view>
+                              <view class='body-a-top-pinpai'>-{{item.brand}}</view>
+                        </view>
+                        <!-- 循环商品 -->
+                        <view class='body-a-body' wx:for="{{item.goods}}">
+                            <view class="promotion">
+                                    <view class="list">
+                                        <view class="image">
+                                            <image class='image_main' src="{{item.cover}}"></image>
+                                            <image class="image_small" wx:if="{{item.is_type == 1}}" src="../image/promto.png"></image>
+                                       <image class="image_small" wx:if="{{item.is_type == 2}}" src="../image/TBD.png"></image>     
+                                        </view>
+                                    </view>
+                                    <view class="title">
+                                        <view>
+                                            <view class="promotion_main">{{item.goods_name}}</view>
+                                            <view class='promotion_Standard'>{{item.color}}，{{item.voltage}}，{{item.power}}</view>
+                                            <!-- <view class='promotion_scale'>降价50%</view> -->
+                                        </view>
+                                            <view class="promotion_button">
+                                                <text class="promotion_price">￥{{item.price}}</text>
+                                                <text class='promotion-shu'>x{{item.num}}</text>
+                                            </view>
+                                    </view>
+                            </view>
+                        </view>
+                 </view>
+            </view>
+             <!-- 付款之前 -->
+            <!-- 付款之后 -->
+             <view class='shopping' wx:if="{{order.status > 0}}">
+                 <view class='number'>订单号：{{order.sub_order}}</view>
+                        <!-- 循环商品 -->
+                        <view class='body-a-body' wx:for="{{order.goods}}">
+                            <view class="promotion">
+                                    <view class="list">
+                                        <view class="image">
+                                            <image class='image_main' src="{{item.cover}}"></image>
+                                            <image class="image_small" wx:if="{{item.is_type == 1}}" src="../image/promto.png"></image>
+                                       <image class="image_small" wx:if="{{item.is_type == 2}}" src="../image/TBD.png"></image>     
+                                        </view>
+                                    </view>
+                                    <view class="title">
+                                        <view>
+                                            <view class="promotion_main">{{item.goods_name}}</view>
+                                            <view class='promotion_Standard'>{{item.color}}，{{item.voltage}}，{{item.power}}</view>
+                                            <!-- <view class='promotion_scale'>降价50%</view> -->
+                                        </view>
+                                            <view class="promotion_button">
+                                                <text class="promotion_price">￥{{item.price}}</text>
+                                                <text class='promotion-shu'>x{{item.num}}</text>
+                                            </view>
+                                    </view>
+                            </view>
+                        </view>
+                 
+            </view>
+             <!-- 付款之后 -->
+            <view class='belief'>
+                  <view class='belief-a'>
+                        <view class='belief-a-a'>商品总件数</view>
+                        <view class='belief-a-b' wx:if="{{order.status == 0}}">{{order.buy_number}}</view>
+                         <view class='belief-a-b' wx:if="{{order.status > 0}}">{{order.all_num}}</view>
+                  </view>
+                  <view class='belief-a'>
+                        <view class='belief-a-a' >商品总价</view>
+                        <view class='belief-a-b' wx:if="{{order.status == 0}}">￥{{order.buy_price - order.buy_freight-order.service_charge}}</view>
+                         <view class='belief-a-b' wx:if="{{order.status > 0}}">￥{{order.sub_price}}</view>
+                  </view>
+                  <view class='belief-a'>
+                        <view class='belief-a-a'>服务费</view>
+                        <view class='belief-a-b' >￥{{order.level_service}}</view>
+                  </view>
+                  <view class='belief-a'>
+                        <view class='belief-a-a'>会员等级</view>
+                        <view class='belief-a-b' >{{order.level_name}}</view>
+                  </view>
+                  <!--<view class='belief-a'>-->
+                        <!--<view class='belief-a-a'>订单总价</view>-->
+                        <!--<view class='belief-a-b' wx:if="{{order.status == 0}}">￥{{order.buy_price}}</view>-->
+                        <!--<view class='belief-a-b' wx:if="{{order.status > 0}}">￥{{order.all_price}}</view>-->
+                  <!--</view>-->
+            </view>
+            <view class='qian'>
+                  <view class='qian-name'>订单总价</view>
+                  <view class='qian-number' wx:if="{{order.status == 0}}" >{{order.buy_price}}元</view>
+                  <view class='qian-number' wx:if="{{order.status > 0}}" >{{order.all_price}}元</view>
+            </view>
+             <view class='shuju'>
+                 <view class='shuju-a'>下单时间：{{order.create_time}}</view>
+                 <view class='shuju-a' wx:if="{{order.create_time}}">付款时间：{{order.create_time}}</view>
+                 <view class='shuju-a' wx:if="{{order.ship_time}}">发货时间：{{order.ship_time}}</view>
+                 <view class='shuju-a' wx:if="{{order.rece_time}}">收货时间：{{order.rece_time}}</view>
+            </view>
+            <view class='SUPP'>
+                  <view class='SUPP-a' wx:if="{{order.status>1}}" bindtap="wl_open">物流详情</view>
+                  <!--<view class='Supplement' wx:if="{{order.status == 0}}">继续付款</view>-->
+                  <!--<view class='Supplement' wx:if="{{order.status == 2}}" bindtap="confirm">确认收货</view>-->
+                <view class='Supplement' wx:if="{{order.status == 0}}" bindtap='payment' data-order_id='{{order.id }}'>继续付款</view>
+                <view class='Supplement' wx:if="{{order.status == 2}}" bindtap='confirm' data-order_id='{{order.id }}'>确认收货</view>
+            </view>
+           
+            <!-- 未付款时线下转账 -->
+            <view class='bottom-all' wx:if="{{order.status == 0}}">
+                <view class='bottom-all-Kamishi'>
+                        <view class='bottom-all-Kamishi-a'>
+                            <image style='width:48rpx;height:48rpx;' src='../image/cross.png'></image>
+                        </view>
+                        <view class='bottom-all-Kamishi-Test' bindtap='upload'>上传银行转款凭证</view>
+                </view>
+                <view class='Explanation'>转款说明</view>
+            </view>
+            <view class='bottom-all' wx:if="{{order.status == 1 && order.pay_way==3}}">
+                <view class='bottom-all-Kamishi'>
+                        <view class='bottom-all-Kamishi-a'>
+                            <image style='width:49rpx;height:29rpx;' src='../image/Eyes.png'></image>
+                        </view>
+                        <view class='bottom-all-Kamishi-Test'>查看银行转款凭证</view>
+                </view>
+                <view class='Explanation'>转款说明</view>
+            </view>
+             <!-- 未付款时线下转账 结束-->
+      </view>
+      <view class='tanchuang' wx:if="{{show}}">
+          <view class='tan' >
+                <!-- <view class='tan-text'>{{item.factory}}-{{item.factory}}</view> -->
+                <view class='tan-image'>
+                      <image style='width:750rpx;height:550rpx;' src='{{order.Logistics}}'></image>
+                </view>
+          </view>
+           <button class='botton' bindtap='wl_close'>返回</button>
+      </view>
+</view>

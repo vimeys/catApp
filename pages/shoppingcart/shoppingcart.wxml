@@ -1,0 +1,54 @@
+<!--pages/shoppingcart/shoppingcart.wxml-->
+
+<block wx:for="{{Data}}" wx:for-index="index" wx:if="{{showNothing}}">
+    <view class="promotion">
+        <view class='Obstruction' wx:if="{{item.del}}" data-type="{{index}}" bindtap="hide">
+            <view class='Obstruction-shan' catchtap="delClick"  data-type="{{index}}" data-id="{{item.id}}">删除</view>
+        </view>
+        <view class='chose-all' bindtap="choose" data-type="{{index}}">
+            <view class="btn {{item.active?'chose':''}}">
+                <image style='width:43rpx;height:31rpx;' src='../image/chose.png'></image>
+            </view>
+        </view>
+        <view class="list"  bindlongpress="longClick" data-type="{{index}}">
+            <view class="image">
+                <image class='image_main' src="{{item.cover}}"></image>
+                <image  wx:if="{{item.is_type==1}}" class="image_small" src="../image/promto.png"></image>
+            </view>
+        </view>
+        <view class="title" bindtap="click" bindlongpress="longClick" data-type="{{index}}" data-tp="{{item.is_type}}" data-num="{{item.goods_id}}">
+            <view class='promotion_main-all'>
+                <view class="promotion_main">{{item.goods_name}}</view>
+                <view class='promotion_text'>{{item.color}}, {{item.voltage}}, {{item.power}}</view>
+            </view>
+            <view class="promotion_button">
+                <text class="promotion_price">￥{{item.buy_price}}</text>
+                <text class='promotion-shu'>x{{item.buy_number}}</text>
+            </view>
+        </view>
+    </view>
+</block>
+<view class="margin"></view>
+<view class='bottom' wx:if="{{showNothing}}">
+      <view class='chose-all' bindtap="chooseAll">
+           <view class="btn {{chooseAll?'chose':'' }}">
+                <image style='width:43rpx;height:31rpx;' src='../image/chose.png'></image>
+           </view>
+      </view>     
+      <view class='choices'>全选</view>
+      <view class='Total-all'>
+            <view class='Total'>
+                  <view>合计:</view>
+                  <view class='quantity'>￥{{total}}</view>
+            </view>
+            <view class='Expense'>(不含运费)</view>
+      </view>
+      <view class='right'>
+           <view class='Confirmation01' bindtap="confirm">确认下单</view>
+      </view>
+</view>
+<view class="nothing" hidden="{{showNothing}}">
+    <image src="../image/cartNothing.png"></image>
+    <view>购物车还是空的,快去选购你喜欢的东西</view>
+</view>
+

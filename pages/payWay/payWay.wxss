@@ -1,0 +1,50 @@
+/* pages/payWay/payWay.wxss */
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items:center;
+}
+.total view:first-child{
+    width: 650rpx;
+    height: 500rpx;
+    display: flex;
+    align-items:center;
+}
+.total view:first-child image{
+    margin-left: 50rpx;
+    width: 300rpx;
+    height: 300rpx;
+}
+.total view:last-child{
+    width: 50rpx;
+    height: 50rpx;
+    background: #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.total view:last-child image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.main .total .chose{
+    background: #EA4736;
+}
+.fix{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    width: 100%;
+    text-align: center;
+    background: #00a79e;
+    line-height: 100rpx;
+    color:#ffffff;
+}

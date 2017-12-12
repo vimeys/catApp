@@ -1,0 +1,24 @@
+/*字体大小设置*/
+.font36{
+  font-size: 36rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+.font22{
+  font-size:22rpx;
+}
+/*设置margin*/
+.margin64{
+  margin-top: 64rpx;
+}
+
+
+/*选择框箭头*/
+.before::before{
+  position: absolute;
+  color:#333;
+  content:"▼";
+  right:1rpx;
+  top:0rpx;
+}

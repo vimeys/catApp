@@ -1,0 +1,5 @@
+<!--pages/news/news.wxml-->
+<view class='all'>
+     <view class='text'>{{news.value}}</view>
+     <view class='time'>{{news.create_time}}</view>
+</view>

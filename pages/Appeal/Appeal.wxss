@@ -1,0 +1,52 @@
+/* pages/Appeal/Appeal.wxss */
+.Appeal{
+    font-size: 36rpx;
+}
+.text-T{
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
+}
+.text{
+    margin: auto;
+    height: 300rpx;
+    width: 690rpx;
+    border: 1rpx #ccc solid;
+}
+.text textarea{
+    color: #1a1a1a;
+    margin: 20rpx 20rpx 20rpx 30rpx;
+}
+.Problem{
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+
+    color: #1a1a1a;
+    margin: 20rpx 20rpx 20rpx 30rpx;
+}
+.Problem{
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+}
+.title{
+    padding-top: 30rpx;
+    border-top: 20rpx #eee solid;
+    margin-bottom: 50rpx;
+    padding-left: 30rpx;
+}
+.img{
+    padding-top: 30rpx;
+    text-align: center;
+    margin: auto;
+}
+.Kamishi{
+    margin: auto;
+    text-align: center;
+}
+.bottom{
+    line-height: 98rpx;
+    text-align: center;
+    width: 750rpx;
+    color: #fff;
+    height: 98rpx;
+    background-color: #00a79e;
+}

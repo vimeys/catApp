@@ -1,0 +1,99 @@
+/* pages/sign/sign.wxss */
+
+.main{
+    width: 100%;
+}
+.logo{
+    width: 100%;
+    height: 300rpx;
+}
+.logo image{
+    width: 100%;
+    height: 300rpx;
+}
+.sign_input{
+
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 70rpx;
+}
+.sign_tel{
+    display: flex;
+    width: 670rpx;
+    border-bottom:1rpx solid #ccc;
+    margin: 0 auto;
+    flex-direction: row;
+}
+.sign_tel image{
+    width: 52rpx;
+    /*position: absolute;*/
+    /*top: 20rpx;*/
+    /*left: 25rpx;*/
+    height: 42rpx;
+}
+.sign_tel input{
+    /*padding-left: 100rpx;*/
+    margin-left: 10rpx;
+    font-size: 30rpx;
+    color:#000;
+    height: 50rpx;
+    min-height: 50rpx;
+    width: 608rpx;
+}
+.code{
+    /*margin-left: 50rpx;*/
+    width: 670rpx;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 30rpx;
+}
+.code image{
+    width: 41rpx;
+    height: 53rpx;
+    border-bottom: 1px solid #ccc;
+}
+.code input{
+    margin-top: 30rpr;
+    padding-left: 20rpx;
+    width: 325rpx;
+    height: 50rpx;
+    /*text-align: center;*/
+    font-size: 30rpx;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    /*color:;*/
+}
+.fff{
+    color:#000;
+}
+
+.code  text{
+    display: inline-block;
+    margin-top: 30rpr;
+    text-align: center;
+    color:#fff;
+    border-radius: 20rpx;
+    background: #EA4736;
+    font-size: 30rpx;
+    /*margin-right: 80rpx;*/
+    height: 78rpx;
+    line-height: 78rpx;
+    width: 240rpx;
+    margin-left: 66rpx;
+}
+button{
+    margin: 30rpx auto 0;
+
+    width: 670rpx;
+    height: 90rpx;
+    border-radius: 20rpx;
+    background-color: #EA4736;
+    color:#fff;
+    font-size: 36rpx;
+}
+.blue{
+    color:#00a79e;
+}

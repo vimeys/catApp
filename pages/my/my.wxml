@@ -1,0 +1,114 @@
+<!--pages/my/my.wxml-->
+<view class='my'>
+      <view class='top'>
+            <view class='top-information'>
+                  <view class='Avatar'>
+                        <image style='width:116rpx;height:116rpx;' src='{{userInfo.avatarUrl}}'></image>
+                  </view>
+                  <view class='upg'>
+                      <view class='information'>
+                            <view class='name'>{{userInfo.nickName}}</view>
+                            <view class='member' wx:if="{{!is_user}}">
+                              <view class='member-grade'>会员已到期</view>
+                            </view>
+                            <view class='member' wx:if="{{is_user}}">
+                                  <view class='member-grade'>{{user_data.level_name}}</view>
+                                  <view class='member-time'>{{user_data.now_time}}~{{user_data.level_vip_end_time}}</view>
+                            </view>
+                      </view>
+                      <view class='upgrade'  >
+                            <view class='upgrade-image'>
+                                  <image style='width:36rpx;height:40rpx;' class='upgrade-a' src='../image/upgrade.png'></image>
+                            </view>
+                            <navigator class='upgrade-shengji' wx:if="{{!is_user}}" url='../vip/vip'>请续费</navigator>
+                            <navigator class='upgrade-shengji' url='../vip/vip' wx:if="{{is_user }}">升级</navigator>
+                      </view>
+                  </view>
+            </view>
+            <!-- <view class='Profit'>
+                   <navigator url='../profits/profits'  class='Profit-Profit'>更多权益</navigator>  
+            </view> -->
+            <view class='Clothing' wx:if="{{is_user}}">服务费：{{user_data.level_service}}元/辆</view>
+            <view class='Clothing' wx:if="{{!is_user}}">服务费：暂时无法查看</view>
+      </view>
+      <view class='Column chart'>
+            <view class='Column-one'>
+                <navigator class='Column-one-san' url='../belief/belief'>
+                    <view class='Profit-image'>
+                          <image style='width:58rpx;height:59rpx;' src='../image/news.png'></image>
+                    </view>
+                    <view class='Profit-top' wx:if="{{new_num}}">{{new_num}}</view>
+                    <view class='Profit-News'>我的消息</view>
+                </navigator>
+                <view class='xian'></view>
+                <navigator url='../Revised/Revised' class='Column-one-san'>
+                    <view class='Column-one-image'>
+                          <image src='../image/study.png'></image>
+                    </view>
+                    <view class='Column-one-text'>我的订单</view>
+                </navigator>
+                <view class='xian'></view>
+                <navigator url='../Collection/Collection' class='Column-one-san'>
+                    <view class='Column-one-image'>
+                          <image src='../image/Collection.png'></image>
+                    </view>
+                    <view class='Column-one-text'>我的收藏</view>
+                </navigator>
+            </view>
+            <navigator url='../myshop/myshop' class='Column-Unity'>
+                  <view class='Column-Unity-left'>
+                         <view class='image-box'>
+                              <image src='../image/shop.png'></image>
+                         </view>
+                        <view class='Column-Unity-zhong'>我的店铺</view>
+                  </view>
+                  <view class='Column-Unity-right'>
+                       <image style='width:23rpx;height:43rpx;' src='../image/right.png'></image>
+                  </view>
+            </navigator>
+            <navigator url='../account/account' class='Column-Unity'>
+                  <view class='Column-Unity-left'>
+                         <view class='image-box'>
+                              <image src='../image/sign.png'></image>
+                         </view>
+                        <view class='Column-Unity-zhong'>平台对公账户</view>
+                  </view>
+                  <view class='Column-Unity-right'>
+                       <image style='width:23rpx;height:43rpx;' src='../image/right.png'></image>
+                  </view>
+            </navigator>
+            <navigator url='../Brandsuper/Brandsuper' class='Column-Unity'>
+                  <view class='Column-Unity-left'>
+                         <view class='image-box'>
+                              <image src='../image/management.png'></image>
+                         </view>
+                        <view class='Column-Unity-zhong'>品牌管理</view>
+                  </view>
+                  <view class='Column-Unity-right'>
+                       <image style='width:23rpx;height:43rpx;' src='../image/right.png'></image>
+                  </view>
+            </navigator>
+            <navigator url='../contFactory/contFactory' class='Column-Unity'>
+                  <view class='Column-Unity-left'>
+                         <view class='image-box'>
+                              <image src='../image/Alead.png'></image>
+                         </view>
+                        <view class='Column-Unity-zhong'>联系厂家</view>
+                  </view>
+                  <view class='Column-Unity-right'>
+                       <image style='width:23rpx;height:43rpx;' src='../image/right.png'></image>
+                  </view>
+            </navigator>
+            <navigator url='../contFactory/contFactory' class='Column-Unity'>
+                  <view class='Column-Unity-left'>
+                         <view class='image-box'>
+                              <image src='../image/Alead.png'></image>
+                         </view>
+                        <view class='Column-Unity-zhong'>联系平台</view>
+                  </view>
+                  <view class='Column-Unity-right'>
+                       <image style='width:23rpx;height:43rpx;' src='../image/right.png'></image>
+                  </view>
+            </navigator>
+      </view>
+</view>

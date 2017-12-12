@@ -1,0 +1,157 @@
+<!--pages/login/login.wxml-->
+<view class="address">
+    <view class="title">
+        <view class="title_name">店铺地址</view>
+        <view class="title_hint">（地址请慎重填写）</view>
+    </view>
+    <view class="addr_three">
+        <view>
+            <picker mode="selector" class="select before" disabled="{{select.provinceUse}}" value="{{select. provinceIndex}}"
+                    data-type="1" bindchange="optionChange" range="{{select.province}}">
+                {{select.province[select.provinceIndex]}}
+            </picker>
+        </view>
+        <view class="middle">
+            <picker mode="selector" class="select before" disabled="{{select.cityUse}}" value="{{select.cityIndex}}"
+                    data-type="2" bindchange="optionChange" range="{{select.city}}">
+                {{select.city[select.cityIndex]}}
+            </picker>
+        </view>
+        <view>
+            <picker mode="selector" class="select before" disabled="{{select.areaUse}}" value="{{select.areaIndex}}"
+                    data-type="3" bindchange="optionChange" range="{{select.area}}">
+                {{select.area[select.areaIndex]}}
+            </picker>
+        </view>
+    </view>
+    <view class="addr_one">
+            <picker mode="selector" class="selectAll before" disabled="{{select.stressUse}}" value="{{select.stressIndex}}"
+                    data-type="4" bindchange="optionChange" range="{{select.stress}}">
+                {{select.stress[select.stressIndex]}}
+            </picker>
+    </view>
+    <view class="addr_input">
+        <input bindinput="address" type="text"/>
+    </view>
+    <view class="people margin64">
+        <view class="people_people">
+            联系人
+        </view>
+
+        <!--<text class="people_name">-->
+        <!--冯川-->
+        <!--</text>-->
+        <input data-type="1" class='people_name' type="text" placeholder="请输入姓名" bindinput="output"/>
+    </view>
+    <view  class="people tel margin64">
+        <text class="font36">联系电话</text>
+        <!--<text class="font36">18081325616</text>-->
+        <input data-type="2" type="text" placeholder="请输入电话号码" bindinput="output"/>
+    </view>
+</view>
+<view class="brand_all">
+    <view class="brand">
+        <view class="brand_name font36">经营品牌：</view>
+        <view class="brand_selectAll">
+
+            <block wx:for="{{brand}}" wx:for-key="index">
+                <view class="brand_select">{{item}}
+                    <image src="../image/del.png" data-type="{{index}}" catchtap="del"></image>
+                </view>
+            </block>
+
+            <view class="brand_input" wx:if="{{showInput}}"><input type="text" bindconfirm="inputBrand" confirm-type="done"/></view>
+            <view class="brand_plus">
+                <view>
+                    <image src="../image/plus.png" catchtap="choose"></image>
+                </view>
+                <view class="brand_option" wx:if="{{show}}" >
+                     <image src="../image/option.png" ></image>
+                    <view class='brand_a'>
+                        <view class="brand_list" catchtap="chooseBrand">
+                            <text>品牌列表</text>
+                        </view>
+                        <view class="brand_custom" catchtap="chooseInput">自定义输入</view>
+                    </view>
+
+
+
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="sales">
+        <view class="font36 sales_name">现年销量：</view>
+        <view><input type="text" bindinput="inputMoney"/></view>
+    </view>
+</view>
+<view class="photo">
+    <view class="font36 photo_title1"> 店铺营业执照</view>
+    <view class="photo_image1"><image src="{{src}}"></image></view>
+    <view class="photo_plus" bindtap="choosePhotoBrand"><image src="../image/plus.png"></image>{{clickUp.click_1}}</view>
+    <view class="font36 photo_title2">身份证 (正反面)</view>
+    <view class="photo_image2">
+        <view><image class="photo_image2_image1" src="{{srcID1}}"></image></view>
+        <view><image class="photo_image2_image2" src="{{srcID2}}"></image></view>
+    </view>
+    <view class="ID">
+        <view class="ID_first ID_common">
+            <view class="font30">正面</view>
+            <view class="font36 ID_more" bindtap="choosePhotoID1"><image src="../image/plus.png"></image>{{clickUp.click_2}}</view>
+        </view>
+        <view class="ID_second ID_common">
+            <view class="font30">背面</view>
+            <view class="font36 ID_more" bindtap="choosePhotoID2"><image src="../image/plus.png"></image>{{clickUp.click_3}}</view>
+        </view>
+    </view>
+    <view class="photo_title3 font36">店铺外景图</view>
+    <view class="photo_image3"><image src="{{srcShop}}"></image></view>
+    <view class="photo_plus" bindtap="choosePhotoShop"><image src="../image/plus.png"></image>{{clickUp.click_4}}</view>
+    <view class="grade">
+        <view class="grade_level1">
+            <view>普通会员</view>
+            <view class="grade_choose {{red==level1?'red':''}}" data-type="{{level1}}" bindtap="level"><image src="../image/chose.png"></image></view>
+        </view>
+        <view class="grade_level2">
+            <view>高级会员</view>
+            <view class="grade_choose {{red==level2?'red':''}}" data-type="{{level2}}" bindtap="level"><image src="../image/chose.png"></image></view>
+        </view>
+    </view>
+    <view  class="explain" bindtap="checkLevel">查看会员权益</view>
+    <view class="level" wx:if="{{showLevel}}">
+        <view class="level1">
+            <view>普卡</view>
+            <view>阿萨德骷髅法师可理解的烦恼蓝色的弗兰克拿手里看到飞鸟卢卡斯的拉萨等你方兰生李开复那拉氏</view>
+        </view>
+        <view class="level1">
+            <view>高级卡</view>
+            <view>阿萨德骷髅法师可理解的恼蓝色的弗兰克拿手里看到飞鸟卢卡斯的拉萨等你方兰生李开复那拉氏</view>
+        </view>
+    </view>
+
+
+    <view class="fix" bindtap='confirm'>确认</view>
+</view>
+<view class="showModel" wx:if="{{showModel}}">
+    <view class="di" bindtap="close"></view>
+    <view class="model">
+        <view class="model_title">
+            <view>请选择店铺</view>
+            <view class="pop-goods-close" bindtap="close"> </view>
+        </view>
+        <scroll-view scroll-y style="height: 300px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <block wx:for="{{json}}" wx:for-item="item" wx:for-index="index">
+                <view class="item">
+                    <view class="num">{{index}}</view>
+                    <view class="goods">
+                        <block wx:for="{{item}}" >
+                            <view class="goods_list {{item.choose?'choose':''}}" bindtap="click" data-type="{{item.id}}">{{item.name}}</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+        <view class="fix" bindtap="close"> 确定</view>
+    </view>
+</view>
+

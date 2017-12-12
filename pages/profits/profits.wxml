@@ -1,0 +1,21 @@
+<!--pages/profits/profits.wxml-->
+<view class='body'>
+      <view class='top'>
+           <view class='top-title'>
+                 <view>你的等级
+                       <image style='width:44rpx;height:58rpx;' src='../image/icon01.png'></image>
+                        <image style='width:44rpx;height:58rpx;' wx:if="{{data.id==2}}" src='../image/icon01.png'></image>
+                       {{data.level_name}}
+                 </view>
+           </view>
+           <view class='text'>{{data.rights}}</view>
+      </view>
+      <view class='Katakana' wx:for="{{data.list}}">
+           <view>
+                <image style='width:44rpx;height:58rpx;' src='../image/icon02.png'></image>
+                <image style='width:44rpx;height:58rpx;' wx:if="{{item.id==2}}"  src='../image/icon02.png'></image>
+           </view>
+           <view>{{item.level_name}}</view>
+           <view class='text01'>{{item.rights}}</view>
+      </view>
+</view>

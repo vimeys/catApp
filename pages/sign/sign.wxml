@@ -1,0 +1,24 @@
+<!--pages/sign/sign.wxml-->
+<!-- <view class="bg">
+    <image src="../image/sign_bg.png"></image>
+</view> -->
+<view class="main">
+    <view class="logo">
+        <image src="../image/signbg.png"></image>
+    </view>
+    <view class="sign_input">
+        <view class="sign_tel">
+            <image src="../image/phonepeople.png"></image>
+            <input type="tel" placeholder="绑定手机号" placeholder-class="fff" bindinput="phoneNum"/>
+        </view>
+        <view class="code">
+            <image class="" src="../image/code.png"></image>
+            <input type="tel" placeholder="请输入验证码"  bindinput="code"  placeholder-class="fff"/>
+            <text bindtap="getCode" data-type="{{ok}}" class="{{blue?'blue':''}}">{{word}}</text>
+        </view>
+    </view>
+    <view>
+        <button bindtap="confirm">注   册</button>
+    </view>
+</view>
+

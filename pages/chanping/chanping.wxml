@@ -1,0 +1,155 @@
+<!--pages/chanping/chanping.wxml-->
+<view class='chanping' bindtap="hide">
+      <view class='chanping-top'>
+            <view class='chanping-top-left'>
+                  <view>
+                        <image style='width:47rpx;height:43rpx;' src='../image/chan.png'></image>
+                  </view>
+                  <view>{{brandName}}</view>
+            </view>
+            <view class='chanping-top-right'>
+                  <view>
+                        <image style='width:35rpx;height:35rpx' src='../image/sousuo.png'></image>
+                  </view>
+                  <view>厂家资料</view>
+            </view>
+      </view>
+      <view class='chanping-title'>
+            <view class="{{check==3?'xuanzhong':''}}"  bindtap="change" data-type="3">全部商品</view>
+            <view class="{{check==2?'xuanzhong':''}}"  bindtap="change" data-type="2">众筹商品</view>
+            <view class="{{check==1?'xuanzhong':''}}"  bindtap="change" data-type="1">活动商品</view>
+      </view>
+
+
+        <block wx:for="{{Data}}">
+            <!--<view class="promotion" wx:if="{{item.is_type==1}}" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}">-->
+                <!--<view class="list">-->
+                    <!--<view class="image">-->
+                        <!--<image class='image_main' src="../image/goods.png"></image>-->
+                        <!--<image class="image_small" src="../image/promto.png"></image>-->
+                    <!--</view>-->
+                    <!--<view class="title">-->
+                        <!--<view class="promotion_all">-->
+                            <!--<view class="promotion_main">无敌风火轮超级厉害萨达啊考</view>-->
+                            <!--<view class="promotion_scale">降价50%</view>-->
+                        <!--</view>-->
+                        <!--<view class="promotion_button">-->
+                            <!--<text class="promotion_price">￥2222.00</text>-->
+                            <!--<text class="promotion_price_del">￥2222.00</text>-->
+                            <!--<text class="promotion_num">销量:2345</text>-->
+                        <!--</view>-->
+                    <!--</view>-->
+                <!--</view>-->
+            <!--</view>-->
+            <view class="promotion" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}" wx:if="{{item.is_type==1}}">
+                <view class="list">
+                    <view class="image">
+                        <image class='image_main' src="../image/goods.png"></image>
+                        <image class="image_small" src="../image/promto.png"></image>
+                    </view>
+                    <view class="title">
+                        <view class="promotion_all">
+                            <view class="promotion_main">{{item.goods_name}}</view>
+                            <view class="promotion_scale"><text class='name-name'>{{item.factory}}—{{item.brand}}</text>降价{{item.percentage_discount}}%</view>
+                        </view>
+                        <view class="promotion_button">
+                            <view>
+                                <text class="promotion_price">￥{{item.goods_activity_price}}</text>
+                                <text class="promotion_price_del">￥{{item.goods_shopping_price}}</text>
+                            </view>
+                            <text class="promotion_num">销量：{{item.goods_sales}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!--<view class="promotion" wx:if="{{item.is_type==0}}" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}">-->
+                <!--<view class="list">-->
+                    <!--<view class="image">-->
+                        <!--<image class='image_main' src="../image/goods.png"></image>-->
+                        <!--&lt;!&ndash;<image class="image_small" src="../image/promto.png"></image>&ndash;&gt;-->
+                    <!--</view>-->
+                    <!--<view class="title">-->
+                        <!--<view class="promotion_all">-->
+                            <!--<view class="promotion_main">无敌风火轮超级厉害萨达啊考</view>-->
+                            <!--&lt;!&ndash;<view class="promotion_scale">降价50%</view>&ndash;&gt;-->
+                        <!--</view>-->
+                        <!--<view class="promotion_button">-->
+                            <!--<text class="promotion_price">￥2222.00</text>-->
+                            <!--&lt;!&ndash;<text class="promotion_price_del">￥2222.00</text>&ndash;&gt;-->
+                            <!--<text class="promotion_num">销量:2345</text>-->
+                        <!--</view>-->
+                    <!--</view>-->
+                <!--</view>-->
+            <!--</view>-->
+            <view class="promotion" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}" wx:if="{{item.is_type==0}}">
+                <view class="list">
+                    <view class="image">
+                        <image class='image_main' src="../image/goods.png"></image>
+                        <!--<image class="image_small" src="../image/promto.png"></image>-->
+                    </view>
+                    <view class="title">
+                        <view class="promotion_all">
+                            <view class="promotion_main">{{item.goods_name}}</view>
+                            <view class="promotion_scale"><text class='name-name'>{{item.factory}}—{{item.brand}}
+                            </text></view>
+                        </view>
+                        <view class="promotion_button">
+                            <view>
+                                <text class="promotion_price">￥{{item.goods_activity_price}}</text>
+                                <!--<text class="promotion_price_del">￥{{item.goods_shopping_price}}</text>-->
+                            </view>
+                            <text class="promotion_num">销量：{{item.goods_sales}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!--<view class="promotion" wx:if="{{item.is_type==2}}" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}">-->
+                <!--<view class="list">-->
+                    <!--<view class="image">-->
+                        <!--<image class='image_main' src="../image/goods.png"></image>-->
+                        <!--<image class="image_small" src="../image/TBD.png"></image>-->
+                    <!--</view>-->
+                    <!--<view class="title">-->
+                        <!--<view class="promotion_all">-->
+                            <!--<view class="TbD_main">无敌风火轮超级厉害萨达阿</view>-->
+                            <!--<view class="progress"><progress percent="50" color="#00a79e" stroke-width="7" style="width: 400rpx; display: inline-block"/><text class="point">85%</text></view>-->
+                            <!--<view class="TbD_people">3445人支持/已筹12万</view>-->
+                        <!--</view>-->
+                        <!--<view class="promotion_button">-->
+                            <!--<text class="promotion_price">2222.00元起</text>-->
+                        <!--</view>-->
+                    <!--</view>-->
+                <!--</view>-->
+            <!--</view>-->
+            <view class="promotion" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}" wx:if="{{item.is_type==2}}">
+                <view class="list">
+                    <view class="image">
+                        <image class='image_main' src="../image/goods.png"></image>
+                        <image class="image_small" src="../image/TBD.png"></image>
+                    </view>
+                    <view class="title">
+                        <view class="promotion_all">
+                            <view class="TbD_main">{{item.goods_name}}</view>
+                            <view class="progress"><progress percent="{{item.percentage_funding}}" color="#00a79e" stroke-width="7" style="width: 400rpx; display: inline-block" /><text class="point">{{item.percentage_funding}}%</text></view>
+                            <view class="TbD_people">{{item.crowd_raise_number}}人支持/已筹{{item.Raise_the_total_price}}万</view>
+                        </view>
+                        <view class="promotion_button">
+                            <text class="promotion_price">{{item.goods_crowd_raise_price}}元</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+</view>
+<view wx:if="{{listShow}}" class="model">
+    <view class="model_name">厂商品牌</view>
+    <view class="model_list" >
+        <block wx:for="{{factoryData}}">
+            <view data-type="{{item.id}}" class="goods choose" bindtap="choose" data-name="{{item.name}}"> {{item.name}}</view>
+        </block>
+    </view>
+</view>
+<view class="fix" catchtap="more">
+    品牌生产厂商所有品牌
+</view>
+<!--<view class='bottom'>厂商所有品牌</view>-->

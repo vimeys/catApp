@@ -1,0 +1,30 @@
+/* pages/Brandmanagement/Brandmanagement.wxss */
+page{
+    border-top: 2rpx #eee solid;
+}
+.all{
+    padding-bottom: 100rpx;
+}
+.all-image{
+    padding-top: 40rpx;
+    margin: auto;
+    text-align: center;
+}
+.all-image-quan{
+    display: flex;
+    justify-content: center;
+}
+.all-image image{
+    width: 670rpx;
+    height: 400rpx;
+    margin-bottom: 50rpx;
+}
+.all-text{
+    font-size: 32rpx;
+    border-radius: 40rpx;
+    padding: 10rpx 30rpx 10rpx 30rpx;
+    background-color: #00a79e;
+    color: #fff;
+    width: 300rpx;
+    margin: 0 auto;
+}

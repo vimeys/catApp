@@ -1,0 +1,58 @@
+<!--pages/login/login.wxml-->
+<view class="address">
+    <view class="title">
+        <view class="title_name">店铺地址</view>
+    </view>
+    <view class="addr_three">
+      {{user.province}}-{{user.city}}-{{user.areas}}-{{user.township}}
+    </view>
+    <view class="addr_input">
+        {{user.address}}
+    </view>
+     <view  class="margin64 people tel ">
+        <text class="font36">联系人</text>
+        <text class="font36">{{user.store_user_name}}</text>
+    </view>
+    <view  class="margin64 people tel ">
+        <text class="font36">联系电话</text>
+        <text class="font36">{{user.mobile}}</text>
+    </view>
+</view>
+<view class="brand_all">
+    <view class="brand">
+        <view class="brand_name font36">经营品牌：</view>
+        <view class="brand_selectAll">
+            <view wx:for="{{user.brand_list}}" class="brand_select">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="sales">
+        <view class="font36 sales_name">现年销量：</view>
+        <view>{{user.store_annual_sales}}</view>
+    </view>
+</view>
+<view class="photo">
+    <view class="font36 photo_title1"> 店铺营业执照</view>
+    <view class="photo_image1"><image src="{{user.store_license}}"></image></view>
+    <view class="font36 photo_title2">身份证 (正反面)</view>
+    <view class="photo_image2">
+        <view><image class="photo_image2_image1" src="{{user.card_z}}"></image></view>
+        <view><image class="photo_image2_image2" src="{{user.card_f}}"></image></view>
+    </view>
+    <view class="ID">
+        <view class="ID_first ID_common">
+            <view class="font30">正面</view>
+        </view>
+        <view class="ID_second ID_common">
+            <view class="font30">背面</view>
+        </view>
+    </view>
+    <view class="photo_title3 font36">店铺外景图</view>
+    <view class="photo_image3"><image src="{{user.store_storefront}}"></image></view>
+    <view class="grade">
+        <view class="grade_level1">
+            <view>{{user.level_name}}</view>
+        </view>
+    </view>
+</view>
+
+

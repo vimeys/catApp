@@ -1,0 +1,39 @@
+<!-- <view class="promotion">
+    <view class="list">
+        <view class="image">
+            <image class='image_main' src="../image/goods.png"></image>
+            <image class="image_small" src="../image/TBD.png"></image>
+        </view>
+        <view class="title">
+            <view class="promotion_main">无敌风火轮超级厉害萨达阿</view>
+            <view class="progress"><progress percent="50" color="#00a79e" stroke-width="10" style="width: 300rpx; display: inline-block"/><text class="point">85%</text></view>
+            <view class="promotion_people">3445人支持/已筹12万</view>
+            <view class="promotion_button">
+                <text class="promotion_price">2222.00元起</text>
+            </view>
+        </view>
+    </view>
+</view> -->
+<template name="TBD">
+    <block wx:for="{{TBD}}">
+        <view class="promotion" bindtap="goodsDetail" data-type="{{item.id}}" data-name="{{item.is_type}}">
+            <view class="list">
+                <view class="image">
+                    <image class='image_main' src="{{item.cover}}"></image>
+                    <image class="image_small" src="../image/TBD.png"></image>
+                </view>
+                <view class="title">
+                    <view class="promotion_all">
+                        <view class="TbD_main">{{item.goods_name}}</view>
+                        <view class="progress"><progress percent="{{item.percentage_funding}}" color="#00a79e" stroke-width="7" style="width: 380rpx; display: inline-block" /><text class="point">{{item.percentage_funding}}%</text></view>
+                        <view class="TbD_people">{{item.crowd_raise_number}}人支持/已筹{{item.Raise_the_total_price}}万</view>
+                    </view>
+                    <view class="promotion_button">
+                        <text class="promotion_price">￥{{item.goods_crowd_raise_price}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</template>
+

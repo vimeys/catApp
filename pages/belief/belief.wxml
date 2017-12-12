@@ -1,0 +1,18 @@
+<!--pages/belief/belief.wxml-->
+<view class='body'>
+      <navigator url='../news/news' wx:for="{{news}}">
+          <view  class='body-news' bindtap='open_news' data-index='{{index}}'>
+            <view class='body-news-top'>
+                <view class='body-img'>
+                      <image style='width:100rpx;height:100rpx;' src='{{userInfo.avatarUrl}}'></image>
+                </view>
+                <view class='name'>农信达电子商城</view>
+                <view class='yuan' wx:if="{{item.status == 0 }}"></view>
+            </view>
+            <view class='body-text'>{{item.value}}</view>
+            <view class='body-time'>
+                <text class='body-time-time'>{{item.create_time}} </text>
+            </view>
+          </view>
+      </navigator>
+</view>

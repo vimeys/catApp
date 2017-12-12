@@ -1,0 +1,78 @@
+/* pages/list/list.wxss */
+.dingshang{
+    background-color: #eee;
+    height:120rpx;
+}
+page{
+    border-top: 2rpx #fafafa solid;
+}
+@import "../../template/search.wxss";
+.title{
+    width: 100%;
+    height: 85rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    width:50rpx ;
+    height: 50rpx;
+    margin-left: 15prx;
+    padding-left: 15rpx;
+    flex:none
+}
+/* .image image{
+    width: 50rpx;
+    height: 50rpx;
+} */
+.word{
+    line-height: 100rpx;
+    margin: auto;
+    margin-left: 15rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+    color:#EA4736;
+}
+.item{
+    width: 100%;
+    /* display: flex; */
+}
+.item_image{
+    width: 750rpx;
+    height: 420rpx;
+}
+.item_image image{
+    width: 750rpx;
+    height: 420rpx;
+}
+.item_list{
+    padding: 40rpx 40rpx 40rpx 40rpx;
+    display: flex;
+    justify-content: space-between;
+    /* flex: 1;
+    padding-left: 20rpx; */
+}
+.item_list view:first-child{
+    font-size: 34rpx;
+    line-height: 40rpx;
+    color:#EA4736;
+}
+.item_list view:last-child{
+    line-height: 40rpx;
+    font-size: 30rpx;
+    color:#1a1a1a;
+}
+.fix{
+    width: 100%;
+    height: 100rpx;
+    position:fixed;
+    bottom: 0;
+    background-color: #EA4736;
+    text-align: center;
+    line-height: 120rpx;
+}
+.fix image{
+    display: inline-block;
+    width: 189rpx;
+    height: 43rpx;
+}

@@ -1,0 +1,78 @@
+{
+    "pages": [
+
+      "pages/index/index",
+      "pages/searchGoods/searchGoods",
+      "pages/shoppingcart/shoppingcart",
+        "pages/login/login",
+        "pages/sign/sign",
+        "pages/Checkedout/Checkedout",
+        "pages/news/news",
+        "pages/payWay/payWay",
+        
+        "pages/CheckedoutTBD/CheckedoutTBD",
+        "pages/list/list",
+        "pages/goodsDetail/goodsDetail",
+        "pages/Reviseda/Reviseda",
+        "pages/Revised/Revised",
+        "pages/chanping/chanping",
+        "pages/Collection/Collection",
+        
+        "pages/TBD/TBD",
+        "pages/Further/Further",
+        "pages/profits/profits",
+        "pages/vip/vip",
+        "pages/belief/belief",
+        "pages/Appeal/Appeal",
+        "pages/my/my",
+
+        
+
+       
+        "pages/search/search",
+        "pages/brand/brand",
+        
+
+        "pages/account/account",
+        "pages/Brandsuper/Brandsuper",
+        "pages/contFactory/contFactory",
+        "pages/myshop/myshop"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "font-size": "38rpx",
+        "color": "#eb4735",
+        "selectedColor": "#eb4735",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "pages/image/icon/index.png",
+                "selectedIconPath": "pages/image/icon/index_a.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/list/list",
+                "iconPath": "pages/image/icon/list.png",
+                "selectedIconPath": "pages/image/icon/list_a.png",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/shoppingcart/shoppingcart",
+                "iconPath": "pages/image/icon/shopcar.png",
+                "selectedIconPath": "pages/image/icon/shopcar_a.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath":  "pages/my/my",
+                "iconPath": "pages/image/icon/myself.png",
+                "selectedIconPath": "pages/image/icon/myself_a.png",
+                "text": "我的"
+            }
+        ]
+    }
+}

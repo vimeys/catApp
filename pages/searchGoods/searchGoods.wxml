@@ -1,0 +1,34 @@
+<include src="../../template/inputSearch.wxml"/>
+<view class="nav">
+    <view bindtap="change" data-type="0" class="all  {{check==0?'choose':''}}">综合</view>
+    <view bindtap="change" data-type="2" class="many {{check==2?'choose':''}}">销量</view>
+    <view bindtap="change" data-type="3" class="price {{check==3?'choose':''}}">价格</view>
+</view>
+<view class="item">
+    <block wx:for="{{Data}}">
+        <view class="list"bindtap="href" data-type="{{item.id}}" data-name="{{item.is_type}}" wx:if="{{item.is_type==1}}">
+            <view class="image">
+                <image src="{{item.cover}}"></image>
+                <image src="../image/promto.png" ></image>
+            </view>
+            <view class="title">{{item.goods_name}}</view>
+            <view class="name">{{item.factory}}—{{item.brand}}</view>
+            <view class="price"><text class="new_price">￥{{item.goods_shopping_price}}</text> <text class="del_price">{{item.goods_activity_price}}</text></view>
+            <view class="sales">销量：{{item.goods_sales}}</view>
+        </view>
+        <view class="list"bindtap="href" data-type="{{item.id}}" data-name="{{item.is_type}}" wx:if="{{item.is_type==0}}">
+            <view class="image">
+                <image src="{{item.cover}}"></image>
+                <!--<image src="../image/promto.png" ></image>-->
+            </view>
+            <view class="title">{{item.goods_name}}</view>
+            <view class="name">{{item.factory}}—{{item.brand}}</view>
+            <view class="price"><text class="new_price">￥1200.00</text></view>
+            <view class="sales">销量：{{item.goods_sales}}</view>
+        </view>
+    </block>
+</view>
+<view class="nothing" wx:if="{{showNothing}}">
+    <image src="../image/searchNothing.png"></image>
+    <view>非常抱歉,没有找到相关商品</view>
+</view>

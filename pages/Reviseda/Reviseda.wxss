@@ -1,0 +1,297 @@
+/* pages/Reviseda/Reviseda.wxss */
+.all-a-title-le{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 235rpx;
+    color: #fff;
+    background-color: #ea3900;
+}
+.all-a-title-left{
+    width: 70%;
+}
+.all-a-title-right{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+.all-a-title-left-top{
+    font-size: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.all-a-title-left-bottom-time{
+    margin-left: 20rpx;
+    font-size: 48rpx;
+}
+.all-a-title-left-bottom{
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Ruined{
+    border-bottom: 20rpx #f0f0f0 solid;
+    margin-top: 20rpx;
+    color: #171717;
+    font-size: 36rpx;
+    padding: 0 20rpx 30rpx 20rpx;
+}
+.Ruined-two{
+    margin-top: 16rpx;
+}
+.Ruined-all{
+    display: flex;
+    justify-content: space-between;
+}
+.Ruined-Detail{
+    margin-top: 16rpx;
+    text-indent: 60rpx;
+    font-size: 30rpx;
+    line-height: 46rpx;
+}
+/*商品详情页面（活动）*/
+
+.number{
+    font-size: 34rpx;
+    padding: 20rpx 0 10rpx 0;
+}
+.shopping{
+    padding: 0 20rpx 0 20rpx;
+}
+.body-a-top{
+    color: #00a79e;
+    font-size: 32rpx;
+    display: flex;
+}
+.body>view{
+    padding: 0 20rpx 0 20rpx;
+}
+.body-a{
+    background-color: #fff;
+}
+.top-b{
+    border-bottom: 4rpx solid #ea3900;
+    color: #ea3900;
+}
+/*复制的那截*/
+.promotion{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+  
+}
+.list{
+    display: flex;
+}
+.image{
+    width: 200rpx;
+    height: 200rpx;
+    position: relative;
+}
+.image .image_main{
+    width: 200rpx;
+    height: 200rpx;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 10;
+}
+.image .image_small{
+    width: 54rpx;
+    height: 54rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+.title{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20rpx;
+    margin-top: 6rpx;
+    border-bottom: 1px solid #eee;
+    font-size: 36rpx;
+}
+.title .promotion_main{
+    width: 480rpx;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size: 36rpx;
+}
+.promotion_Standard{
+    font-size: 32rpx;
+    color: #6e6e6e;
+}
+.title .promotion_scale{
+    font-size: 28rpx;
+    color:#ff9388;
+}
+.promotion_button{
+    display: flex;
+    justify-content: space-between;
+}
+.promotion_price{
+    color:#EA4736;
+    font-size: 32rpx;
+}
+.chose-01{
+    background-color: #eee;
+}
+.Obstruction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -6rpx;
+    right: 0;
+    height: 210rpx;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 12;
+}
+.Obstruction-shan{
+    font-weight: 600;
+    font-size: 48rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 134rpx;
+    height: 134rpx;
+    border-radius: 50%;
+    background-color: #2cb2ab;
+    color: #ffffff;
+}
+.bottom-all{
+    margin-top: 50rpx;
+    background-color: #f0f0f0;
+    line-height: 88rpx;
+    position: relative;
+    height: 88rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottom-all-Kamishi{
+    display: flex;
+    align-items: center;
+}
+.bottom-all-Kamishi-Test{
+    padding-left: 10rpx;
+    font-size: 30rpx;
+    color: #00a79e;
+}
+.Explanation{
+    position: absolute;
+    right: 20rpx;
+    font-size: 24rpx;
+    color: #1a1a1a;
+}
+/*订单其它信息*/
+.belief-a{
+    line-height: 50rpx;
+    padding: 0 20rpx 0 20rpx;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.belief-a-a{
+    color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.belief-a-b{
+    color: #b2b2b2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qian{
+    margin-top: 60rpx;
+    line-height: 50rpx;
+    padding: 0 20rpx 0 20rpx;
+    background-color: #f0f0f0;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.qian-name{
+    color: #171717;
+}
+.qian-number{
+    color: #ea3900;
+}
+.SUPP{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20rpx;
+}
+.SUPP-a{
+    margin-right: 20rpx;
+    margin-top: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36rpx;
+    color: #ffffff;
+    width: 185rpx;
+    height: 67rpx;
+    border-radius: 10rpx;
+    background-color: #b2b2b2;   
+}
+.Supplement{
+    margin-right: 20rpx;
+    margin-top: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36rpx;
+    color: #ffffff;
+    width: 185rpx;
+    height: 67rpx;
+    border-radius: 10rpx;
+    background-color: #ea3900;
+}
+.bottom-all-Kamishi-a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shuju{
+    margin-left: 20rpx;
+    margin-top: 30rpx;
+    font-size: 28rpx;
+    color: #171717;
+}
+/*弹窗*/
+.tanchuang{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 100;
+}
+.tan-text{
+  margin-left: 30rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  color: #00a79e;
+}
+.botton{
+  margin-top: 30rpx;
+  line-height: 80rpx;
+  background-color: #00a79e;
+  width: 400rpx;
+  color: #ffffff;
+}

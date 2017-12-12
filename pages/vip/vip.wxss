@@ -1,0 +1,50 @@
+/* pages/vip/vip.wxss */
+.vip{
+    position: relative;
+}
+.vip-time{
+    font-size: 30rpx;
+    position: absolute;
+    bottom: 116rpx;
+    right: 52rpx;
+    color: #e5e5e5;
+}
+.vip-chose{
+    position: absolute;
+    bottom: 40rpx;
+    right: 40rpx;
+}
+.chose-yuan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #00a46c;
+    width: 60rpx;
+    height: 60rpx;
+}
+.body{
+    margin-top: 40rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.time01{
+    color: #777;
+}
+.bottom{
+    height: 98rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -2rpx;
+    background-color: #ea3900;
+    width: 100%;
+    color: #fff;
+}
+.chose-yuan2{
+    background-color: #767676;
+}
