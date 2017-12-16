@@ -1,3 +1,5 @@
 {
-    "navigationBarTitleText": "平台账户"
+    "navigationBarTitleText": "平台账户",
+    "navigationBarBackgroundColor": "#333333",
+    "navigationBarTextStyle": "white"
 }

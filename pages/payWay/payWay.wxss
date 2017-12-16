@@ -1,4 +1,7 @@
 /* pages/payWay/payWay.wxss */
+page{
+  padding-top: 150rpx;
+}
 .main{
     width: 100%;
     display: flex;
@@ -10,18 +13,20 @@
     justify-items: center;
     align-items:center;
 }
+.union{
+  margin-top: 100rpx;
+}
 .total view:first-child{
     width: 650rpx;
-    height: 500rpx;
     display: flex;
     align-items:center;
 }
-.total view:first-child image{
-    margin-left: 50rpx;
-    width: 300rpx;
-    height: 300rpx;
+.total>view:first-child image{
+      margin-left: 50rpx;  
+     width: 574rpx; 
+    height: 144rpx;
 }
-.total view:last-child{
+.total>view:last-child{
     width: 50rpx;
     height: 50rpx;
     background: #ccc;
@@ -47,4 +52,16 @@
     background: #00a79e;
     line-height: 100rpx;
     color:#ffffff;
+}
+.word{
+  
+    margin: 50rpx auto 0 ;
+    color: #EA4736;
+    font-size: 31rpx;
+    width: 80%;
+    word-wrap:break-word;
+}
+.block{
+    color:#666;
+    text-align: center;
 }

@@ -27,6 +27,7 @@ Page({
         goodsPrice:'',//商品售价
         goodsDelPrice:'',//商品原价
         goodsStorage:999,//商品库存
+        goodsStorageTrue:'',//真实数量
         crowd_raise_number:'',//以众筹人数
         crowd_start_time:'',//众筹开始时间
         crowd_end_time:'',//众筹结束时间
@@ -53,6 +54,10 @@ Page({
         buyNumberMin:1,//最小购买数量
         buyNumberMax:999,//最大购买数量
         height:[1000,1000,1000],
+        over:false,//结束不能点击按钮
+        text1:true,
+        text2:false,
+        cover:''//规格图片
     },
 
 
@@ -138,7 +143,8 @@ Page({
                             brandID:json.brand_id,
                             factory_id:json.factory_id,
                             brand:json.brand,
-                            factory:json.factory
+                            factory:json.factory,
+                            cover:json.cover
                         });
                         that.loadImage();
                     }else if(json.is_type==2){//众筹数据写入
@@ -147,25 +153,56 @@ Page({
                         let time=Date.parse(new Date())/1000;
                         if(json.crowd_end_time-time>0){
                             number=Math.floor((json.crowd_end_time-time)/86400);
+                            let int=Math.floor(json.Raise_the_total_price);
+                            that.setData({
+                                img:json.goods_img,
+                                goodsName:json.goods_name,
+                                goodsImage:json.goods_info,
+                                crowd_raise_number:json.crowd_raise_number,
+                                crowd_start_time:json.crowd_start_time,
+                                crowd_end_time:json.crowd_end_time,
+                                Raise_the_total_price:int,
+                                percentage_funding:json.percentage_funding,
+                                goods_crowd_raise_price:json.goods_crowd_raise_price,
+                                goodsStorage:num,
+                                goodsStorageTrue:num,
+                                brandID:json.brand_id,
+                                factory_id:json.factory_id,
+                                sizeID:json.spec_id,
+                                brand:json.brand,
+                                factory:json.factory,
+                                day:number,
+                                cover:json.cover
+                            })
+                        }else {
+                            let int=Math.floor(json.Raise_the_total_price);
+                            that.setData({
+                                img:json.goods_img,
+                                goodsName:json.goods_name,
+                                goodsImage:json.goods_info,
+                                crowd_raise_number:json.crowd_raise_number,
+                                crowd_start_time:json.crowd_start_time,
+                                crowd_end_time:json.crowd_end_time,
+                                Raise_the_total_price:int,
+                                percentage_funding:json.percentage_funding,
+                                goods_crowd_raise_price:json.goods_crowd_raise_price,
+                                goodsStorage:num,
+                                goodsStorageTrue:num,
+                                brandID:json.brand_id,
+                                factory_id:json.factory_id,
+                                sizeID:json.spec_id,
+                                brand:json.brand,
+                                factory:json.factory,
+                                day:number,
+                                cover:json.cover
+                            })
+                            that.setData({
+                                // percentage_funding:100,
+                                over:true,
+                                text1:false,
+                                text2:true
+                            })
                         }
-                        that.setData({
-                            img:json.goods_img,
-                            goodsName:json.goods_name,
-                            goodsImage:json.goods_info,
-                            crowd_raise_number:json.crowd_raise_number,
-                            crowd_start_time:json.crowd_start_time,
-                            crowd_end_time:json.crowd_end_time,
-                            Raise_the_total_price:json.Raise_the_total_price,
-                            percentage_funding:json.percentage_funding,
-                            goods_crowd_raise_price:json.goods_crowd_raise_price,
-                            goodsStorage:num,
-                            brandID:json.brand_id,
-                            factory_id:json.factory_id,
-                            sizeID:json.spec_id,
-                            brand:json.brand,
-                            factory:json.factory,
-                            day:number
-                        })
                         that.loadImage();
                     }else if(json.is_type==0){//正常商品写入
                         that.setData({
@@ -178,7 +215,8 @@ Page({
                             brandID:json.brand_id,
                             factory_id:json.factory_id,
                             brand:json.brand,
-                            factory:json.factory
+                            factory:json.factory,
+                            cover:json.cover
                         });
                         that.loadImage();
                     }
@@ -223,12 +261,14 @@ Page({
     //关闭按钮
     close:function (e) {
         this.setData({
-            hideShopPopup:true
+            hideShopPopup:true,
+            buyNumber:1
         })
     },
     closeTBD:function (e) {
       this.setData({
-          hideShopTBD:true
+          hideShopTBD:true,
+          buyNumber:1
       })
     },
     //收藏
@@ -254,7 +294,6 @@ Page({
                     is_collection:this.data.storage
                 },
                 success:res=>{
-                    console.log(res);
                 }
             })
         }else{
@@ -272,7 +311,6 @@ Page({
                     is_collection:this.data.storage
                 },
                 success:res=>{
-                    console.log(res);
                 }
             })
         }
@@ -294,6 +332,7 @@ Page({
                 that.setData({
                     SIZEID:SIZEID,
                     goodsStorage:SIZEID[0].stock,
+                    goodsStorageTrue:SIZEID[0].stock,
                     sizeID:SIZEID[0].id
                 })
         },this);
@@ -324,6 +363,7 @@ Page({
 
         this.setData({
             goodsStorage:size[num].stock,
+            goodsStorageTrue:size[num].stock,
             SIZEID:size,
             index:num,
             sizeID:id,
@@ -363,9 +403,9 @@ Page({
     inputBuy:function (e) {
         let value=e.detail.value;
         let storage=this.data.goodsStorage;
-
-        if(value!=0&&value<storage){
-            storage=storage-value;
+        let storageTrue=this.data.goodsStorageTrue;
+        if(value!=0&&value<storageTrue){
+            storage=storageTrue-value;
             this.setData({
                 buyNumber:value,
                 goodsStorage:storage
@@ -381,10 +421,10 @@ Page({
     numJianTap:function (e) {
         let  value=this.data.buyNumber;
         let storage=this.data.goodsStorage;
-        console.log(131);
+        let storageTrue=this.data.goodsStorageTrue;
         if(value>1){
             value--;
-            storage++;
+            storage=storageTrue-value;
             this.setData({
                 buyNumber:value,
                 goodsStorage:storage
@@ -393,12 +433,12 @@ Page({
     },
     //按钮数量减1
     numJiaTap:function (e) {
-        console.log(131);
         let  value=this.data.buyNumber;
         let storage=this.data.goodsStorage;
-        if(value<storage){
+        let storageTrue=this.data.goodsStorageTrue;
+        if(value<storageTrue){
             value++;
-            storage--;
+            storage=storageTrue-value;
             this.setData({
                 buyNumber:value,
                 goodsStorage:storage
@@ -446,12 +486,27 @@ Page({
             method:'POST',
             data:obj,
             success:res=>{
-                wx.setStorageSync('TBDorder', res.data.data);
-                wx.setStorageSync('goods_id',data.goods_id);
-                wx.setStorageSync('spic_id',data.sizeID);
-                wx.redirectTo({
-                  url: '../CheckedoutTBD/CheckedoutTBD'
-                })
+                if(res.data.code==200){
+                    wx.setStorageSync('TBDorder', res.data.data);
+                    wx.setStorageSync('goods_id',data.goods_id);
+                    wx.setStorageSync('spic_id',data.sizeID);
+                    wx.redirectTo({
+                        url: '../CheckedoutTBD/CheckedoutTBD'
+                    })
+                }else if(res.data.code==201){
+                    wx.showModal({
+                      title: '警告',
+                      content:'会员权益已过期，请续费',
+                        showCancel:false,
+                      success: res=>{
+                        if (res.confirm) {
+                            wx.redirectTo({
+                              url: '../vip/vip'
+                            })
+                        }
+                      }
+                    })
+                }
             }
         })
     },
@@ -464,12 +519,12 @@ Page({
             method:'POST',
             data:obj,
             success:res=>{
-                console.log(res);
                 let code=res.data.code;
                  if(res.data.code==200){
                      that.setData({
                          sizeID:'',
-                         hideShopPopup:true
+                         hideShopPopup:true,
+                         buyNumber:1
                      });
                      wx.showToast({
                        title: '加入购物车成功',

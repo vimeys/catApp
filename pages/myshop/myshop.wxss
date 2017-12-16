@@ -24,6 +24,9 @@
     margin-top: 25rpx;
     display: flex;
     justify-items: center;
+    word-break:break-all;
+    line-height: 60rpx;
+    margin-bottom: 20rpx;
 }
 
 .addr_three view{
@@ -299,6 +302,7 @@
 }
 .photo_image3{
     margin: 0 40rpx 26rpx 40rpx;
+    border-radius: 50rpx;
 }
 .grade{
     margin: 83rpx 40rpx 51rpx 40rpx;

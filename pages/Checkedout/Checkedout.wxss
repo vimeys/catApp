@@ -124,6 +124,9 @@
     margin-right: 30rpx;
     color: #171717;
 }
+.red{
+    color:#EA4736;
+}
 .site-bottom-buttom{
     width: 243rpx;
     color: #ffffff;

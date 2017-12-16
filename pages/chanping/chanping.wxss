@@ -14,9 +14,17 @@
     padding-left: 20rpx;
     display: flex;
 }
+.chanping-top-left view:first-child image{
+    margin-top: 20rpx;
+    margin-right: 20rpx;
+}
 .chanping-top-right{
     padding-right: 20rpx;
     display: flex;
+}
+.chanping-top-right view:first-child image{
+    margin-top: 20rpx;
+    margin-right: 20rpx;
 }
 .chanping-title{
     line-height: 60rpx;
@@ -344,4 +352,13 @@ page{
     overflow:hidden;
     text-overflow:ellipsis;
     font-size: 36rpx;
+}
+.TBDOk{
+    color: red;
+    font-size: 36rpx;
+    margin-top: 20rpx;
+}
+.point{
+    font-size: 32rpx;
+    margin-left: 10rpx;
 }

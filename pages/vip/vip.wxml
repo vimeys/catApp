@@ -1,10 +1,10 @@
 <!--pages/vip/vip.wxml-->
 <view class='body'>
       <view class='vip'>
-            <view class='vip-photo'>
+            <view class='vip-photo' bindtap="click">
                   <image style='width:733rpx;height:449rpx;' src='../image/vip.png'></image>
             </view>
-            <view class='vip-time'>{{end_time}}</view>
+            <view class='vip-time' wx:if="{{vip_id == 1}}">{{end_time}}</view>
             <view class='vip-chose' bindtap='checked' data-index='1'>
                   <view class='chose-yuan {{one_show?"":"chose-yuan2"}}'>
                         <image style='width:43rpx;height:31rpx;' src='../image/chose.png'></image>
@@ -12,10 +12,10 @@
             </view>
       </view>
       <view class='vip'>
-            <view class='vip-photo'>
+            <view class='vip-photo' bindtap="click">
                   <image style='width:733rpx;height:449rpx;' src='../image/vip01.png'></image>
             </view>
-            <view class='vip-time time01'>{{end_time}}</view>
+            <view class='vip-time time01' wx:if="{{vip_id == 2}}">{{end_time}}</view>
             <view class='vip-chose' bindtap='checked' data-index='2'>
                   <view class='chose-yuan {{two_show?"":"chose-yuan2"}}'>
                         <image style='width:43rpx;height:31rpx;' src='../image/chose.png'></image>

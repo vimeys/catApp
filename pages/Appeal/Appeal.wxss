@@ -45,8 +45,11 @@
 .bottom{
     line-height: 98rpx;
     text-align: center;
-    width: 750rpx;
+    width: 100%;
     color: #fff;
     height: 98rpx;
+    position: fixed;
+    bottom:0;
+    left: 0;
     background-color: #00a79e;
 }

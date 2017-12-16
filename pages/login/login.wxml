@@ -50,10 +50,9 @@
     </view>
 </view>
 <view class="brand_all">
+    <view class="brand_name font36">经营品牌</view>
     <view class="brand">
-        <view class="brand_name font36">经营品牌：</view>
         <view class="brand_selectAll">
-
             <block wx:for="{{brand}}" wx:for-key="index">
                 <view class="brand_select">{{item}}
                     <image src="../image/del.png" data-type="{{index}}" catchtap="del"></image>
@@ -121,11 +120,11 @@
     <view class="level" wx:if="{{showLevel}}">
         <view class="level1">
             <view>普卡</view>
-            <view>阿萨德骷髅法师可理解的烦恼蓝色的弗兰克拿手里看到飞鸟卢卡斯的拉萨等你方兰生李开复那拉氏</view>
+            <view>每一台收取40元的服务费</view>
         </view>
         <view class="level1">
             <view>高级卡</view>
-            <view>阿萨德骷髅法师可理解的恼蓝色的弗兰克拿手里看到飞鸟卢卡斯的拉萨等你方兰生李开复那拉氏</view>
+            <view>每一台收取20元的服务费</view>
         </view>
     </view>
 
@@ -154,4 +153,8 @@
         <view class="fix" bindtap="close"> 确定</view>
     </view>
 </view>
+<view class="model2" bindtap="clickClose" wx:if="{{showModel2}}">
+    <view class="model2_text">支付成功。请等待平台审核通过后重新登录（24之内通过审核）</view>
+</view>
+
 

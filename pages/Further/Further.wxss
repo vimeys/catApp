@@ -2,21 +2,6 @@
 
 @import "../../template/inputSearch.wxss";
 @import "../../template/TBD.wxss";
-.search input{
-    line-height: 90rpx;
-    width: 450rpx;
-    display: inline-block;
-    padding-left: 20rpx;
-}
-.search{
-    background: #fff;
-}
-.search .input{
-    margin-bottom: 20rpx;
-    margin-top: 20rpx;
-    background-color: #eee;
-    border-radius: 40rpx;
-}
 
 
 
@@ -118,4 +103,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.name-name{
+    margin-right: 20rpx;
+    padding: 0rpx 10rpx 0rpx 10rpx;
+    font-size: 22rpx;
+    color: #EA4736;
+    border: 2rpx #EA4736 solid;
+    border-radius: 20rpx;
 }

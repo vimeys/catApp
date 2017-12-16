@@ -88,7 +88,6 @@ Page({
               arr.push(item.buy_price*item.buy_number)
           }
       })
-        console.log(arr);
         let total=new Number()
         for(var i=0;i<arr.length;i++){
             total+=arr[i]
@@ -192,6 +191,7 @@ Page({
     },
     //确认订单
     confirm:function (e) {
+      let that=this;
         let arr=[];
         let arrId=[];
         let num=[];
@@ -206,13 +206,49 @@ Page({
         wx.setStorageSync('cartId', arrId);
         wx.setStorageSync('testId',arrId);
         wx.setStorageSync('num', num);
-        arr=arr.toString();
-        ajax.postAjax(url.url.confirmCart,{user_id:this.data.user_id,cart_id:arr},function (that,json) {
-            wx.setStorageSync('order', json.data);
-            wx.setStorageSync('orderTotal',that.data.total);
-            wx.navigateTo({
-              url: '../Checkedout/Checkedout'
+        // ajax.postAjax(url.url.confirmCart,{user_id:this.data.user_id,cart_id:arr},function (that,json) {
+        //     wx.setStorageSync('order', json.data);
+        //     wx.setStorageSync('orderTotal',that.data.total);
+        //     wx.navigateTo({
+        //       url: '../Checkedout/Checkedout'
+        //     })
+        // },this);
+        if(arr.length>0){
+            wx.request({
+                url:url.url.confirmCart,
+                method:'POST',
+                data:{
+                    user_id:this.data.user_id,cart_id:arr
+                },
+                success:res=>{
+                    if(res.data.code==200){
+                        wx.setStorageSync('order', res.data.data);
+                        wx.setStorageSync('orderTotal',that.data.total);
+                        wx.navigateTo({
+                            url: '../Checkedout/Checkedout'
+                        })
+                    }else if(res.data.code==201){
+                        wx.showModal({
+                            title: '提示',
+                            content: res.data.message,
+                            success: res=>{
+                                if (res.confirm) {
+
+                                }
+                            }
+                        })
+
+                    }
+                }
             })
-        },this)
+        }
+
+    },
+    onShareAppMessage: function () {
+        //     return {
+        //         title: '微信小程序联盟',
+        //         desc: '最具人气的小程序开发联盟!',
+        //         path: '/page/index'
+        //     }
     }
 })

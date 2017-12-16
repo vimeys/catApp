@@ -1,20 +1,40 @@
 // pages/account/account.js
+import url from '../../utils/url.js';
+import ajax from '../../utils/ajax.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    list:'',
+      show:false,
+      order_id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let show=options.go;
+    let order_id=options.order_id
+    if(show==1){
+      this.setData({
+          show:true,
+          order_id:order_id
+      })
+    }
+    ajax.postAjax(url.url.banks_list,{},function(that,json){
+       that.setData({
+         list:json.data,
+       })
+    },this);
   },
-
+  click:function () {
+      wx.redirectTo({
+        url: '../Revised/Revised??order_id='+this.data.order_id+'&status=1'
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

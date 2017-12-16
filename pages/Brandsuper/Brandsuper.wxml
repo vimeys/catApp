@@ -4,7 +4,7 @@
             <view class='all-image-quan'>
                  <image src='{{item.image}}'></image>
             </view>
-            <navigator url='../FactoryBrand/FactoryBrand?id={{item.factory_id}}' class='all-text'>进入厂家品牌列表</navigator>
+            <navigator url='../factorybrand/factorybrand?id={{item.factory_id}}' class='all-text'>进入该品牌所属厂家其他品牌</navigator>
       </view>
      
 </view>

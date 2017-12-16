@@ -71,15 +71,17 @@
 }
 .Profit-top{
     color: #fff;
-    position: fixed;
-    top: 266rpx;
-    left: 162rpx;
+    position: absolute;
+    top: 28rpx;
+    left: 144rpx;
+    /*align-self: flex-end;*/
     line-height: 36rpx;
     text-align: center;
     width: 36rpx;
     height: 36rpx;
     background-color: #eb4735;
     border-radius: 50%;
+    font-size: 24rpx;
 }
 .Profit-image{
     padding-right: 20rpx;
@@ -116,6 +118,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .yuan{
     position: fixed;

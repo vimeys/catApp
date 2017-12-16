@@ -41,7 +41,7 @@
         </view>
         <view class='site-belief-a'>
             <view class='site-belief-a-a'>服务费总计</view>
-            <view class='site-belief-a-b'>￥{{Data.service_charge*Data.num}}</view>
+            <view class='site-belief-a-b'>￥{{Data.level_service*Data.num}}.00</view>
         </view>
         <!--<view class='site-belief-a'>-->
             <!--<view class='site-belief-a-a'>合计</view>-->
@@ -49,7 +49,7 @@
         <!--</view>-->
     </view>
     <view class='site-bottom'>
-        <view class='site-bottom-Useless'>合计：￥{{Data.sum_price}}</view>
+        <view class='site-bottom-Useless'>合计：<text class="red">￥{{Data.sum_price}}</text></view>
         <view class='site-bottom-buttom' bindtap="confirm">提交订单</view>
     </view>
 </view>

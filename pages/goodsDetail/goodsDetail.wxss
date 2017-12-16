@@ -12,7 +12,7 @@ page{
 }
 .goods_title{
     margin-top: 30rpx;
-    width: 100%;
+    /* width: 100%; */
     /*border: 1px solid #000;*/
 }
 .title{
@@ -32,7 +32,7 @@ page{
 .main{
     margin-top: 30rpx;
     line-height: 40rpx;
-    width: 100%;
+    /* width: 100%; */
     margin-left: 20rpx;
 }
 .new_price{
@@ -232,7 +232,7 @@ page{
 .buy-num-box{
     display: flex;
     justify-content: space-between;
-    padding: 30rpx 30rpx 48rpx 0;
+    padding: 30rpx 30rpx 28rpx 0;
     margin-left: 30rpx;
     border-top: 1px solid #eee;
     margin-top: 30rpx;
@@ -295,4 +295,23 @@ page{
     border-radius: 20rpx;
     border: 2rpx #1a1a1a solid;
     padding: 0 10rpx 0 10rpx;
+}
+.index{
+    z-index: 1000;
+    color: #1a1a1a;
+    background: #cccccc;
+}
+
+/*剩余库存*/
+.residue{
+    margin-top: -10rpx;
+    margin-left: 30rpx;
+    margin-bottom: 20rpx;
+    color:#ccc;
+
+}
+.TBD_word{
+    width: 100%;
+    border-bottom: 1rpx solid #ccc;
+    height: 20rpx;
 }

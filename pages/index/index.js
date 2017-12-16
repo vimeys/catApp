@@ -28,7 +28,6 @@ Page({
         var  that=this;
             wx.chooseImage({
                 success: function(res) {
-                    console.log(res);
                     that.setData({
                         order: res.tempFilePaths
                     })
@@ -37,7 +36,6 @@ Page({
         
     },
     cart:function (e) {
-        console.log(123)
         // wx.navigateTo({
         //     url:'../shoppingcart/shoppingcart'
         // })
@@ -61,7 +59,6 @@ Page({
   },
     look:function(e){
         var that=this;
-        console.log(that.data.order);
         wx.previewImage({
             urls: ["'"+that.data.order+"'"] 
         })
@@ -156,8 +153,15 @@ Page({
             url:url.url.TBD,
             success:res=>{
                 if(res.data.code==200){
+                    let json=res.data.data.commodity_goods_list;
+                    // for(var i=0;i<json.length;i++){
+                    //     let data1=parseFloat(json[i].percentage_funding,2)
+                    //     json[i].percentage_funding=data1;
+                    //     console.log(json[i].percentage_funding);
+                    // }
                     that.setData({
-                        TBD:res.data.data.commodity_goods_list
+                        // TBD:res.data.data.commodity_goods_list
+                        TBD:json
                     })
                 }
             }
@@ -178,6 +182,20 @@ Page({
     },
     //页面滚动
     onPageScroll:function (e) {
+        // let that=this;
+        // let arr=[100,110,120,130,140,150,160,170,180,190,200];
+        // let arr2=[20,18,16,14,12,10,8,6,4,0];
+        // (function (arr,arr2) {
+        //     for(var i=0;i<arr.length;i++){
+        //         if(e.scrollTop>=arr[i]){
+        //             that.setData({
+        //                 marginTop:arr2[i]
+        //             })
+        //             console.log(arr2[i])
+        //         }
+        //     }
+        // }(arr,arr2));
+
         if(e.scrollTop>200){
             this.setData({
                 marginTop:0
@@ -187,5 +205,12 @@ Page({
                 marginTop:20
             })
         }
+    },
+    onShareAppMessage: function () {
+    //     return {
+    //         title: '微信小程序联盟',
+    //         desc: '最具人气的小程序开发联盟!',
+    //         path: '/page/index'
+    //     }
     }
 })

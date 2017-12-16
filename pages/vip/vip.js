@@ -9,7 +9,8 @@ Page({
   data: {
     end_time:'',
     one_show:false,
-    two_show:false
+    two_show:false,
+    vip_id:'',
   },
 
   /**
@@ -23,8 +24,14 @@ Page({
         one_show:true,
         two_show: false
       });
+    } else if (vip_id == 2){
+      this.setData({
+        one_show: false,
+        two_show: true
+      });
     }
     this.setData({
+      vip_id:vip_id,
       end_time:end_time,
     });
   },
@@ -95,7 +102,6 @@ Page({
   pay:function(){
     var show = this.data.two_show;
     var user = wx.getStorageSync('user');
-    console.log(user);
     var id='';
     if(show){
       id=2;
@@ -111,7 +117,6 @@ Page({
             signType: pay.signType,
             paySign: pay.paySign,
             success:function(res){
-                console.log(res);
                 ajax.postAjax(url.url.pay_user, { level_order_sn: pay.order, user_id: user.user_id},function(that,json){
                     wx.showModal({
                         title: '支付成功',
@@ -126,12 +131,18 @@ Page({
             },
             fail:function(res){
                 wx.showModal({
-                    title: res.errMsg,
-                    content: res.errMsg,
+                    title: "警告",
+                    content: '支付失败',
                 })
             }
         })
 
     },this);
-  }
+  },
+  //跳转
+    click:function (e) {
+        wx.navigateTo({
+          url: '../profits/profits'
+        })    
+    }
 })

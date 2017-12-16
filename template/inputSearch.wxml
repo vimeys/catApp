@@ -1,6 +1,5 @@
 <view class="search" >
   <view class="input {{margin?'noMargin':''}}" >
-    <!--<image src="../image/searcwhite.png"></image>-->
     <icon type="search" size="25" color="white"/>
     <input type='text' placeholder='请输入商品名称' bindinput="input"/>
   </view>

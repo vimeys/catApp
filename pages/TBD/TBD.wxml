@@ -12,11 +12,12 @@
             <view class="title">
                 <view class="promotion_all">
                     <view class="TbD_main">{{item.goods_name}}</view>
-                    <view class="progress"><progress percent="{{item.percentage_funding}}" color="#00a79e" stroke-width="7" style="width: 380rpx; display: inline-block" /><text class="point">{{item.percentage_funding}}%</text></view>
-                    <view class="TbD_people">{{item.crowd_raise_number}}人支持/已筹{{item.Raise_the_total_price}}万</view>
+                    <view class="TBDOk" wx:if="{{item.is_crowd==2}}">众筹已成功</view>
+                    <view class="progress" wx:if="{{item.is_crowd==1}}"><progress percent="{{item.percentage_funding}}" color="#00a79e" stroke-width="7" style="width: 380rpx; display: inline-block" /><text class="point">{{item.percentage_funding}}%</text></view>
+                    <view class="TbD_people" wx:if="{{item.is_crowd==1}}">{{item.crowd_raise_number}}人支持/已筹{{item.Raise_the_total_price}}万</view>
                 </view>
                 <view class="promotion_button">
-                    <text class="promotion_price">{{item.goods_crowd_raise_price}}元起</text>
+                    <text class="promotion_price">￥{{item.goods_crowd_raise_price}}</text>
                 </view>
             </view>
         </view>

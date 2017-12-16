@@ -7,7 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        check: 0,//选中
+        check: 1,//选中
         Data: [1, 2, 3],//
         page: 0,
         goodsName: '',
@@ -28,7 +28,8 @@ Page({
     change: function (e) {
         let value = e.currentTarget.dataset.type;
         this.setData({
-            check: value
+            check: value,
+            page:0
         });
         let page = this.data.page;
         let type = this.data.check;
@@ -42,6 +43,10 @@ Page({
                 goodsName: value,
                 page: 0
             })
+        }else{
+            this.setData({
+                goodsName:''
+            })
         }
     },
     //点击请求
@@ -50,9 +55,9 @@ Page({
         let type = 1;
         this.setData({
             page: 0,
-            check: 0
+            check: type
         })
-        this.ajax(page, type);
+        this.ajax(this.data.page, type);
     },
     // 数据请求
     ajax: function (page, type) {
@@ -87,7 +92,7 @@ Page({
     },
     //页面跳转
     href: function (e) {
-        let arr = []
+        let arr = [];
         let id = e.currentTarget.dataset.type;
         let type = e.currentTarget.dataset.name;
         arr.push(id)
@@ -105,9 +110,42 @@ Page({
             page: page
         });
 
-        let paged = this.data.page;
-        let type = this.data.check;
-        this.ajax(paged, type)
-    },
-    //屏幕滚动
+        // let paged = this.data.page;
+        // let type = this.data.check;
+        // this.ajax(paged, type)
+            let that = this;
+            let obj = {};
+            obj.page = page;
+            obj.type = this.data.check;
+            obj.goods_name=this.data.goodsName;
+            // obj.goods_name = this.data.goodsName;
+            let data=this.data.Data;
+            wx.request({
+                url: url.url.goodsSearch,
+                method: 'POST',
+                data: obj,
+                success: res => {
+                    let json=[];
+                    if(res.data.data){
+                        // json.push(res.data.data);
+                        res.data.data.forEach(function (item,index){
+                            data.push(item)
+                        });
+                        // data.push(res.data.data);
+                        that.setData({
+                            Data: data,
+                            showNothing: false
+                        })
+                    }
+
+                    // else if (res.data.code == 201) {
+                    //     that.setData({
+                    //         Data: [],
+                    //         showNothing: true
+                    //     })
+                    // }
+                }
+            })
+        },
+
 })

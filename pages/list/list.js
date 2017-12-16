@@ -21,7 +21,6 @@ Page({
     },
     //点击品牌跳转品牌详情
     brandDetail:function (e) {
-        console.log(1);
         let Type=e.currentTarget.dataset.type;
         let name=e.currentTarget.dataset.name;
         wx.setStorageSync('brandName', name);
@@ -64,7 +63,6 @@ Page({
     },
     // 页面滚动
     onPageScroll:function (e) {
-        console.log(e.scrollTop);
         if(e.scrollTop>200){
             this.setData({
                 marginTop:0
@@ -74,5 +72,12 @@ Page({
                 marginTop:20
             })
         }
+    },
+    onShareAppMessage: function () {
+        //     return {
+        //         title: '微信小程序联盟',
+        //         desc: '最具人气的小程序开发联盟!',
+        //         path: '/page/index'
+        //     }
     }
 })

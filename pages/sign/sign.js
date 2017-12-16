@@ -7,7 +7,7 @@ Page({
     data: {
         phoneNum:"",
         word:'获取验证码',
-        ok:true,//是否再次点击
+        ok:'ok',//是否再次点击
         blue:false,
         code:''
     },
@@ -17,7 +17,6 @@ Page({
     },
     //获取input的值
    phoneNum:function (e) {
-        console.log(e);
        let num=e.detail.value;
        var that=this;
        if(/^((1[3,5,8,7,4][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/.test(num)){
@@ -31,27 +30,27 @@ Page({
     getCode:function (e) {
         var that=this;
         if(this.data.phoneNum.length==11){
-            let time=60;
-            this.setData({
-                word:'60S',
-                blue:true
-            })
+
             let ok=e.currentTarget.dataset.type;
-            if(ok){
+            if(ok=='ok'){
+                let time=60;
+                this.setData({
+                    word:'60S',
+                });
                 ajax.getAjax(url.url.msg,{mobile:this.data.phoneNum},function (that,json) {
                     var timer=setInterval(function () {
                         time--;
                         var word=time+'S';
                         that.setData({
                             word:word,
+                            ok:'nook',
                         //     blue:true
                         })
                         if(time==0){
-                            clearInterval(timer)
+                            clearInterval(timer);
                             that.setData({
                                 word:'点击重新获取',
-                                ok:true,
-                                blue:false
+                                ok:'ok',
                             })
                         }
                     },1000)
@@ -97,7 +96,6 @@ Page({
             method:'GET',
             data:obj,
             success:res=>{
-                console.log(res);
                 if(res.data.code==200){
                     wx.removeStorageSync('level');
                         wx.redirectTo({

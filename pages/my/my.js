@@ -12,6 +12,7 @@ Page({
       user_data:{},
       is_user:true, //判断是否到期
       new_num:'',
+      news:''
   },
 
   /**
@@ -27,12 +28,14 @@ Page({
       ajax.ask(url.url.user_info, {user_id:user.user_id},'POST',function(that,json){
          if(json.code != 200){
             that.setData({
-              is_user:false
+              is_user:false,
+                news:json.message
             })
          }else{
            wx.setStorageSync('level_vip_end_time', json.data.level_vip_end_time);
            wx.setStorageSync('vip_id', json.data.level_vip_id);
            that.setData({
+               is_user:true,
              user_data:json.data,
            })
          }
@@ -61,10 +64,12 @@ Page({
     ajax.ask(url.url.user_info, { user_id: user.user_id }, 'POST', function (that, json) {
       if (json.code != 200) {
         that.setData({
+            news:json.message,
           is_user: false
         })
       } else {
         that.setData({
+          is_user:true,
           user_data: json.data,
         })
       }

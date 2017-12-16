@@ -3,7 +3,7 @@
 
 /*导航条*/
 .margin{
-    margin-top: 100rpx;
+    height: 100rpx;
 }
 .nav{
     width: 100%;

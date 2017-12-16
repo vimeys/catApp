@@ -2,6 +2,7 @@
 <!-- <view class="bg">
     <image src="../image/sign_bg.png"></image>
 </view> -->
+<view class="all"><image src="../image/logo.png"></image> </view>
 <view class="main">
     <view class="logo">
         <image src="../image/signbg.png"></image>
@@ -14,7 +15,7 @@
         <view class="code">
             <image class="" src="../image/code.png"></image>
             <input type="tel" placeholder="请输入验证码"  bindinput="code"  placeholder-class="fff"/>
-            <text bindtap="getCode" data-type="{{ok}}" class="{{blue?'blue':''}}">{{word}}</text>
+            <text bindtap="getCode" data-type="{{ok}}" >{{word}}</text>
         </view>
     </view>
     <view>

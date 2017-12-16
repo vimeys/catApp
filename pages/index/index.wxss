@@ -58,6 +58,7 @@ background:#00a79e;
 .main_name{
   display: flex;
   margin-left: 20rpx;
+  justify-items: center;
 }
 .main_name image{
     width: 40rpx;
@@ -113,6 +114,7 @@ background:#00a79e;
 .TBD_name{
   display: flex;
   margin-left: 20rpx;
+  align-items: center;
 }
 .TBD_name image{
   width: 40rpx;

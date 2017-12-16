@@ -35,14 +35,16 @@
 <!--众筹-->
 <view class="TBD" wx:if="{{TBD}}">
     <view class='one-all'>
-         <text class='one'>众筹中.剩{{day}}天</text>
+         <text class='one'wx:if="{{text1}}">众筹中.剩{{day}}天</text>
+         <text class='one'wx:if="{{text2}}">众筹已结束</text>
     </view>
     <view class="title">{{goodsName}}</view>
     <text class='chang-name'>{{factory}}-{{brand}}</text>
-    <view class="progress">
+    <view class="progress" wx:if="{{text1}}">
         <progress percent="{{percentage_funding}}" color="#00a79e" stroke-width="10" style="width: 600rpx; display: inline-block"/><text class="point">{{percentage_funding}}%</text>
     </view>
-    <view class="TBD_people">{{crowd_raise_number}}人支持/已筹{{Raise_the_total_price}}万</view>
+    <view class="TBD_people" wx:if="{{text1}}">{{crowd_raise_number}}人支持/已筹{{Raise_the_total_price}}元</view>
+    <view wx:if="{{text2}}" class="TBD_word"></view>
 </view>
 
 <view style="margin-bottom: 100rpx;margin-top: 30rpx">
@@ -56,7 +58,7 @@
     <view class="popup-contents">
         <view class="pop-goods-info">
             <view class="pop-img-box">
-                <image src="../image/goods.png" class="goods-thumbnail"/>
+                <image src="{{cover}}" class="goods-thumbnail"/>
             </view>
             <view class="pop-goods-des">
                 <view class="pop-goods-title">{{goodsName}}</view>
@@ -74,7 +76,7 @@
 
         </view>
         <view class="buy-num-box">
-            <view class="num-label"> 库存剩余：{{goodsStorage}}</view>
+
             <view class="num-label">购买数量</view>
             <view class="num-box">
                 <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
@@ -84,6 +86,7 @@
                 <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
             </view>
         </view>
+        <view class="num-label residue"> 库存剩余：{{goodsStorage}}</view>
         <view class="popup-join-btn" bindtap="joinCart">
             加入购物车
         </view>
@@ -97,7 +100,7 @@
     <view class="popup-contents">
         <view class="pop-goods-info">
             <view class="pop-img-box">
-                <image src="../image/goods.png" class="goods-thumbnail"/>
+                <image src="{{cover}}" class="goods-thumbnail"/>
             </view>
             <view class="pop-goods-des">
                 <view class="pop-goods-title">{{goodsName}}</view>
@@ -115,7 +118,7 @@
             <!--</block>-->
         </view>
         <view class="buy-num-box">
-            <view class="num-label"> 库存剩余：{{goodsStorage}}</view>
+            <!--<view class="num-label"> 库存剩余：{{goodsStorage}}</view>-->
             <view class="num-label">购买数量</view>
             <view class="num-box">
                 <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
@@ -125,6 +128,7 @@
                 <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
             </view>
         </view>
+        <view class="num-label residue"> 库存剩余：{{goodsStorage}}</view>
         <view class="popup-join-btn" bindtap="buyNow">
             立即购买
         </view>
@@ -149,4 +153,7 @@
 </view>
 <view class="fix fixed " wx:if="{{TBD}}" bindtap="getSizeTBD">
     立即购买
+</view>
+<view class="fix fixed index" wx:if="{{over}}">
+    已结束
 </view>

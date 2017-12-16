@@ -11,6 +11,10 @@ Page({
     show:false,
     order_id:'',
     status:'',
+      lastTime:'',
+      h:'',
+      m:'',
+      s:'',
   },
 
   /**
@@ -21,14 +25,40 @@ Page({
     var status = options.status;
     var user = wx.getStorageSync('user');
     ajax.postAjax(url.url.order_info,{order_id:order_id,user_id:user.user_id,status:status},function(that,json){
+        let time=json.data.create_time;
+        // let reg=new RegExp('.')
+        time=time.replace(/\./g,'-');
+        let timer=new Date(time).getTime();
+        let newtime=new Date().getTime();
+        let lastTime=((172800000-(newtime-timer))/1000);
       that.setData({
+          lastTime:lastTime,
         order:json.data,
         order_id:order_id,
         status:status
       });
+        that.intv()
     },this);
-  },
 
+  },
+    intv:function () {
+      let lastTime=this.data.lastTime;
+
+      let that=this;
+      setInterval(function () {
+        lastTime=Math.floor(lastTime)-1;
+          let hours=Math.floor(lastTime/3600);
+
+          let min=Math.floor((lastTime-hours*3600)/60);
+          let s=Math.floor(lastTime-hours*3600-min*60);
+          that.setData({
+              h:hours,
+              m:min,
+              s:s
+          })
+      },1000)
+
+    },
   /**
    * 物流图片关闭
    */
@@ -50,7 +80,7 @@ Page({
     var order_id = this.data.order_id;
     wx.chooseImage({
       count:1,
-      sizeType:'original',
+      sizeType:'compressed',
       success: function(res) {
          wx.uploadFile({
            url: url.url.uploadfile,
@@ -82,7 +112,6 @@ Page({
         var order_id = e.currentTarget.dataset.order_id;
         var user = wx.getStorageSync('user');
         ajax.postAjax(url.url.payment, { order_id: order_id, open_id: user.openid, pay_way: 1 }, function (that, json) {
-            console.log(json.data);
             var pay = json.data;
             wx.requestPayment({
                 timeStamp: pay.timeStamp,
@@ -127,6 +156,17 @@ Page({
                 })
             }
         }, this);
+    },
+
+    /**
+     * 我的转账凭证
+     */
+    preve: function (e) {
+      var url = e.currentTarget.dataset.tran;
+      wx.previewImage({
+        current: '我的转款凭证',
+        urls: [url],
+      })
     },
 
 })

@@ -16,7 +16,6 @@ Page({
   onLoad: function (options) {
     var user = wx.getStorageSync('user');
     ajax.postAjax(url.url.my_brand,{user_id:user.user_id},function(that,json){
-      console.log(json.data);
       that.setData({
         list:json.data
       });

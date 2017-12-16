@@ -1,4 +1,13 @@
 <!--pages/account/account.wxml-->
-<view>
-     <image></image>
+<view class='account' wx:for="{{list}}">
+     <view class='account-one'>
+          <image src='{{item.bank_ico}}'></image>
+          <view class='account-one-one'>{{item.bank_name}}</view>
+     </view>
+     <view class='account-two'>开户人：{{item.bank_user_name}}</view>
+     <view class='account-three'>账号：{{item.bank_number}}</view>
+     <view class='account-four'>开户行地址：{{item.bank_address}}</view>
+
 </view>
+<view class="margin100"></view>
+<view class="fix" bindtap="click">查看订单列表</view>

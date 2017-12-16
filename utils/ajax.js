@@ -10,12 +10,11 @@ function postAjax(url,data,fn,that){// post方法请求数据
             if(json.code== 200){// 当请求数据成功后执行
                 return typeof fn=='function'&&fn(that,json);
             }else{
-                console.log("请求数据失败");
                 console.log(res);
             }
         },
         fail:function(res){  // 请求链接失败后执行
-            console.log("请求get链接失败");
+            console.log(res);
 
         }
     })
@@ -31,11 +30,11 @@ function postAjaxMore(url,data,fn,that) {
             if(json.code== 200||json.code==201){// 当请求数据成功后执行
                 return typeof fn=='function'&&fn(that,json);
             }else{
-                console.log("请求数据失败");
+                console.log(res);
             }
         },
         fail:function(res){  // 请求链接失败后执行
-            console.log("请求get链接失败");
+            console.log(res);
         }
     })
 }
@@ -51,12 +50,12 @@ function getAjax(url, data,fn,that){//get方式请求数据开始
             if(json.code==200){
                 return typeof fn == "function" && fn(that, json);//封装回调函数
             }else{
-                console.log("请求数据失败");
+                console.log(res);
             }
         },
         fail:function(res){
             console.log(res)
-            console.log("请求链接失败");
+            console.log(res);
         }
     }) // requset请求结束
 
@@ -74,7 +73,6 @@ function ask(url,data,methd,fn,that){ //通用请求，methd 为请求方式,
         },
         fail:function(res){
             console.log(res)
-            console.log("请求链接失败");
         }
     })
 }

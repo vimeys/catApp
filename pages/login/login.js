@@ -61,7 +61,8 @@ Page({
             click_2:'点击上传',
             click_3:'点击上传',
             click_4:'点击上传',
-        }
+        },
+        showModel2:false,
     },
 
     /**
@@ -89,7 +90,8 @@ Page({
             that.setData({
                 level1:data[0].id,
                 level2:data[1].id,
-                red:data[0].id
+                red:data[0].id,
+                chooseID:data[0].id
             })
         },this)
     },
@@ -137,7 +139,6 @@ Page({
                     parentId:that.data.select.provinceId[value]
                 },
                 success:res=>{
-                    console.log(res);
                     if(res.data.code==200){
                         let arr=[];
                         let arr1=[];
@@ -169,7 +170,6 @@ Page({
                     parentId:that.data.select.cityId[value]
                 },
                 success:res=>{
-                    console.log(res);
                     if(res.data.code==200){
                         let arr=[];
                         let arr1=[];
@@ -201,7 +201,6 @@ Page({
                     parentId:that.data.select.areaId[value]
                 },
                 success:res=>{
-                    console.log(res);
                     if(res.data.code==200){
                         let arr=[];
                         let arr1=[];
@@ -266,7 +265,6 @@ Page({
     //删除品牌
     del:function (e) {
         let Type=e.currentTarget.dataset.type;
-        console.log(Type);
         let arr=this.data.brand;
         arr.splice(Type,1);
         this.setData({
@@ -282,7 +280,6 @@ Page({
      },
     // 获取品牌
     chooseBrand:function (e) {
-         console.log(123);
          this.setData({
             show:false,
              showModel:true
@@ -352,7 +349,6 @@ Page({
          ctx.takePhoto({
              quality: 'high',
              success: (res)=> {
-                 console.log(res.tempImagePath);
              that.setData({
                  src: res.tempImagePath
              })
@@ -363,7 +359,7 @@ Page({
         var that=this;
          wx.chooseImage({
              count: 1,
-             sizeType: ['original', 'compressed'],
+             sizeType:  'compressed',
              sourceType: ['album', 'camera'],
              success: function (res) {
                  var src = res.tempFilePaths;
@@ -391,6 +387,7 @@ Page({
          let that=this;
          wx.chooseImage({
              count:1,
+             sizeType:'compressed',
            success: res => {
                 let src=res.tempFilePaths;
                let clickUp=that.data.clickUp;
@@ -418,6 +415,7 @@ Page({
         let that=this;
         wx.chooseImage({
             count:1,
+            sizeType:'compressed',
             success: res => {
                 let src=res.tempFilePaths;
                 let clickUp=that.data.clickUp;
@@ -445,6 +443,7 @@ Page({
         let that=this;
         wx.chooseImage({
             count:1,
+            sizeType:'compressed',
             success: res => {
                 let src=res.tempFilePaths;
                 let clickUp=that.data.clickUp;
@@ -482,7 +481,6 @@ Page({
              red:Type,
              chooseID:Type
          })
-        console.log(this.data.chooseID);
     },
     //查看权益
     checkLevel:function (e){
@@ -499,6 +497,7 @@ Page({
     },
     //提交信息
     confirm:function (e) {
+        let here=this;
         var api=url.url.login;
 
         let obj={};
@@ -519,7 +518,7 @@ Page({
         obj.level_vip_id=data.chooseID;
         obj.card_z=data.srcID1Up;
         obj.card_f=data.srcID2Up;
-        obj.brand_id=data.brandselectId;
+
         let i=0
         for (var key in obj){
             // debugger
@@ -536,18 +535,20 @@ Page({
 
                     }
                   }
-                })
+                });
                 break;
                 // return
             }
         }
+        obj.brand_id=data.brandselectId;
         obj.other_brand=data.brandinput;
         if(i<1){
             ajax.postAjax(api,obj,function (that,json) {
-                wx.setStorageSync('user_id', json.user_id);
-                let order=json.order;
-                let user_id=json.user_id;
-                let pay=json.pay;
+                wx.setStorageSync('user_id', json.data.user_id);
+                let order=json.data.order;
+                let user_id=json.data.user_id;
+
+                let pay=json.data.pay;
                 wx.requestPayment({
                     timeStamp: pay.timeStamp,
                     nonceStr: pay.nonceStr,
@@ -555,23 +556,27 @@ Page({
                     signType: pay.signType,
                     paySign: pay.paySign,
                     success: function (res) {
-                        console.log(res);
-                        ajax.postAjax(url.url.pay_user, { level_order_sn:order, open_id: pay.openid }, function (that, json) {
-                            wx.showModal({
-                                title: '支付成功',
-                                content: '支付成功',
-                                success: function () {
-                                    wx.navigateTo({
-                                        url: '../index/index',
-                                    })
-                                }
+                        ajax.postAjax(url.url.pay_user, { level_order_sn:order, user_id: user_id }, function (that, json) {
+                            console.log(that.data.showModel2);
+                            that.setData({
+                                showModel2:true
                             })
-                        }, this)
+                            // wx.showModal({
+                            //     title: '支付成功',
+                            //     content: '支付成功',
+                            //     success: function () {
+                            //         // wx.switchTab({
+                            //         //     url: '../index/index',
+                            //         // })
+                            //
+                            //     }
+                            // })
+                        }, here)
                     },
                     fail: function (res) {
                         wx.showModal({
-                            title: res.errMsg,
-                            content: res.errMsg,
+                            title: "警告",
+                            content: '支付失败',
                         })
                     }
                 })

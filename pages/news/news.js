@@ -15,13 +15,11 @@ Page({
    */
   onLoad: function (options) {
     var news = wx.getStorageSync('news_info');
-    console.log(news);
     this.setData({
       news:news
     });
     if(news.status == 0){
       ajax.postAjax(url.url.is_news, {new_id:news.id},function(that,json){
-        console.log(json);
       },this);
     }
   },

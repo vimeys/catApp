@@ -97,3 +97,14 @@ button{
 .blue{
     color:#00a79e;
 }
+.all{
+    position: fixed;
+    width: 150rpx;
+    height: 150rpx;
+    top: 100rpx;
+    left: 300rpx;
+}
+.all image{
+    width: 100%;
+    height: 100%;
+}

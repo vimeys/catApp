@@ -26,7 +26,6 @@ Page({
     //输入input
     input:function (e) {
         let value=e.detail.value;
-        console.log(value);
         if(value){
             this.setData({
                 input:value
@@ -42,31 +41,29 @@ Page({
     search:function (e) {
         let obj={};
         obj.page=1;
-        obj.pageSize=99;
-        obj.search=this.data.input
-        ajax.postAjax(url.url.getBrand,obj,function (that,json) {
-            let arr=[]
-            for(var i=0;i<10;i++){
-                arr.push(json.data.brand_list[0])
-            }
-            that.setData({
-                showSearch:true,
-                searchData:arr
-                // searchData:json.data.brand_list
-            })
-        },this)
+        obj.pageSize=999;
+        obj.search=this.data.input;
+        if(obj.search){
+            ajax.postAjax(url.url.getBrand,obj,function (that,json) {
+                var arr;
+                arr=json.data.brand_list;
+                that.setData({
+                    showSearch:true,
+                    searchData:arr
+                    // searchData:json.data.brand_list
+                })
+            },this)
+        }
+
     },
   /**
    * 生命周期函数--监听页面加载
    */
   upper: function (e) {
-      console.log(e)
   },
   lower: function (e) {
-      console.log(e)
   },
   scroll: function (e) {
-      console.log(e)
   },
   tap: function (e) {
       for (var i = 0; i < order.length; ++i) {
@@ -90,11 +87,9 @@ Page({
   getBrand:function (e) {
 
       ajax.postAjax(url.url.getBrand,{page:0,pageSize:999,search:''},function (that,json) {
-          console.log(json);
           that.setData({
               Data:json.data.brand_list
           })
-          console.log(that.data.Data);
           that.classify(that);
       },this)
   },

@@ -11,7 +11,7 @@
                   <view>
                         <image style='width:35rpx;height:35rpx' src='../image/sousuo.png'></image>
                   </view>
-                  <view>厂家资料</view>
+                  <navigator url='../factory/factory?id={{factoryId}}'>厂家资料</navigator>
             </view>
       </view>
       <view class='chanping-title'>
@@ -44,13 +44,13 @@
             <view class="promotion" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}" wx:if="{{item.is_type==1}}">
                 <view class="list">
                     <view class="image">
-                        <image class='image_main' src="../image/goods.png"></image>
+                        <image class='image_main' src="{{item.cover}}"></image>
                         <image class="image_small" src="../image/promto.png"></image>
                     </view>
                     <view class="title">
                         <view class="promotion_all">
                             <view class="promotion_main">{{item.goods_name}}</view>
-                            <view class="promotion_scale"><text class='name-name'>{{item.factory}}—{{item.brand}}</text>降价{{item.percentage_discount}}%</view>
+                            <view class="promotion_scale"><text class='name-name'>{{item.factory}}—{{item.brand}}</text>降价{{item.percentage_funding}}%</view>
                         </view>
                         <view class="promotion_button">
                             <view>
@@ -84,7 +84,7 @@
             <view class="promotion" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}" wx:if="{{item.is_type==0}}">
                 <view class="list">
                     <view class="image">
-                        <image class='image_main' src="../image/goods.png"></image>
+                        <image class='image_main' src="{{item.cover}}"></image>
                         <!--<image class="image_small" src="../image/promto.png"></image>-->
                     </view>
                     <view class="title">
@@ -124,17 +124,18 @@
             <view class="promotion" bindtap="href" data-id="{{item.id}}" data-type="{{item.is_type}}" wx:if="{{item.is_type==2}}">
                 <view class="list">
                     <view class="image">
-                        <image class='image_main' src="../image/goods.png"></image>
+                        <image class='image_main' src="{{item.cover}}"></image>
                         <image class="image_small" src="../image/TBD.png"></image>
                     </view>
                     <view class="title">
                         <view class="promotion_all">
                             <view class="TbD_main">{{item.goods_name}}</view>
-                            <view class="progress"><progress percent="{{item.percentage_funding}}" color="#00a79e" stroke-width="7" style="width: 400rpx; display: inline-block" /><text class="point">{{item.percentage_funding}}%</text></view>
-                            <view class="TbD_people">{{item.crowd_raise_number}}人支持/已筹{{item.Raise_the_total_price}}万</view>
+                            <view class="TBDOk" wx:if="{{item.is_crowd==2}}">众筹已成功</view>
+                            <view class="progress" wx:if="{{item.is_crowd==1}}"><progress percent="{{item.percentage_funding}}" color="#00a79e" stroke-width="7" style="width: 380rpx; display: inline-block" /><text class="point">{{item.percentage_funding}}%</text></view>
+                            <view class="TbD_people" wx:if="{{item.is_crowd==1}}">{{item.crowd_raise_number}}人支持/已筹{{item.Raise_the_total_price}}万</view>
                         </view>
                         <view class="promotion_button">
-                            <text class="promotion_price">{{item.goods_crowd_raise_price}}元</text>
+                            <text class="promotion_price">￥{{item.goods_crowd_raise_price}}</text>
                         </view>
                     </view>
                 </view>

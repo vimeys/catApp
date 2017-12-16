@@ -49,7 +49,7 @@
 }
 .Ruined-Detail{
     margin-top: 16rpx;
-    text-indent: 60rpx;
+   
     font-size: 30rpx;
     line-height: 46rpx;
 }
@@ -294,4 +294,13 @@
   background-color: #00a79e;
   width: 400rpx;
   color: #ffffff;
+}
+.word{
+    position: fixed;
+    top:30rpx;
+    right: 50rpx;
+}
+.word image{
+    width: 200rpx;
+    height: 100rpx;
 }

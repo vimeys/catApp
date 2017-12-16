@@ -100,7 +100,7 @@ page{
 }
 /* pages/Further/Further.wxss */
 page{
-    border-top: 2rpx #eee solid;
+    /* border-top: 2rpx #eee solid; */
 }
 .promotion{
     width: 100%;
@@ -182,4 +182,9 @@ page{
     overflow:hidden;
     text-overflow:ellipsis;
     font-size: 36rpx;
+}
+.TBDOk{
+    color: red;
+    font-size: 36rpx;
+    margin-top: 20rpx;
 }

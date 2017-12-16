@@ -52,8 +52,9 @@
                  <!--<view class='site-belief-a-b'>￥{{total}}</view>-->
            <!--</view>-->
      </view>
+    <view style="height: 100rpx;width:50%"></view>
      <view class='site-bottom'>
-           <view class='site-bottom-Useless'>合计：{{Data.all_price}}</view>
+           <view class='site-bottom-Useless'>合计：<text class="red">{{Data.all_price}}</text></view>
            <view class='site-bottom-buttom' bindtap="confirm">提交订单</view>
      </view>
 </view>

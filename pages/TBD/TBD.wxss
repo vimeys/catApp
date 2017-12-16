@@ -1,21 +1,7 @@
 /* pages/TBD/TBD.wxss */
 /*@import '../../template/search.wxss';*/
 @import "../../template/inputSearch.wxss";
-.search input{
-    line-height: 90rpx;
-    width: 450rpx;
-    display: inline-block;
-    padding-left: 20rpx;
-}
-.search{
-    background: #fff;
-}
-.search .input{
-    margin-bottom: 20rpx;
-    margin-top: 20rpx;
-    background-color: #eee;
-    border-radius: 40rpx;
-}
+
 
 
 
@@ -182,4 +168,9 @@
     overflow:hidden;
     text-overflow:ellipsis;
     font-size: 36rpx;
+}
+.TBDOk{
+    color: red;
+    font-size: 36rpx;
+    margin-top: 20rpx;
 }

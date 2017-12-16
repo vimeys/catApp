@@ -3,14 +3,16 @@ page{
     background-color: #eee;
 }
 .all{
+  margin-top: 40rpx;
     font-size: 30rpx;
-    padding: 20rpx 40rpx 20rpx 40rpx;
+    padding: 40rpx 40rpx 20rpx 40rpx;
     background-color: #fff;
 }
 .text{
     text-indent:60rpx;
 }
 .time{
+  border-top: 2rpx #eee solid;
     margin-top: 50rpx;
     display: flex;
     flex-direction: row-reverse;

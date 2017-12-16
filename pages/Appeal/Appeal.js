@@ -24,7 +24,7 @@ Page({
     var that = this;
     wx.chooseImage({
       count: 1, // 默认9 
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
+      sizeType:  'compressed', // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['camera', 'album'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
@@ -58,7 +58,7 @@ Page({
     var that = this;
     wx.chooseImage({
       count: 1, // 默认9 
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有 
+      sizeType:  'compressed', // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['camera', 'album'], // 可以指定来源是相册还是相机，默认二者都有 
       success: function (res) {
         var tempFilePaths = res.tempFilePaths

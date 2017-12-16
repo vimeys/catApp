@@ -1,15 +1,18 @@
 {
     "pages": [
-
       "pages/index/index",
+      "pages/login/login",
+      "pages/sign/sign",
+      "pages/Brandsuper/Brandsuper",
+
+      "pages/payWay/payWay",
+      "pages/search/search",
+      "pages/account/account",
       "pages/searchGoods/searchGoods",
       "pages/shoppingcart/shoppingcart",
-        "pages/login/login",
-        "pages/sign/sign",
-        "pages/Checkedout/Checkedout",
-        "pages/news/news",
-        "pages/payWay/payWay",
-        
+      "pages/Checkedout/Checkedout",
+      "pages/news/news",
+
         "pages/CheckedoutTBD/CheckedoutTBD",
         "pages/list/list",
         "pages/goodsDetail/goodsDetail",
@@ -26,17 +29,14 @@
         "pages/Appeal/Appeal",
         "pages/my/my",
 
-        
-
-       
-        "pages/search/search",
         "pages/brand/brand",
-        
+        "pages/factorybrand/factorybrand",
 
-        "pages/account/account",
-        "pages/Brandsuper/Brandsuper",
+        
         "pages/contFactory/contFactory",
-        "pages/myshop/myshop"
+        "pages/myshop/myshop",
+        "pages/platform/platform",
+        "pages/factory/factory"
     ],
     "window": {
         "backgroundTextStyle": "light",

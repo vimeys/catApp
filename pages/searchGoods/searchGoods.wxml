@@ -1,6 +1,7 @@
 <include src="../../template/inputSearch.wxml"/>
+<view style="height:110rpx"></view>
 <view class="nav">
-    <view bindtap="change" data-type="0" class="all  {{check==0?'choose':''}}">综合</view>
+    <view bindtap="change" data-type="1" class="all  {{check==1?'choose':''}}">综合</view>
     <view bindtap="change" data-type="2" class="many {{check==2?'choose':''}}">销量</view>
     <view bindtap="change" data-type="3" class="price {{check==3?'choose':''}}">价格</view>
 </view>

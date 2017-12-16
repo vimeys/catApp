@@ -30,7 +30,7 @@
 </view>
 <view class="TBD">
   <view class="TBD_name">
-    <image src="../image/hot.png"></image>
+    <image src="../image/zhongchou.png"></image>
     <text class="TBD_title">众筹商品</text>
   </view>
   <view class="TBD_more" bindtap="tMore">更多</view>

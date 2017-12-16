@@ -4,11 +4,11 @@
         <view class="title_name">店铺地址</view>
     </view>
     <view class="addr_three">
-      {{user.province}}-{{user.city}}-{{user.areas}}-{{user.township}}
+      {{user.province}}-{{user.city}}-{{user.areas}}-{{user.township}}-{{user.address}}
     </view>
-    <view class="addr_input">
-        {{user.address}}
-    </view>
+    <!--<view class="addr_input">-->
+        <!--{{user.address}}-->
+    <!--</view>-->
      <view  class="margin64 people tel ">
         <text class="font36">联系人</text>
         <text class="font36">{{user.store_user_name}}</text>
@@ -47,10 +47,10 @@
         </view>
     </view>
     <view class="photo_title3 font36">店铺外景图</view>
-    <view class="photo_image3"><image src="{{user.store_storefront}}"></image></view>
+    <view class="photo_image3"><image src="{{user.store_storefront}}" style="border-radius: 20rpx"></image></view>
     <view class="grade">
         <view class="grade_level1">
-            <view>{{user.level_name}}</view>
+            <view>会员等级：{{user.level_name}}</view>
         </view>
     </view>
 </view>

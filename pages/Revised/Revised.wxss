@@ -132,7 +132,7 @@ page{
     color: #ffffff;
 }
 .body-a-shopp{
-    padding: 34rpx 0rpx 50rpx 0rpx;
+    padding: 20rpx 0rpx 20rpx 0rpx;
     color: #1A1A1A;
     font-size: 30rpx;
     display: flex;
@@ -170,6 +170,7 @@ page{
 }
 .bottom-all-Kamishi{
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-top:20rpx;
     margin-bottom: 20rpx;
@@ -189,4 +190,25 @@ page{
 /*众筹*/
 .body-a-top-mann{
     color: #00a79e;
+}
+.model{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.85);
+    z-index: 1000;
+}
+.model_text{
+    width: 80%;
+    height: 200rpx;
+    background: #fff;
+    color:#1a1a1a;
+    margin: 450rpx auto 0;
+    text-align: center;
+    font-size: 36rpx;
+    line-height: 60rpx;
+    border-radius: 20rpx;
+    padding-top: 80rpx;
 }

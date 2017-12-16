@@ -19,7 +19,7 @@
         <view class="title" bindtap="click" bindlongpress="longClick" data-type="{{index}}" data-tp="{{item.is_type}}" data-num="{{item.goods_id}}">
             <view class='promotion_main-all'>
                 <view class="promotion_main">{{item.goods_name}}</view>
-                <view class='promotion_text'>{{item.color}}, {{item.voltage}}, {{item.power}}</view>
+                <view class='promotion_text'>{{item.spec}}</view>
             </view>
             <view class="promotion_button">
                 <text class="promotion_price">￥{{item.buy_price}}</text>

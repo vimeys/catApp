@@ -10,6 +10,7 @@ Page({
     order:'',
     sub_order:'',
     show:0,
+      showModal:false,
   },
 
   /**
@@ -23,8 +24,19 @@ Page({
           order:order,
         });
       },this);
-  },
 
+  },
+  showModel:function () {
+      this.setData({
+          showModel:true
+      })
+  },
+    clickClose:function () {
+        this.setData({
+            showModel:false
+        })
+        wx
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -124,7 +136,7 @@ Page({
     var user = wx.getStorageSync('user');
     wx.chooseImage({
       count: 1,
-      sizeType: 'original',
+      sizeType: 'compressed',
       success: function (res) {
         wx.uploadFile({
           url: url.url.uploadfile,
@@ -139,7 +151,7 @@ Page({
                   content: '您已上传转款凭证，请等待平台审核....',
                   showCancel: false,
                   success: function () {
-                    that.onLoad();
+                   
                   }
                 })
               }
@@ -174,7 +186,6 @@ Page({
     var order_id = e.currentTarget.dataset.order_id;
     var user = wx.getStorageSync('user');
     ajax.postAjax(url.url.payment, { order_id: order_id, open_id: user.openid, pay_way:1},function(that,json){
-      console.log(json.data);
       var pay = json.data;
       wx.requestPayment({
         timeStamp: pay.timeStamp,

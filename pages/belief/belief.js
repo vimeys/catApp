@@ -78,7 +78,6 @@ Page({
   open_news:function(e){
     var id = e.currentTarget.dataset.index;
     var new_list = wx.getStorageSync('news');
-    console.log(new_list);
     wx.setStorageSync('news_info', new_list[id]);
     wx.navigateTo({
       url: '../news/news',

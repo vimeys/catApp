@@ -29,6 +29,7 @@ page{
     font-size: 30rpx;
 }
 .body-news{
+    border-radius: 10rpx;
     margin-top: 20rpx;
     padding: 0 20rpx 0 20rpx;
     background-color: #fff;
@@ -54,5 +55,6 @@ page{
   border-radius: 100rpx;
 }
 .body-time-time{
+  color: #333;
     margin-right: 20rpx;
 }

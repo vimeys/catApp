@@ -32,7 +32,7 @@
                                   <view class="title">
                                         <view>
                                           <view class="promotion_main">{{item.goods_name}}</view>
-                                          <view class='promotion_Standard'>{{item.color}}，{{item.voltage}}，{{item.power}}</view>
+                                          <view class='promotion_Standard'>{{item.spec}}</view>
                                        </view>
                                           <view class="promotion_button">
                                               <text class="promotion_price">￥{{item.price}}</text>
@@ -48,12 +48,12 @@
                  <view class='body-a-shopp'>
                        <view class='body-a-shopp-Product'>共{{item.buy_number}}件商品</view>
                        <view class='body-a-shopp-Total'>合计：</view>
-                       <view class='body-a-shopp-Useless'>{{item.buy_price}}元</view>
+                       <view class='body-a-shopp-Useless'>￥{{item.buy_price}}</view>
                  </view>
                  <view class='body-a-time'>
                        <view class='body-a-time-time'>{{item.create_time}}</view>
                        <view class='body-a-time-manny' wx:if="{{item.status == 0 && item.valid==0}}" >订单已失效</view>
-                       <view class='body-a-time-manny' wx:if="{{item.status == 0 && item.valid==1}}" bindtap='payment' data-order_id='{{item.id}}'>继续付款</view>
+                       <!-- <view class='body-a-time-manny' wx:if="{{item.status == 0 && item.valid==1}}" bindtap='payment' data-order_id='{{item.id}}'>继续付款</view> -->
                         <view class='body-a-time-manny' wx:if="{{item.status == 2}}" bindtap='confirm' data-order_id='{{item.id}}'>确认收货</view>
                  </view>
                  <view class='bottom-all'>
@@ -71,7 +71,7 @@
                              </view>
                              <view class='bottom-all-Kamishi-Test' bindtap='preve' data-tran='{{item.transfer}}'>查看银行转款凭证</view>
                        </view>
-                       <view class='Explanation'>转款说明</view>
+                       <view class='Explanation' bindtap="showModel">转款说明</view>
                  </view>
            </view>
            <!-- 循环结束 -->
@@ -93,7 +93,7 @@
                                   <view class="title">
                                         <view>
                                           <view class="promotion_main">{{val.goods_name}}</view>
-                                          <view class='promotion_Standard'>{{val.color}}，{{val.voltage}}，{{val.power}}</view>
+                                          <view class='promotion_Standard'>{{val.spec}}</view>
                                        </view>
                                           <view class="promotion_button">
                                               <text class="promotion_price">￥{{val.price}}</text>
@@ -107,13 +107,24 @@
                  <view class='body-a-shopp'>
                        <view class='body-a-shopp-Product'>共{{item.all_num}}件商品</view>
                        <view class='body-a-shopp-Total'>合计：</view>
-                       <view class='body-a-shopp-Useless'>{{item.all_price}}元</view>
+                       <view class='body-a-shopp-Useless'>￥{{item.all_price}}</view>
                  </view>
+                 <view class='bottom-all-Kamishi' wx:if="{{(item.pay_way ==3)}}" bindtap='upload'>
+                             <view>
+                                   <image style='width:49rpx;height:29rpx;' src='../image/Eyes.png'></image>
+                             </view>
+                             <view class='bottom-all-Kamishi-Test' bindtap='preve' data-tran='{{item.transfer}}'>查看银行转款凭证</view>
+                       </view>
                  <view class='body-a-time'>
                        <view class='body-a-time-time'>{{item.create_time}}</view>
                         <view class='body-a-time-manny' wx:if="{{item.status == 2}}" bindtap='confirm' data-order_id='{{item.id}}'>确认收货</view>
+                         
                  </view>
            </view>
         
       </view>
+</view>
+
+<view class="model" bindtap="clickClose" wx:if="{{showModel}}">
+    <view class="model_text">请在48小时内，进行转账支付及上传支付凭证（订单列表页面上传）。</view>
 </view>

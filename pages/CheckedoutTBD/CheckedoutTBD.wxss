@@ -117,7 +117,10 @@
 }
 .site-bottom-Useless{
     margin-right: 30rpx;
-    color: #171717;
+    color: #EA4736;
+}
+.red{
+    color:#EA4736;
 }
 .site-bottom-buttom{
     width: 243rpx;

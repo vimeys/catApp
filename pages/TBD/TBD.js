@@ -43,7 +43,6 @@ Page({
               name:name
           },
           success:function (res) {
-            console.log(page)
               if(res.data.code==200){
                 let data=that.data.Data;
         let json=res.data.data.commodity_goods_list;
@@ -53,7 +52,6 @@ Page({
                         Data:res.data.data.commodity_goods_list
                     })
                 }
-                 console.log(that.data.Data);
               }
           }
       })

@@ -9,7 +9,7 @@
                       <view class='information'>
                             <view class='name'>{{userInfo.nickName}}</view>
                             <view class='member' wx:if="{{!is_user}}">
-                              <view class='member-grade'>会员已到期</view>
+                              <view class='member-grade'>{{news}}</view>
                             </view>
                             <view class='member' wx:if="{{is_user}}">
                                   <view class='member-grade'>{{user_data.level_name}}</view>
@@ -99,10 +99,10 @@
                        <image style='width:23rpx;height:43rpx;' src='../image/right.png'></image>
                   </view>
             </navigator>
-            <navigator url='../contFactory/contFactory' class='Column-Unity'>
+            <navigator url='../platform/platform' class='Column-Unity'>
                   <view class='Column-Unity-left'>
                          <view class='image-box'>
-                              <image src='../image/Alead.png'></image>
+                              <image src='../image/service.png'></image>
                          </view>
                         <view class='Column-Unity-zhong'>联系平台</view>
                   </view>

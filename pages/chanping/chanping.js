@@ -14,6 +14,7 @@ Page({
         listShow:false,
         factoryData:[],
         brandName:'',
+        factoryId:'',//工厂id
     },
 
     /**
@@ -26,6 +27,7 @@ Page({
             id:id
         })
         this.getList();
+
     },
     //选择分类
     change: function (e) {
@@ -84,11 +86,14 @@ Page({
                 // pageSize:10
             },
             success:res=>{
-                console.log(res);
+
                 that.setData({
                     Data:res.data.data
                 })
-
+                let factoryId=res.data.data[0].factory_id;
+                that.setData({
+                    factoryId: factoryId
+                })
             }
         })
     },

@@ -1,4 +1,4 @@
-const allUrl ="http://test.scmxkj.com/index.php/cat/";
+const allUrl ="https://mela.scmxkj.com/index.php/cat/";
 
 var  url={};
 
@@ -34,6 +34,7 @@ url.orderOkTBD=allUrl+'order/Place_order';//众筹订单确认页面
 url.payWay=allUrl+"order/payment";//选择支付方式
 url.delCart=allUrl+'goods/Shopping_cart_list_del';//删除购物车商品
 url.confirmCart=allUrl+'order/Confirm_order';//确认订单
+url.factory=allUrl+'user/factory_info';//工厂资料
 
 
 
@@ -56,6 +57,8 @@ url.complan     = allUrl + 'Personalhome/Complaint_factory'; //投诉厂家
 url.take_over   = allUrl + 'order/take_over';   //确认收货
 url.pay_user    = allUrl + 'user/pay_user';  //缴费成功
 url.pay_success = allUrl + 'order/pay_success'; //微信支付成功
+url.banks_list  = allUrl + 'user/banks_list'; //平台对公账户
+url.contact     = allUrl + 'user/contact';//联系平台
 
 
 

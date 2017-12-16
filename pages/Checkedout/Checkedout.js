@@ -27,7 +27,6 @@ Page({
   getStorage:function (e) {
       let order=wx.getStorageSync('order');
       let total=wx.getStorageSync("orderTotal");
-      console.log(total);
       let cartId=wx.getStorageSync('cartId');
       let num=wx.getStorageSync("num");//获取商品购买数量
       this.setData({
@@ -57,12 +56,10 @@ Page({
       }
       obj.user_id=this.data.user_id;
       obj.goods=goods;
-      console.log(obj);
       ajax.postAjax(url.url.orderOkTBD,obj,function (that,json) {
-          console.log(json)
           wx.removeStorageSync('testId');
           wx.setStorageSync('order_id', json.data.order_id);
-          wx.navigateTo({
+          wx.redirectTo({
             url: '../payWay/payWay'
           })
       },this)
