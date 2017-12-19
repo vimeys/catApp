@@ -3,7 +3,7 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height: 420rpx">
   <block wx:for="{{img}}" class="swiper" wx:for-item="item">
     <swiper-item>
-      <image src="{{item.image}}" class="slide-image" width="100%" height="420rpx" bindtap="hrefProduct"data-type="{{item.brand_id}}"/>
+      <image src="{{item.image}}" class="slide-image" width="100%" height="420rpx" bindtap="hrefProduct"data-type="{{item.brand_id}}" data-factory="{{item.factory_id}}" data-status="{{item.is_type}}"/>
     </swiper-item>
   </block>
 </swiper>
@@ -23,11 +23,12 @@
 
         <block wx:for="{{scroll}}">
             <view id="green" class="scroll-view-item bc_green">
-                <image src="{{item.image}}" data-type="{{item.is_type}}" bindtap="href"></image>
+                <image src="{{item.image}}" data-type="{{item.is_type}}" bindtap="href" data-href="{{item.href}}"></image>
             </view>
         </block>
     </scroll-view>
 </view>
+<web-view src="https://mp.weixin.qq.com/" wx:if="{{show}}">123</web-view>
 <view class="TBD">
   <view class="TBD_name">
     <image src="../image/zhongchou.png"></image>

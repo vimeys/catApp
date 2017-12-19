@@ -1,0 +1,6 @@
+<!--pages/factory/factory.wxml-->
+<view>
+    <block wx:for="{{image}}" wx:for-index="index">
+        <image src="{{item}}" style="height: {{height[index]}}rpx"></image>
+    </block>
+</view>

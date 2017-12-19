@@ -31,7 +31,7 @@
             </picker>
     </view>
     <view class="addr_input">
-        <input bindinput="address" type="text"/>
+        <input bindinput="address" type="text" placeholder="详细地址"/>
     </view>
     <view class="people margin64">
         <view class="people_people">
@@ -72,9 +72,6 @@
                         </view>
                         <view class="brand_custom" catchtap="chooseInput">自定义输入</view>
                     </view>
-
-
-
                 </view>
             </view>
         </view>

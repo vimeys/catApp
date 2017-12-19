@@ -1,0 +1,67 @@
+<!--pages/login_3/login_3.wxml-->
+<view>
+    <view class='top'>
+        <view class='top-text'>
+            <view class='top-text-chose'>店铺信息</view>
+            <view class='top-text-text'>营业执照/法人身份证正反面/店铺外景图</view>
+        </view>
+    </view>
+    <view class='three'>
+        <view class='three-left'>
+            <view class='three-kuang'></view>
+            <view class='three-text'>营业执照</view>
+        </view>
+        <view class='three-image'>
+             <image class='three-image-one' src='../image/image.png' wx:if="{{!srcBool}}" bindtap="choosePhotoBrand"></image>
+            <image class='three-photo-one' src='{{src}}' wx:if="{{srcBool}}"></image>
+            <view class='three-shan' wx:if="{{srcBool}}" >
+                <image class='shanchu' src='../image/shanchu.png' data-type="1"bindtap="del" ></image>
+            </view>
+        </view>
+    </view>
+    <view class='three'>
+        <view class='three-left'>
+            <view class='three-kuang'></view>
+            <view class='three-text'>店铺外景图</view>
+        </view>
+        <view class='three-image'>
+             <image class='three-image-one' src='../image/image.png' wx:if="{{!srcShopBool}}" bindtap="choosePhotoShop"></image>
+            <image class='three-photo-one' src='{{srcShop}}' wx:if="{{srcShopBool}}"></image>
+            <view class='three-shan' wx:if="{{srcShopBool}}">
+                <image class='shanchu' src='../image/shanchu.png' data-type="4" bindtap="del" ></image>
+            </view>
+        </view>
+
+    </view>
+    <view class='ID'>
+        <view class='three-left'>
+            <view class='three-kuang'></view>
+            <view class='three-text'>身份证（正反面）</view>
+        </view>
+        <view class='id-bottom'>
+            <view class='id'>
+                <view>
+                     <image bindtap="choosePhotoID1" wx:if="{{!srcID1Bool}}" style='width: 175rpx;height: 122rpx;' class='id-image' src='../image/image.png' ></image>
+                    <image  wx:if="{{srcID1Bool}}" style='width:300rpx;height:150rpx' src='{{srcID1}}' ></image>
+                </view>
+                <view class='id-shanchu-all' wx:if="{{srcID1Bool}}" >
+                    <image  bindtap="del" data-type="2" style='width:29rpx;height:29rpx' class='id-shanchu' src='../image/shanchu.png'></image>
+                </view>
+            </view>
+            <view class='id'>
+                <view>
+                     <image  bindtap="choosePhotoID2" wx:if="{{!srcID2Bool}}" style='width: 175rpx;height: 122rpx;' class='id-image' src='../image/image.png'></image>
+                    <image wx:if="{{srcID2Bool}}" style='width:300rpx;height:150rpx' src='{{srcID2}}'></image>
+                </view>
+                <view class='id-shanchu-all'wx:if="{{srcID2Bool}}" >
+                    <image  bindtap="del" data-type="3" style='width:29rpx;height:29rpx' class='id-shanchu' src='../image/shanchu.png'></image>
+                </view>
+            </view>
+        </view>
+        <view class='id-ok'>
+            <view>正</view>
+            <view>反</view>
+        </view>
+    </view>
+    <button class='bottom' bindtap="href">下一步</button>
+</view>

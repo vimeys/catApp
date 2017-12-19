@@ -1,0 +1,10 @@
+<!--pages/factorybrand/factorybrand.wxml-->
+<view >
+      <view class='title'>{{list.name}}</view>
+      <view class='factorybrand' wx:for="{{list.list}}">
+           <navigator url='../chanping/chanping?id={{item.id}}' >
+            <image src='{{item.image}}'></image>
+            <view class='nav'>{{item.name}}</view>
+           </navigator>
+      </view>
+</view>

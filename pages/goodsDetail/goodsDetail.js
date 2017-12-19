@@ -101,16 +101,29 @@ Page({
     loadImage:function () {
       let  that=this;
       let image=this.data.goodsImage;
+      let windowsWidth="";
+      wx.getSystemInfo({
+          success:function (res) {
+                windowsWidth=res.windowWidth*2
+          }
+      });
         let arr=[];
         for(var i=0;i<image.length;i++){
+            // debugger
             getImage(that,i)
         }
          function getImage(that,i){
              wx.getImageInfo({
                  src:that.data.goodsImage[i],
                  success:function (res) {
+                     let imageWidth=res.width;
+                     let point=imageWidth/windowsWidth;
+                     let imageHeight=res.height/point;
                      // var height=[];
-                     arr.unshift(res.height);
+                     let obj={};
+                     obj.image=that.data.goodsImage[i];
+                     obj.height=imageHeight;
+                     arr.unshift(obj);
                      that.setData({
                          height:arr
                      })

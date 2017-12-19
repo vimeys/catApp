@@ -1,0 +1,97 @@
+/* pages/login_1/login_1.wxss */
+/*.title{*/
+    /*width: 100%;*/
+    /*height: 87rpx;*/
+    /*text-align: center;*/
+    /*line-height: 87rpx;*/
+    /*color: #fff;*/
+    /*background: #0092be;*/
+    /*!*display: flex;*!*/
+    /*!*flex-direction: column;*!*/
+/*}*/
+/*.title view:first-child{*/
+    /*font-size: 36rpx;*/
+    /*line-height: 40rpx;*/
+/*}*/
+/*.title view:last-child{*/
+    /*font-size: 24rpx;*/
+/*}*/
+.top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20rpx;
+    color: #fff;
+    width:750rpx;
+    height:100rpx;
+    background:rgba(0,146,190,1);
+}
+.top-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top-text-chose{
+    font-size:36rpx;
+    font-family:SourceHanSansCN-Bold;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+.top-text-text{
+    font-size: 24rpx;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.choose {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 120rpx;
+    /*width: 100%;*/
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+}
+.choose input{
+    text-align: right;
+    font-size: 28rpx;
+}
+/*选择框箭头*/
+.before::before{
+    position: absolute;
+    color:#333;
+    content:"▼";
+    right:1rpx;
+    top:0rpx;
+}
+.select{
+    width: 300rpx;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.select1{
+    width: 100%;
+    height: 50rpx;
+}
+button{
+    margin-top: 100rpx;
+    width: 670rpx;
+    height: 90rpx;
+    background-color: #0092be;
+    color:#fff;
+    font-size: 30rpx;
+}
+.bottom{
+    margin-top: 82rpx;
+    width: 670rpx;
+    background-color: #0092BE;
+    color: #fff;
+    letter-spacing: 16rpx;
+}

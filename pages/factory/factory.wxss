@@ -1,0 +1,12 @@
+/* pages/factory/factory.wxss */
+page{
+    border-top: 2rpx #eee solid;
+}
+view{
+    width: 100%;
+    height: 100%;
+}
+image{
+    width: 100%;
+    height: 1000rpx;
+}

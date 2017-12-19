@@ -111,9 +111,11 @@ Page({
                         arr1.push(item.areaId)
                     };
                     res.data.data.province_list.forEach(push);
+                    arr.unshift('全部');
+                    arr1.unshift('0');
                     var select=that.data.select;
                     select.province=arr;
-                    select.provinceId=arr1
+                    select.provinceId=arr1;
                     that.setData({
                         select:select
                     });
@@ -147,6 +149,8 @@ Page({
                             arr1.push(item.areaId)
                         };
                         res.data.data.city_list.forEach(push);
+                        arr.unshift('全部');
+                        arr1.unshift('0');
                         var select=that.data.select;
                         select.city=arr;
                         select.cityId=arr1;
@@ -178,6 +182,8 @@ Page({
                             arr1.push(item.areaId)
                         };
                         res.data.data.city_list.forEach(push);
+                        arr.unshift('全部');
+                        arr1.unshift('0');
                         var select=that.data.select;
                         select.area=arr;
                         select.areaId=arr1;
@@ -210,6 +216,8 @@ Page({
                         };
                         res.data.data.city_list.forEach(push);
                         var select=that.data.select;
+                        arr.unshift('全部');
+                        arr1.unshift('0');
                         select.stress=arr;
                         select.stressId=arr1;
                         select.stressUse=false;
@@ -512,16 +520,13 @@ Page({
         obj.address=data.address;
         obj.store_mobile=data.phone;
         obj.store_user_name=data.people;
-        obj.store_annual_sales=data.money;
         obj.store_license=data.srcUp;
         obj.store_storefront=data.srcShopUp;
         obj.level_vip_id=data.chooseID;
         obj.card_z=data.srcID1Up;
         obj.card_f=data.srcID2Up;
-
-        let i=0
+        let i=0;
         for (var key in obj){
-            // debugger
             if(obj[key]==''){
                 i++;
                 // debugger
@@ -540,6 +545,7 @@ Page({
                 // return
             }
         }
+        obj.store_annual_sales=data.money;
         obj.brand_id=data.brandselectId;
         obj.other_brand=data.brandinput;
         if(i<1){

@@ -1,0 +1,34 @@
+/* pages/factorybrand/factorybrand.wxss */
+.factorybrand{
+    margin-top: 30rpx;
+    font-size: 36rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.factorybrand image{
+    background-color: #00A79F;
+    color: #fff;
+    width: 600rpx;
+    height: 400rpx;
+}
+.factorybrand .nav{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20rpx;
+    padding: 0 40rpx 0 40rpx;
+    border-radius: 40rpx;
+    line-height: 50rpx;
+    background-color: #00A79F;
+    color: #fff;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00A79F;
+    line-height: 80rpx;
+    color: #fff;
+}

@@ -1,0 +1,60 @@
+<!--pages/login_1/login_1.wxml-->
+<view class='top'>
+    <view class='top-text'>
+        <view class='top-text-chose'>店铺地址</view>
+        <view class='top-text-text'>（地址请慎重填写）</view>
+    </view>
+</view>
+<view class="main">
+    <view class="choose">
+        <text>省份</text>
+        <view class="select">
+            <picker mode="selector" class="select1 before" disabled="{{select.provinceUse}}" value="{{select. provinceIndex}}"
+                    data-type="1" bindchange="optionChange" range="{{select.province}}">
+                {{select.province[select.provinceIndex]}}
+            </picker>
+        </view>
+    </view>
+    <view class="choose">
+        <text>市</text>
+        <view class="select">
+            <picker mode="selector" class="select1 before" disabled="{{select.cityUse}}" value="{{select.cityIndex}}"
+                    data-type="2" bindchange="optionChange" range="{{select.city}}">
+                {{select.city[select.cityIndex]}}
+            </picker>
+        </view>
+    </view>
+    <view class="choose">
+        <text>县/区</text>
+        <view class="select">
+            <picker mode="selector" class="select1 before" disabled="{{select.areaUse}}" value="{{select.areaIndex}}"
+                    data-type="3" bindchange="optionChange" range="{{select.area}}">
+                {{select.area[select.areaIndex]}}
+            </picker>
+        </view>
+    </view>
+    <view class="choose">
+        <text>乡/镇</text>
+        <view class="select">
+            <picker mode="selector" class="select1 before" disabled="{{select.stressUse}}" value="{{select.stressIndex}}"
+                    data-type="4" bindchange="optionChange" range="{{select.stress}}">
+                {{select.stress[select.stressIndex]}}
+            </picker>
+        </view>
+    </view>
+    <view class="choose">
+        <text>详细地址</text>
+        <input bindinput="address" type="text" placeholder="详细地址"/>
+    </view>
+    <view class="choose">
+        <text>中文姓名</text>
+        <input data-type="1" class='people_name' type="text" placeholder="请输入姓名" bindinput="output"/>
+    </view>
+    <view class="choose">
+        <text>手机号</text>
+        <input data-type="2" type="text" placeholder="请输入电话号码" bindinput="output"/>
+    </view>
+</view>
+<button  bindtap="href" class="bottom">下 一 步 </button>
+
+

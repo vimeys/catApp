@@ -99,7 +99,7 @@ Page({
                 if(res.data.code==200){
                     wx.removeStorageSync('level');
                         wx.redirectTo({
-                          url: '../login/login?mobile='+that.data.phoneNum
+                          url: '../login_1/login_1?mobile='+that.data.phoneNum
                         });
                 }else {
                     wx.showModal({

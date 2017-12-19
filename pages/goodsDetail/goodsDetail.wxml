@@ -47,9 +47,14 @@
     <view wx:if="{{text2}}" class="TBD_word"></view>
 </view>
 
+<!--<view style="margin-bottom: 100rpx;margin-top: 30rpx">-->
+    <!--<block wx:for="{{goodsImage}}" wx:for-index="index">-->
+        <!--<image src="{{item}}" style="width: 100%;height:{{height[index]}}rpx" ></image>-->
+    <!--</block>-->
+<!--</view>-->
 <view style="margin-bottom: 100rpx;margin-top: 30rpx">
-    <block wx:for="{{goodsImage}}" wx:for-index="index">
-        <image src="{{item}}" style="width: 100%;height:{{height[index]}}rpx" ></image>
+    <block wx:for="{{height}}" wx:for-index="index" >
+        <image src="{{item.image}}" style="width: 100%;height:{{item.height}}rpx" ></image>
     </block>
 </view>
 <!--活动普通购物车结算-->

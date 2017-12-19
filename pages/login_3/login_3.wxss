@@ -1,0 +1,106 @@
+/* pages/login_3/login_3.wxss */
+.top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 21rpx;
+    color: #fff;
+    width:750rpx;
+    height:100rpx;
+    background:rgba(0,146,190,1);
+}
+.top-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top-text-chose{
+    font-size:36rpx;
+    font-family:SourceHanSansCN-Bold;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+.top-text-text{
+    font-size: 24rpx;
+}
+.three{
+    border-bottom: 20rpx #fafafa solid;
+    padding-top: 12rpx;
+    width:749rpx;
+    height:269rpx;
+}
+.three-left{
+    margin-left: 40rpx;
+    display: flex;
+    align-items: center;
+}
+.three-kuang{
+    width:7rpx;
+    height:47rpx;
+    background:rgba(0,146,190,1);
+}
+.three-text{
+    margin-left: 10rpx;
+    font-size:36rpx;
+    font-family:SourceHanSansCN-Normal;
+    color:rgba(26,26,26,1);
+}
+.three-image-one{
+    margin-top: 40rpx;
+    width: 175rpx;
+    height: 122rpx;
+}
+.three-image{
+    display: flex;
+    justify-content: center;
+}
+.three-photo-one{
+    margin-top: 27rpx;
+    width:346rpx;
+    height:173rpx;
+}
+.three-shan image{
+    width:29rpx;
+    height:29rpx;
+}
+.three-shan{
+    position: relative;
+    left: -10rpx;
+}
+.id-bottom{
+    padding: 36rpx 40rpx 0 40rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.id{
+    height: 178rpx;
+    width: 375rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.id-shanchu-all{
+    position: relative;
+    left: 150rpx;
+    top:-190rpx;
+}
+.id-ok{
+    font-size:36rpx;
+    color:rgba(26,26,26,1);
+    display: flex;
+    justify-content: space-between;
+}
+.id-ok view{
+    display: flex;
+    justify-content: center;
+    width: 375rpx;
+}
+.bottom{
+    margin-top:30rpx;
+    width: 670rpx;
+    background-color: #0092BE;
+    color: #fff;
+    letter-spacing: 16rpx;
+}

@@ -1,0 +1,33 @@
+<!--pages/login_4/login_4.wxml-->
+<view>
+    <view class='top'>
+        <view class='top-text'>
+            <view class='top-text-chose'>会员选择</view>
+            <view class='top-text-text'>会员权益最终解释权归本公司所有</view>
+        </view>
+    </view>
+    <view class='chose'>
+        <view class='chose-one'>
+            <view class='chose-one-left'>普通会员</view>
+            <view class='chose-one-right' data-type="{{level1}}" bindtap="level">
+                <view class='chose-one-right-yuan' wx:if="{{show}}"></view>
+            </view>
+        </view>
+        <view class='chose-one'>
+            <view class='chose-one-left'>高级会员</view>
+
+            <view class='chose-one-right' data-type="{{level2}}" bindtap="level">
+                <view class='chose-one-right-yuan' wx:if="{{!show}}"></view>
+            </view>
+        </view>
+    </view>
+    <view class='text'>
+        <view class='text-huiyuan'>会员权益</view>
+        <textarea class='text-text'>啊哈史蒂夫卡收费的接口啊可是大家发表贺卡设计的部分就卡死的发狂似的北京发撒</textarea>
+    </view>
+    <button class='bottom' bindtap="confirm">资料提交进入支付</button>
+</view>
+
+<view class="model2" bindtap="clickClose" wx:if="{{showModel2}}">
+    <view class="model2_text">支付成功。请等待平台审核通过后重新登录（24之内通过审核）</view>
+</view>

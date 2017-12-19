@@ -1,0 +1,72 @@
+<!--pages/login_2/login_2.wxml-->
+
+<view class='top'>
+    <view class='top-text'>
+        <view class='top-text-chose'>店铺地址</view>
+        <view class='top-text-text'>（地址请慎重填写）</view>
+    </view>
+</view>
+<view  class="custom">
+    <text>自定义输入</text>
+    <image src="../image/plus.png" bindtap="chooseInput"></image>
+</view>
+
+
+<view class="custom_input">
+    <block wx:for="{{brand}}" wx:for-key="index">
+        <view class="brand_select">{{item}}
+            <image src="../image/del.png" data-type="{{index}}" catchtap="delInput"></image>
+        </view>
+    </block>
+    <view class="brand_input" wx:if="{{showInput}}"><input type="text" bindconfirm="inputBrand" confirm-type="done"/></view>
+</view>
+
+
+
+
+
+<view  class="custom">
+    <text>品牌列表</text>
+    <image src="../image/plus.png" bindtap="chooseModal"></image>
+</view>
+<view class="list">
+    <block wx:for="{{brandList}}" wx:for-key="index">
+        <view class="brand_select">{{item}}
+            <image src="../image/del.png" data-type="{{index}}" catchtap="del"></image>
+        </view>
+    </block>
+</view>
+<view class="choose1">
+    <text style="font-size: 28rpx">手机号（可不填）</text>
+    <input data-type="2" type="text" placeholder="请输入电话号码" bindinput="inputMoney"/>
+</view>
+
+<button class='bottom' bindtap="href">下一步</button>
+
+
+
+
+
+
+<view class="showModel" wx:if="{{showModel}}">
+    <view class="di" bindtap="close"></view>
+    <view class="model">
+        <view class="model_title">
+            <view>请选择店铺</view>
+            <view class="pop-goods-close" bindtap="close"> </view>
+        </view>
+        <scroll-view scroll-y style="height: 300px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <block wx:for="{{json}}" wx:for-item="item" wx:for-index="index">
+                <view class="item">
+                    <view class="num">{{index}}</view>
+                    <view class="goods">
+                        <block wx:for="{{item}}" >
+                            <view class="goods_list {{item.choose?'choose':''}}" bindtap="click" data-type="{{item.id}}">{{item.name}}</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+        <view class="fix" bindtap="close"> 确定</view>
+    </view>
+</view>

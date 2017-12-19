@@ -1,6 +1,10 @@
 {
-    "pages": [
-      "pages/index/index",
+  "pages": [
+    "pages/index/index",
+    "pages/login_1/login_1",
+      "pages/login_4/login_4",
+      "pages/login_3/login_3",
+      "pages/login_2/login_2",
       "pages/login/login",
       "pages/sign/sign",
       "pages/Brandsuper/Brandsuper",
