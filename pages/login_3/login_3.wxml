@@ -15,7 +15,7 @@
              <image class='three-image-one' src='../image/image.png' wx:if="{{!srcBool}}" bindtap="choosePhotoBrand"></image>
             <image class='three-photo-one' src='{{src}}' wx:if="{{srcBool}}"></image>
             <view class='three-shan' wx:if="{{srcBool}}" >
-                <image class='shanchu' src='../image/shanchu.png' data-type="1"bindtap="del" ></image>
+                <image class='shanchu' src='../image/shanchu.png' data-type="1" bindtap="del" ></image>
             </view>
         </view>
     </view>

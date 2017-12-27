@@ -1,6 +1,6 @@
 <!--pages/goodsDetail/goodsDetail.wxml-->
 <swiper class="swiper" indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true" circular="true">
     <block wx:for="{{img}}">
         <swiper-item >
             <image src="{{item}}" class="slide-image" width="100%" height="150"/>
@@ -35,8 +35,8 @@
 <!--众筹-->
 <view class="TBD" wx:if="{{TBD}}">
     <view class='one-all'>
-         <text class='one'wx:if="{{text1}}">众筹中.剩{{day}}天</text>
-         <text class='one'wx:if="{{text2}}">众筹已结束</text>
+         <text class='one' wx:if="{{text1}}">众筹中.剩{{day}}天</text>
+         <text class='one' wx:if="{{text2}}">众筹已结束</text>
     </view>
     <view class="title">{{goodsName}}</view>
     <text class='chang-name'>{{factory}}-{{brand}}</text>
@@ -47,11 +47,12 @@
     <view wx:if="{{text2}}" class="TBD_word"></view>
 </view>
 
-<!--<view style="margin-bottom: 100rpx;margin-top: 30rpx">-->
-    <!--<block wx:for="{{goodsImage}}" wx:for-index="index">-->
-        <!--<image src="{{item}}" style="width: 100%;height:{{height[index]}}rpx" ></image>-->
-    <!--</block>-->
-<!--</view>-->
+
+<view class="product">
+    <view class="product_title">商品描述</view>
+    <text>{{product}}</text>
+</view>
+<!--图片-->
 <view style="margin-bottom: 100rpx;margin-top: 30rpx">
     <block wx:for="{{height}}" wx:for-index="index" >
         <image src="{{item.image}}" style="width: 100%;height:{{item.height}}rpx" ></image>

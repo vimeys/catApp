@@ -57,7 +57,8 @@ Page({
         over:false,//结束不能点击按钮
         text1:true,
         text2:false,
-        cover:''//规格图片
+        cover:'',//规格图片
+        product:'',//产品介绍
     },
 
 
@@ -157,7 +158,8 @@ Page({
                             factory_id:json.factory_id,
                             brand:json.brand,
                             factory:json.factory,
-                            cover:json.cover
+                            cover:json.cover,
+                            product:json.goods_describe
                         });
                         that.loadImage();
                     }else if(json.is_type==2){//众筹数据写入
@@ -185,7 +187,8 @@ Page({
                                 brand:json.brand,
                                 factory:json.factory,
                                 day:number,
-                                cover:json.cover
+                                cover:json.cover,
+                                product:json.goods_describe
                             })
                         }else {
                             let int=Math.floor(json.Raise_the_total_price);
@@ -207,7 +210,8 @@ Page({
                                 brand:json.brand,
                                 factory:json.factory,
                                 day:number,
-                                cover:json.cover
+                                cover:json.cover,
+                                product:json.goods_describe
                             })
                             that.setData({
                                 // percentage_funding:100,
@@ -229,7 +233,8 @@ Page({
                             factory_id:json.factory_id,
                             brand:json.brand,
                             factory:json.factory,
-                            cover:json.cover
+                            cover:json.cover,
+                            product:json.goods_describe
                         });
                         that.loadImage();
                     }

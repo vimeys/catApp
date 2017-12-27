@@ -74,6 +74,11 @@ Page({
                 goodsName:value,
                 page:0
             })
+        }else{
+            this.setData({
+                goodsName:''
+            })
+            this.getList();
         }
     },
 

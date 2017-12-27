@@ -36,6 +36,7 @@ Page({
                 let time=60;
                 this.setData({
                     word:'60S',
+                    ok:'nook',
                 });
                 ajax.getAjax(url.url.msg,{mobile:this.data.phoneNum},function (that,json) {
                     var timer=setInterval(function () {
@@ -43,7 +44,7 @@ Page({
                         var word=time+'S';
                         that.setData({
                             word:word,
-                            ok:'nook',
+
                         //     blue:true
                         })
                         if(time==0){

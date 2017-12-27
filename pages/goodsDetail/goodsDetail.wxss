@@ -12,6 +12,7 @@ page{
 }
 .goods_title{
     margin-top: 30rpx;
+    margin-bottom: 30rpx;
     /* width: 100%; */
     /*border: 1px solid #000;*/
 }
@@ -314,4 +315,18 @@ page{
     width: 100%;
     border-bottom: 1rpx solid #ccc;
     height: 20rpx;
+}
+
+.product{
+    border-top: 1px solid #ccc;
+    padding: 30rpx 40rpx 30rpx;
+}
+.product_title{
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+}
+.product text{
+    font-size: 28rpx;
+    color:#333;
+    line-height: 40rpx;
 }

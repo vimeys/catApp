@@ -2,8 +2,8 @@
 
 <view class='top'>
     <view class='top-text'>
-        <view class='top-text-chose'>店铺地址</view>
-        <view class='top-text-text'>（地址请慎重填写）</view>
+        <view class='top-text-chose'>经营品牌</view>
+        <view class='top-text-text'>可自填/可选择平台已有</view>
     </view>
 </view>
 <view  class="custom">
@@ -17,8 +17,12 @@
         <view class="brand_select">{{item}}
             <image src="../image/del.png" data-type="{{index}}" catchtap="delInput"></image>
         </view>
+
     </block>
-    <view class="brand_input" wx:if="{{showInput}}"><input type="text" bindconfirm="inputBrand" confirm-type="done"/></view>
+    <view class="brand_select" wx:if="{{showInput}}">
+        <input type="text" bindconfirm="inputBrand" confirm-type="done"/>
+    </view>
+    <!--<view class="brand_input" wx:if="{{showInput}}"><input type="text" bindconfirm="inputBrand" confirm-type="done"/></view>-->
 </view>
 
 
@@ -37,8 +41,8 @@
     </block>
 </view>
 <view class="choose1">
-    <text style="font-size: 28rpx">手机号（可不填）</text>
-    <input data-type="2" type="text" placeholder="请输入电话号码" bindinput="inputMoney"/>
+    <text style="font-size: 28rpx">现年销量（可不填）</text>
+    <input data-type="2" type="text"  bindinput="inputMoney" placeholder="销量"/>
 </view>
 
 <button class='bottom' bindtap="href">下一步</button>

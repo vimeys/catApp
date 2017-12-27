@@ -124,7 +124,7 @@ Page({
         var id=e.currentTarget.dataset.type;
         var name=e.currentTarget.dataset.name;
         wx.setStorageSync('brandName', name);
-        wx.redirectTo({
+        wx.navigateTo({
             url:'../chanping/chanping?id='+id
         })
         // var json=this.data.Data;

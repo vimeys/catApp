@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login_1/login_1",
-      "pages/login_4/login_4",
-      "pages/login_3/login_3",
       "pages/login_2/login_2",
-      "pages/login/login",
+    "pages/login_1/login_1",
       "pages/sign/sign",
+    "pages/login_4/login_4",
+      "pages/login_3/login_3",
+      "pages/login/login",
       "pages/Brandsuper/Brandsuper",
 
       "pages/payWay/payWay",
@@ -63,7 +63,7 @@
                 "pagePath": "pages/list/list",
                 "iconPath": "pages/image/icon/list.png",
                 "selectedIconPath": "pages/image/icon/list_a.png",
-                "text": "分类"
+                "text": "推荐厂商"
             },
             {
                 "pagePath": "pages/shoppingcart/shoppingcart",

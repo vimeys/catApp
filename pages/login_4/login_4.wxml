@@ -23,11 +23,13 @@
     </view>
     <view class='text'>
         <view class='text-huiyuan'>会员权益</view>
-        <textarea class='text-text'>啊哈史蒂夫卡收费的接口啊可是大家发表贺卡设计的部分就卡死的发狂似的北京发撒</textarea>
+        <view></view>
+        <textarea class='text-text'>{{leveltext[0].level_name}}{{leveltext[0].rights}}</textarea>
+        <textarea class='text-text'>{{leveltext[1].level_name}}{{leveltext[1].rights}}</textarea>
     </view>
     <button class='bottom' bindtap="confirm">资料提交进入支付</button>
 </view>
 
-<view class="model2" bindtap="clickClose" wx:if="{{showModel2}}">
+<view class="model2" bindtap="clickClose" wx:if="{{showModel}}">
     <view class="model2_text">支付成功。请等待平台审核通过后重新登录（24之内通过审核）</view>
 </view>

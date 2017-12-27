@@ -14,8 +14,8 @@ Page({
       srcID1:'',//身份证正面
       srcID1Bool:false,
       srcID1Up:'',//
-      srcID2:'',//身份证反面
 
+      srcID2:'',//身份证反面
       srcID2Bool:false,
       srcID2Up:'',
       srcShop:'',//店铺外景
@@ -148,7 +148,7 @@ Page({
         let type=e.currentTarget.dataset.type;
         if(type==1){
             this.setData({
-                scrBool:false
+                srcBool:false
             })
         }else if(type==2){
             this.setData({

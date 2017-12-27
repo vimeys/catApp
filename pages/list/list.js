@@ -9,7 +9,8 @@ Page({
      */
     data: {
         list:[],//列表页面
-        marginTop:20
+        marginTop:20,
+        page:0
     },
 
     /**
@@ -79,5 +80,13 @@ Page({
         //         desc: '最具人气的小程序开发联盟!',
         //         path: '/page/index'
         //     }
-    }
+    },
+    onReachBottom: function () {
+        let page=this.data.page;
+        page++;
+        this.setData({
+            page:page
+        })
+
+    },
 })

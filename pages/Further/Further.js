@@ -45,6 +45,11 @@ Page({
                 goodsName:value,
                 page:0
             })
+        }else{
+            this.setData({
+                goodsName:''
+            })
+            this.getList();
         }
     },
     //点击请求
@@ -67,11 +72,16 @@ Page({
         // this.getList();
         ajax.postAjax(url.url.allPromotion,{num:this.data.page,name:this.data.goodsName},function (that,json) {
             let data=that.data.Data;
+            console.log(json.data.commodity_goods_list);
             if(json.data.commodity_goods_list.length>=1){
-                data.push(json.data.commodity_goods_list);
+                for(var i=0;i<json.data.commodity_goods_list.length;i++){
+                    data.push(json.data.commodity_goods_list[i])
+                }
+                // data.push(json.data.commodity_goods_list);
                 that.setData({
                     Data:data
                 })
+                console.log(that.data.Data)
             }
 
         },this)

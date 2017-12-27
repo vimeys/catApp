@@ -12,19 +12,22 @@ Page({
           provinceIndex: 0,
           provinceId: [],
           provinceUse:false,
-          city:['全部'],
+          city:['选 择 城 市'],
           cityIndex:0,
           cityId:[],
           cityUse:true,
-          area:['全部'],
+          area:['选 择 区/县'],
           areaIndex:0,
           areaId:[],
           areaUse:true,
-          stress:['全部'],
+          stress:['选 择 乡/镇'],
           stressIndex:0,
           stressId:[],
           stressUse:true
       },
+      address:'',
+      people:'',
+      phone:''
   },
 
   /**
@@ -48,7 +51,7 @@ Page({
                         arr1.push(item.areaId)
                     };
                     res.data.data.province_list.forEach(push);
-                    arr.unshift('全部');
+                    arr.unshift('选 择 省 份');
                     arr1.unshift('0');
                     var select=that.data.select;
                     select.province=arr;
@@ -88,7 +91,7 @@ Page({
                             arr1.push(item.areaId)
                         };
                         res.data.data.city_list.forEach(push);
-                        arr.unshift('全部');
+                        arr.unshift('选 择 城 市');
                         arr1.unshift('0');
                         var select=that.data.select;
                         select.city=arr;
@@ -123,7 +126,7 @@ Page({
                             arr1.push(item.areaId)
                         };
                         res.data.data.city_list.forEach(push);
-                        arr.unshift('全部');
+                        arr.unshift('选 择 区/县');
                         arr1.unshift('0');
                         var select=that.data.select;
                         select.area=arr;
@@ -159,7 +162,7 @@ Page({
                         };
                         res.data.data.city_list.forEach(push);
                         var select=that.data.select;
-                        arr.unshift('全部');
+                        arr.unshift('选 择 乡/镇');
                         arr1.unshift('0');
                         select.stress=arr;
                         select.stressId=arr1;
@@ -206,10 +209,32 @@ Page({
     
     //点击跳转
     href:function () {
-        wx.navigateTo({
-          url: '../login_2/login_2'
-        })
-    },
+        let obj = {};
+        obj.zhen = wx.getStorageSync('zhen');
+        obj.address = this.data.address;
+        obj.phone = this.data.phone;
+        obj.people = this.data.people;
+        let i = 0;
+        for (var key in obj) {
+            if (obj[key] == '') {
+                i++
+                wx.showModal({
+                    title: '提示',
+                    content: '请填写完成所有表格',
+                    showCancel: false,
+                    success: res => {
+                        if (res.confirm) {
+                        }
+                    }
+                })
+            }
+        }
+        if (i < 1) {
+            wx.navigateTo({
+                url: '../login_2/login_2'
+            })
+        }
+    }
 
 
   

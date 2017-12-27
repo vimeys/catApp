@@ -85,6 +85,9 @@
     top:-25rpx;
     right: -10rpx;
 }
+.brand_select input{
+    color:#333;
+}
 .list{
     display: flex;
     flex-direction: row;

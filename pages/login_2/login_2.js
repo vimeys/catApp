@@ -18,7 +18,8 @@ Page({
       brand_id:'',
       showModal:false,
       json:'',
-      Data:''
+      Data:'',
+      money:'',
   },
 
   /**

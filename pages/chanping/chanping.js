@@ -130,7 +130,7 @@ Page({
         let arr=[];
         arr.push(id);
         arr.push(type);
-        wx.redirectTo({
+        wx.navigateTo({
           url: '../goodsDetail/goodsDetail?id='+arr
         })
     },

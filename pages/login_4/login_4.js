@@ -12,14 +12,16 @@ Page({
       chooseID:'',
       level1:'',
       level2:'',
-      showModal:false
+      showModal:false,
+      leveltext:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getCardLevel()
+    this.getCardLevel();
+      this.more();
   },
     //获取会员等级及赋值
     getCardLevel:function (e) {
@@ -35,6 +37,22 @@ Page({
             })
         },this)
     },
+    //更多权益
+    more:function (e) {
+      let user=wx.getStorageSync('user_id');
+        ajax.postAjax(url.url.more_rights,{user_id:user},function (that,json) {
+            let arr=[];
+            for(var  key in json.data.list){
+                arr.push(json.data.list[key]);
+            }
+            console.log(arr);
+            that.setData({
+
+                leveltext:arr
+            })
+        },this)
+    },
+
     //选择会员等级
     level:function (e) {
         let Type=e.currentTarget.dataset.type;
@@ -84,7 +102,6 @@ Page({
                     paySign: pay.paySign,
                     success: function (res) {
                         ajax.postAjax(url.url.pay_user, { level_order_sn:order, user_id: user_id }, function (that, json) {
-                            console.log(that.data.showModel2);
                             that.setData({
                                 showModel:true
                             })
