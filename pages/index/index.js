@@ -20,7 +20,9 @@ Page({
         scroll: '',
         marginTop: 20,//搜索顶部
         show: false,
-        src: ''//
+        src: '',//
+        changeShow1:true,
+        changeShow2:false,//切换显示
     },
     search: function (e) {
         wx.navigateTo({
@@ -36,6 +38,22 @@ Page({
                 })
             },
         })
+
+    },
+    change:function (e) {
+        let type=e.currentTarget.dataset.type;
+        let show=this.data.changeShow;
+        if(type==2){
+            this.setData({
+                changeShow1:false,
+                changeShow2:true
+            })
+        }else if(type==1){
+            this.setData({
+                changeShow1:true,
+                changeShow2:false
+            })
+        }
 
     },
     cart: function (e) {
@@ -159,12 +177,29 @@ Page({
             method: 'POST',
             success: function (res) {
                 if (res.data.code == 200) {
+                    var arr=res.data.data.commodity_goods_list;
+                    let arr1=[]
+                    arr.map((item,index)=>{
+                        arr1.push(parseInt(item.goods_activity_price))
+                    });
+                    arr1.sort((a,b)=>{
+                        return a-b
+                    });
+                    let arr2=[];
+                    arr1.map((item,index)=>{
+                        arr.map((Item,index)=>{
+                            if(item==Item.goods_activity_price){
+                                arr2.push(Item)
+                            }
+                        })
+                    });
                     that.setData({
-                        promotion: res.data.data.commodity_goods_list
+                        // promotion: res.data.data.commodity_goods_list
+                        promotion:arr2
                     })
                 }
             }
-        })
+        });
         wx.request({
             url: url.url.TBD,
             success: res => {

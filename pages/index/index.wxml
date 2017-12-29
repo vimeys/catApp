@@ -1,40 +1,49 @@
 <include src="../../template/search.wxml"/>
 <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height: 420rpx" circular="true">
-  <block wx:for="{{img}}" class="swiper" wx:for-item="item">
-    <swiper-item>
-      <image src="{{item.image}}" class="slide-image" width="100%" height="420rpx" bindtap="hrefProduct"data-type="{{item.brand_id}}" data-factory="{{item.factory_id}}" data-status="{{item.is_type}}"/>
-    </swiper-item>
-  </block>
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height: 420rpx" circular="true">
+    <block wx:for="{{img}}" class="swiper" wx:for-item="item">
+        <swiper-item>
+            <image src="{{item.image}}" class="slide-image" width="100%" height="420rpx" bindtap="hrefProduct"
+                   data-type="{{item.brand_id}}" data-factory="{{item.factory_id}}" data-status="{{item.is_type}}"/>
+        </swiper-item>
+    </block>
 </swiper>
 <view class="border"></view>
 <view class="main">
-  <view class="main_name">
-    <image src="../image/hot.png"></image>
-    <text class="main_title">爆款商品</text>
-  </view>
-  <view class="main_more" bindtap="pMore">更多</view>
+    <view class="main_name" bindtap="change" data-type="1">
+        <!--<image src="../image/hot.png"></image>-->
+        爆款商品
+        <!--<text class="main_title">爆款商品</text>-->
+    </view>
+    <view class="main_name2" bindtap="change" data-type="2">众筹商品</view>
+    <!--<view class="main_more" bindtap="pMore">更多</view>-->
 </view>
- <import src="../../template/promotion"/>
- <template is="promotion_minus" data="{{promotion}}"></template>
- <improt></improt>
-<view class="AD">
-    <scroll-view scroll-x style="height:200rpx" class="scroll">
+<import src="../../template/promotion"/>
+<template is="promotion_minus" data="{{promotion}}" wx:if="{{changeShow1}}"></template>
+<view bindtap="pMore" class="more" wx:if="{{changeShow1}}"> 更多商品</view>
+<import src="../../template/TBD"/>
+<template is="TBD" data="{{TBD}}" wx:if="{{changeShow2}}"></template>
+<view bindtap="tMore" class="more" wx:if="{{changeShow2}}"> 更多商品</view>
 
-        <block wx:for="{{scroll}}">
-            <view id="green" class="scroll-view-item bc_green">
-                <image src="{{item.image}}" data-type="{{item.is_type}}" bindtap="" data-href="{{item.href}}"></image>
-            </view>
-        </block>
-    </scroll-view>
-</view>
-<web-view src="https://mp.weixin.qq.com/" wx:if="{{show}}">123</web-view>
-<view class="TBD">
-  <view class="TBD_name">
-    <image src="../image/zhongchou.png"></image>
-    <text class="TBD_title">众筹商品</text>
-  </view>
-  <view class="TBD_more" bindtap="tMore">更多</view>
-</view>
- <import src="../../template/TBD" />
- <template is="TBD" data="{{TBD}}"></template>
+
+<!--<view class="AD">-->
+<!--<scroll-view scroll-x style="height:200rpx" class="scroll">-->
+
+<!--<block wx:for="{{scroll}}">-->
+<!--<view id="green" class="scroll-view-item bc_green">-->
+<!--<image src="{{item.image}}" data-type="{{item.is_type}}" bindtap="" data-href="{{item.href}}"></image>-->
+<!--</view>-->
+<!--</block>-->
+<!--</scroll-view>-->
+<!--</view>-->
+<!--<web-view src="https://mp.weixin.qq.com/" wx:if="{{show}}">123</web-view>-->
+
+
+<!--<view class="TBD">-->
+    <!--<view class="TBD_name">-->
+        <!--<image src="../image/zhongchou.png"></image>-->
+        <!--<text class="TBD_title">众筹商品</text>-->
+    <!--</view>-->
+    <!--<view class="TBD_more" bindtap="tMore">更多</view>-->
+<!--</view>-->
+<!--<import src="../../template/TBD"/>-->

@@ -122,6 +122,7 @@ Page({
                         title: '支付成功',
                         content: '支付成功',
                         success:function(){
+                            wx.setStorageSync('vip_id', '2');
                             wx.navigateBack({
                                 detail:1
                             })

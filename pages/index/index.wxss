@@ -4,139 +4,180 @@
 @import "../../template/TBD.wxss";
 /*轮播图的图片*/
 
-.slide-image{
-  width: 100%;
-  height: 420rpx;
+.slide-image {
+    width: 100%;
+    height: 420rpx;
 }
+
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+    color: #aaa;
 }
 
 .usermotto {
-  margin-top: 200px;
+    margin-top: 200px;
 }
-.main{
-  width:100%;
-  height: 50rpx; 
+
+.main {
+    width: 100%;
+    height: 50rpx;
 }
-.blue{
-  display: inline-block;
-  height: 50rpx;
-background:#00a79e;
+
+.blue {
+    display: inline-block;
+    height: 50rpx;
+    background: #00a79e;
 }
-.white{
-  display: inline-block;
-  height: 50rpx;
-  background:#fafafa;
+
+.white {
+    display: inline-block;
+    height: 50rpx;
+    background: #fafafa;
 }
-.border{
-  width: 100%;
-  height: 20rpx;
-  background: #eee;
+
+.border {
+    width: 100%;
+    height: 20rpx;
+    background: #eee;
 }
+
 /*活动*/
-.main{
-  width: 100%;
-  height: 90rpx;
-  border-bottom: 1px  solid #f6f6f6;
-  display: flex;
-  align-items: center;
+.main {
+    width: 100%;
+    height: 90rpx;
+    border-bottom: 1px solid #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.main_name{
-  display: flex;
-  margin-left: 20rpx;
-  justify-items: center;
+.main view{
+    width: 45%;
+    text-align: center;
 }
-.main_name image{
+
+.main_name {
+    /*display: flex;*/
+    /*margin-left: 20rpx;*/
+    /*justify-items: center;*/
+    color: #EA4736;
+    font-size: 36rpx;
+}
+
+.main_name2 {
+    /*margin-right: 30rpx;*/
+    color: #EA4736;
+    font-size: 36rpx;
+}
+
+.main_name image {
     width: 40rpx;
-  height: 40rpx;
-  margin-left: 20rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
 }
-.main_name .main_title{
-  font-size: 36rpx;
-  color:#EA4736;
-  margin-left: 10rpx;
+
+.main_name .main_title {
+    font-size: 36rpx;
+    color: #EA4736;
+    margin-left: 10rpx;
 }
-.main_name .main_num{
-  font-size: 28rpx;
-  color:#989898;
-  margin-left: 5rpx;
-  display: flex;
-  justify-items: center;
+
+.main_name .main_num {
+    font-size: 28rpx;
+    color: #989898;
+    margin-left: 5rpx;
+    display: flex;
+    justify-items: center;
 }
-.main_more{
-  font-size: 36rpx;
-  color:#EA4736;
-  margin-left: 420rpx;
+
+.main_more {
+    font-size: 36rpx;
+    color: #EA4736;
+    margin-left: 420rpx;
 }
+
 /*广告位*/
-.AD{
-  width: 100%;
-  height: 200rpx;
-  /*display: flex;*/
+.AD {
+    width: 100%;
+    height: 200rpx;
+    /*display: flex;*/
 }
-.AD image{
-  width: 100%;
-  height:100%;
+
+.AD image {
+    width: 100%;
+    height: 100%;
 }
-.scroll{
-  width: 100%;
-  white-space: nowrap;
-  height: 200rpx;
+
+.scroll {
+    width: 100%;
+    white-space: nowrap;
+    height: 200rpx;
 }
-.scroll-view-item{
-  margin-right: 20rpx;
-  display: inline-block;
-  height: 200rpx;
-  width: 100%;
+
+.scroll-view-item {
+    margin-right: 20rpx;
+    display: inline-block;
+    height: 200rpx;
+    width: 100%;
 }
+
 /*众筹*/
-.TBD{
-  width: 100%;
-  height: 90rpx;
-  border-bottom: 1px  solid #fafafa;
-  display: flex;
-  align-items: center;
+.TBD {
+    width: 100%;
+    height: 90rpx;
+    border-bottom: 1px solid #fafafa;
+    display: flex;
+    align-items: center;
 }
-.TBD_name{
-  display: flex;
-  margin-left: 20rpx;
-  align-items: center;
+
+.TBD_name {
+    display: flex;
+    margin-left: 20rpx;
+    align-items: center;
 }
-.TBD_name image{
-  width: 40rpx;
-  height: 40rpx;
-  margin-left: 20rpx;
+
+.TBD_name image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 20rpx;
 }
-.TBD_name .TBD_title{
-  font-size: 36rpx;
-  color:#00a79e;
-  margin-left: 10rpx;
+
+.TBD_name .TBD_title {
+    font-size: 36rpx;
+    color: #00a79e;
+    margin-left: 10rpx;
 }
-.TBD_name .TBD_num{
-  font-size: 28rpx;
-  color:#989898;
-  margin-left: 5rpx;
-  display: flex;
-  justify-items: center;
-  display: flex;
-  justify-items: center;
+
+.TBD_name .TBD_num {
+    font-size: 28rpx;
+    color: #989898;
+    margin-left: 5rpx;
+    display: flex;
+    justify-items: center;
 }
-.TBD_more{
-  font-size: 36rpx;
-  color:#00a79e;
-  margin-left: 420rpx;
+
+.TBD_more {
+    font-size: 36rpx;
+    color: #00a79e;
+    margin-left: 420rpx;
+}
+.more{
+    width: 100%;
+    height: 90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 36rpx;
+    background: #EA4736;
+    color:#fafafa;
 }
