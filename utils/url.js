@@ -35,7 +35,7 @@ url.payWay=allUrl+"order/payment";//选择支付方式
 url.delCart=allUrl+'goods/Shopping_cart_list_del';//删除购物车商品
 url.confirmCart=allUrl+'order/Confirm_order';//确认订单
 url.factory=allUrl+'user/factory_info';//工厂资料
-
+url.rest=allUrl+'user/user_update';//重新提交审核
 
 
 //余智仙

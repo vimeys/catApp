@@ -17,6 +17,76 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      wx.getUserInfo({
+          success: function (res) {
+              var userInfoAvatar = res.userInfo.avatarUrl;
+              var nickname = res.userInfo.nickName;
+              wx.setStorageSync('name', nickname);
+              wx.setStorageSync('userInfo',res.userInfo);
+              // wx.setStorageSync('UserID', nickname);
+              // console.log("在onlaunch里面的url"+url);
+              // console.log("nickname"+nickname)
+              // console.log("nickname"+userInfoAvatar);
+              // console.log(res);
+              // return;
+              wx.login({
+                  success: function (res) {
+                      if (res.code) {
+                          //发起网络请求
+
+                          wx.request({
+                              url:'https://mela.scmxkj.com/index.php/cat/part/get_openid',
+                              method: "POST",
+                              data: {
+                                  code: res.code,
+                                  // img: userInfoAvatar,
+                                  // uname: nickname
+                              },
+                              success: function (res) {
+                                  wx.setStorageSync('user',res.data.data);
+                                  if(res.data.code==200){
+                                      wx.removeStorageSync('level');
+                                      wx.setStorageSync('open_id',res.data.data.openid);
+                                      wx.setStorageSync('user_id',res.data.data.user_id);
+                                  }
+                                  if(res.data.code==202){//没有注册
+                                      wx.setStorageSync('open_id',res.data.data.openid);
+                                      wx.setStorageSync('level', 'none');
+                                      test.test(this);
+                                  }
+                                  if(res.data.code==203){//没有付款
+                                      wx.setStorageSync('open_id',res.data.data.openid);
+                                      wx.setStorageSync('user_id',res.data.data.user_id);
+
+                                  }
+                                  if(res.data.code==204){//已过期
+                                      wx.setStorageSync('open_id',res.data.data.openid);
+                                      wx.setStorageSync('user_id',res.data.data.user_id);
+                                      wx.reLaunch({
+                                          url: '../vip/vip'
+                                      })
+                                  }
+                              },
+                              fail: function () {
+
+                                  wx.setStorageSync('user', userInfoAvatar);
+                              },
+                              complete: function () {
+
+                              }
+                          })
+                      } else {
+                      }
+                  }
+              })
+          },
+          fail: function (res) {
+              // fail
+          },
+          complete: function () {
+              // complete
+          }
+      })
     var end_time = wx.getStorageSync('level_vip_end_time');
     var vip_id = wx.getStorageSync('vip_id');
     if(vip_id==1){
@@ -47,7 +117,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -123,8 +193,8 @@ Page({
                         content: '支付成功',
                         success:function(){
                             wx.setStorageSync('vip_id', '2');
-                            wx.navigateBack({
-                                detail:1
+                            wx.switchTab({
+                                url:'../index/index'
                             })
                         }
                     })

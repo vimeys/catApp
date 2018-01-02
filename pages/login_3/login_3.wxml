@@ -63,5 +63,6 @@
             <view>反</view>
         </view>
     </view>
-    <button class='bottom' bindtap="href">下一步</button>
+    <button class='bottom' bindtap="href" wx:if="{{next}}">下一步</button>
+    <button class="bottom" bindtap="confirm" wx:if="{{!next}}">重新提交</button>
 </view>

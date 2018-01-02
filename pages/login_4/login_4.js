@@ -42,12 +42,18 @@ Page({
       let user=wx.getStorageSync('user_id');
         ajax.postAjax(url.url.more_rights,{user_id:user},function (that,json) {
             let arr=[];
-            for(var  key in json.data.list){
-                arr.push(json.data.list[key]);
+            let list = json.data.list;
+            for(var  key in list){
+                list[key]['level_service']=parseInt(list[key]['level_service']);
+                list[key]['level_money']=parseInt(list[key]['level_money']);
+                arr.push(list[key]);
             }
-            console.log(arr);
+            console.log(list);
+            // arr.forEach(function (item,index) {
+            //     item.level_service=parseInt(item.level_service)
+            //     item.level_money=parseInt(item.level_money)
+            // });
             that.setData({
-
                 leveltext:arr
             })
         },this)
@@ -67,6 +73,17 @@ Page({
 
     //提交信息
     confirm:function (e) {
+      let type=e.currentTarget.dataset.type;
+      if(type==this.data.level1){
+          this.setData({
+              chooseID:type
+          })
+      }else if(type==this.data.level2){
+            this.setData({
+                chooseID:type
+            })
+        }
+        console.log(this.data.chooseID);
         let here=this;
         var api=url.url.login;
         let obj={};
@@ -88,9 +105,10 @@ Page({
         obj.card_f=wx.getStorageSync('srcID2Up');
         obj.store_annual_sales=wx.getStorageSync('money');
         obj.brand_id=wx.getStorageSync('brandId');
-        obj.other_brand=wx.getStorageSync('brandInput');
+        obj.other_brand=wx.getStorageSync('inputBrand');
             ajax.postAjax(api,obj,function (that,json) {
                 wx.setStorageSync('user_id', json.data.user_id);
+                wx.setStorageSync('user',json,data);
                 let order=json.data.order;
                 let user_id=json.data.user_id;
                 let pay=json.data.pay;
@@ -102,19 +120,31 @@ Page({
                     paySign: pay.paySign,
                     success: function (res) {
                         ajax.postAjax(url.url.pay_user, { level_order_sn:order, user_id: user_id }, function (that, json) {
-                            that.setData({
-                                showModel:true
-                            })
-                            // wx.showModal({
-                            //     title: '支付成功',
-                            //     content: '支付成功',
-                            //     success: function () {
-                            //         // wx.switchTab({
-                            //         //     url: '../index/index',
-                            //         // })
-                            //
-                            //     }
+                            // that.setData({
+                            //     showModel:true
                             // })
+                            wx.showModal({
+                                title: '支付成功',
+                                content: '支付成功',
+                                success: function () {
+                                    wx.removeStorage({
+                                      key: 'srcUp',
+                                    });
+                                    wx.removeStorage({
+                                        key: 'srcShop',
+                                    });
+                                    wx.removeStorage({
+                                        key: 'srcID1Up',
+                                    });
+                                    wx.removeStorage({
+                                        key: 'srcID2Up',
+                                    });
+                                    wx.switchTab({
+                                        url: '../index/index',
+                                    })
+
+                                }
+                            })
                         }, here)
                     },
                     fail: function (res) {

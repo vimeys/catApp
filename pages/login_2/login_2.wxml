@@ -20,7 +20,7 @@
 
     </block>
     <view class="brand_select" wx:if="{{showInput}}">
-        <input type="text" bindconfirm="inputBrand" confirm-type="done"/>
+        <input type="text" bindblur="inputBrand" />
     </view>
     <!--<view class="brand_input" wx:if="{{showInput}}"><input type="text" bindconfirm="inputBrand" confirm-type="done"/></view>-->
 </view>
@@ -30,7 +30,7 @@
 
 
 <view  class="custom">
-    <text>品牌列表</text>
+    <text>品牌列表(非必选)</text>
     <image src="../image/plus.png" bindtap="chooseModal"></image>
 </view>
 <view class="list">
@@ -42,7 +42,7 @@
 </view>
 <view class="choose1">
     <text style="font-size: 28rpx">现年销量（可不填）</text>
-    <input data-type="2" type="text"  bindinput="inputMoney" placeholder="销量"/>
+    <input data-type="2" type="text"  bindinput="inputMoney" placeholder="销量(台)"/>
 </view>
 
 <button class='bottom' bindtap="href">下一步</button>

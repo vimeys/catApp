@@ -34,7 +34,7 @@ App({
                                 success: function (res) {
                                     wx.setStorageSync('user',res.data.data);
                                     if(res.data.code==200){
-
+                                        wx.removeStorageSync('level');
                                         wx.setStorageSync('open_id',res.data.data.openid);
                                         wx.setStorageSync('user_id',res.data.data.user_id);
                                     }
@@ -89,7 +89,7 @@ App({
             wx.getUserInfo({
                 withCredentials: false,
                 success: function (res) {
-                    that.globalData.userInfo = res.userInfo
+                    that.globalData.userInfo = res.userInfo;
                     typeof cb == "function" && cb(that.globalData.userInfo)
                 }
             })

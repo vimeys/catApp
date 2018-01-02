@@ -1,5 +1,6 @@
 // pages/login_3/login_3.js
 import url from "../../utils/url";
+import ajax from "../../utils/ajax";
 
 Page({
 
@@ -21,13 +22,19 @@ Page({
       srcShop:'',//店铺外景
       srcShopBool:false,
       srcShopUp:'',
+      next:true//显示按钮
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      let storage=wx.getStorageSync('next');
+    if(storage){
+        this.setData({
+            next:false
+        })
+    }
   },
 
 
@@ -53,6 +60,7 @@ Page({
                     success:res=>{
                         let src=JSON.parse(res.data);
                         wx.setStorageSync('srcUp',src.data);
+
                         that.setData({
                             srcUp:src.data,
 
@@ -165,8 +173,70 @@ Page({
         }
     },
     href:function () {
-        wx.navigateTo({
-            url: '../login_4/login_4'
-        })
+      let obj=[];
+       let a=wx.getStorageSync('srcUp');
+       let b=wx.getStorageSync('srcID1Up');
+       let c=wx.getStorageSync('srcID2Up');
+       let d=wx.getStorageSync('srcShop');
+       if(a){
+           obj.push(a)
+       }
+        if(b){
+            obj.push(b)
+        }
+        if(c){
+            obj.push(c)
+        }
+        if(d){
+            obj.push(d)
+        }
+       // console.log(obj.length);
+        if(obj.length<4){
+           wx.showModal({})
+            wx.showModal({
+              title: '提示',
+              content: '请完成图片上传',
+                showCancel:false,
+              success: res=>{
+
+              }
+            })
+        }else{
+            wx.navigateTo({
+                url: '../login_4/login_4'
+            })
+        }
+
     },
+    confirm:function (e) {
+
+        let here=this;
+        var api=url.url.rest;
+        let obj={};
+        let data=this.data;
+        obj.id=wx.getStorageSync('user_id');
+        obj.nick_name=wx.getStorageSync('name');
+        obj.province=wx.getStorageSync('sheng');
+        obj.city=wx.getStorageSync('shi');
+        obj.areas=wx.getStorageSync('qu');
+        obj.township=wx.getStorageSync('zhen');
+        obj.address=wx.getStorageSync('addr');
+        obj.store_mobile=wx.getStorageSync('phone');
+        obj.store_user_name=wx.getStorageSync('people');
+        obj.store_license=wx.getStorageSync('srcUp');
+        obj.store_storefront=wx.getStorageSync('srcShop');
+        obj.card_z=wx.getStorageSync('srcID1Up');
+        obj.card_f=wx.getStorageSync('srcID2Up');
+        obj.store_annual_sales=wx.getStorageSync('money');
+        obj.brand_id=wx.getStorageSync('brandId');
+        obj.other_brand=wx.getStorageSync('inputBrand');
+        ajax.postAjax(api,obj,function (that,json) {
+            wx.removeStorage({
+              key: 'next',
+            })
+           wx.switchTab({
+               url:'../my/my'
+           })
+        },this)
+    }
 })

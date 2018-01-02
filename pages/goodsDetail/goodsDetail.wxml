@@ -53,7 +53,7 @@
     <text>{{product}}</text>
 </view>
 <!--图片-->
-<view style="margin-bottom: 100rpx;margin-top: 30rpx">
+<view style="margin-bottom: 90rpx;margin-top: 30rpx">
     <block wx:for="{{height}}" wx:for-index="index" >
         <image src="{{item.image}}" style="width: 100%;height:{{item.height}}rpx" ></image>
     </block>
@@ -96,7 +96,6 @@
         <view class="popup-join-btn" bindtap="joinCart">
             加入购物车
         </view>
-
     </view>
 </view>
 

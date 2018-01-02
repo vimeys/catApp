@@ -55,7 +55,7 @@
                     <view class='Column-one-text'>我的收藏</view>
                 </navigator>
             </view>
-            <navigator url='../myshop/myshop' class='Column-Unity'>
+            <navigator url='{{url}}' class='Column-Unity'>
                   <view class='Column-Unity-left'>
                          <view class='image-box'>
                               <image src='../image/shop.png'></image>

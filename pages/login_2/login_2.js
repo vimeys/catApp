@@ -30,16 +30,16 @@ Page({
   },
     //自定义输入显示
     chooseInput:function (e) {
-        this.setData({
-            showInput:true
-        })
+          this.setData({
+              showInput:true
+          })
     },
     // 手动输入品牌
     inputBrand:function (e) {
         let value=e.detail.value;
         let arrselect=this.data.brand;
         // let arr=this.data.brandinput;
-        if(value&&value.length<6){
+        if(value&&value.length<8){
             arrselect.push(value);
             // arr.push(value);
             wx.setStorageSync('inputBrand',arrselect);
@@ -48,7 +48,7 @@ Page({
                 // brandinput:arr
             })
         }
-
+        e.detail.value=''
     },
 
 
@@ -92,9 +92,11 @@ Page({
         arr.map((item,index)=>{
             ARR.push(item.initials)
         });
+        console.log(ARR);
         var list=ARR.filter(function(element,index,arr){
             return arr.indexOf(element)==index;
         });
+        console.log(list)
         let OBJ={};
         list.map((item,index)=>{
             OBJ[item]=[];
@@ -103,7 +105,8 @@ Page({
                     OBJ[item].push(Ite);
                 }
             })
-        })
+        });
+        console.log(OBJ);
         that.setData({
             json:OBJ
         })

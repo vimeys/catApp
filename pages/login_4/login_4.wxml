@@ -1,35 +1,61 @@
 <!--pages/login_4/login_4.wxml-->
-<view>
-    <view class='top'>
-        <view class='top-text'>
-            <view class='top-text-chose'>会员选择</view>
-            <view class='top-text-text'>会员权益最终解释权归本公司所有</view>
-        </view>
-    </view>
-    <view class='chose'>
-        <view class='chose-one'>
-            <view class='chose-one-left'>普通会员</view>
-            <view class='chose-one-right' data-type="{{level1}}" bindtap="level">
-                <view class='chose-one-right-yuan' wx:if="{{show}}"></view>
-            </view>
-        </view>
-        <view class='chose-one'>
-            <view class='chose-one-left'>高级会员</view>
+<!--<view>-->
+    <!--<view class='top'>-->
+        <!--<view class='top-text'>-->
+            <!--<view class='top-text-chose'>会员选择</view>-->
+            <!--<view class='top-text-text'>会员权益最终解释权归本公司所有</view>-->
+        <!--</view>-->
+    <!--</view>-->
+    <!--<view class='chose'>-->
+        <!--<view class='chose-one'>-->
+            <!--<view class='chose-one-left'>普通会员</view>-->
+            <!--<view class='chose-one-right' data-type="{{level1}}" bindtap="level">-->
+                <!--<view class='chose-one-right-yuan' wx:if="{{show}}"></view>-->
+            <!--</view>-->
+        <!--</view>-->
+        <!--<view class='chose-one'>-->
+            <!--<view class='chose-one-left'>高级会员</view>-->
 
-            <view class='chose-one-right' data-type="{{level2}}" bindtap="level">
-                <view class='chose-one-right-yuan' wx:if="{{!show}}"></view>
-            </view>
+            <!--<view class='chose-one-right' data-type="{{level2}}" bindtap="level">-->
+                <!--<view class='chose-one-right-yuan' wx:if="{{!show}}"></view>-->
+            <!--</view>-->
+        <!--</view>-->
+    <!--</view>-->
+    <!--<view class='text'>-->
+        <!--<view class='text-huiyuan'>会员权益</view>-->
+        <!--<view></view>-->
+        <!--<textarea class='text-text'>{{leveltext[0].level_name}}{{leveltext[0].rights}}</textarea>-->
+        <!--<textarea class='text-text'>{{leveltext[1].level_name}}{{leveltext[1].rights}}</textarea>-->
+    <!--</view>-->
+    <!--<button class='bottom' bindtap="confirm">资料提交进入支付</button>-->
+<!--</view>-->
+
+<!--<view class="model2" bindtap="clickClose" wx:if="{{showModel}}">-->
+    <!--<view class="model2_text">支付成功。请等待平台审核通过后重新登录（24之内通过审核）</view>-->
+<!--</view>-->
+<view class="vip">
+    <image src="../image/vip1.png"></image>
+    <view class='main'>
+        <view class="main1">{{leveltext[0].level_name}}</view>
+        <view class="main2">{{leveltext[0].rights}}</view>
+        <view class="main3">
+            <view><text>{{leveltext[0].level_money}}</text>元/年</view>
+            <view><image src="../image/payplus.png"></image></view>
+            <view><text>{{leveltext[0].level_service}}</text>元/台</view>
         </view>
+        <view class="main4" bindtap="confirm" data-type="{{level1}}">立即购买</view>
     </view>
-    <view class='text'>
-        <view class='text-huiyuan'>会员权益</view>
-        <view></view>
-        <textarea class='text-text'>{{leveltext[0].level_name}}{{leveltext[0].rights}}</textarea>
-        <textarea class='text-text'>{{leveltext[1].level_name}}{{leveltext[1].rights}}</textarea>
-    </view>
-    <button class='bottom' bindtap="confirm">资料提交进入支付</button>
 </view>
-
-<view class="model2" bindtap="clickClose" wx:if="{{showModel}}">
-    <view class="model2_text">支付成功。请等待平台审核通过后重新登录（24之内通过审核）</view>
+<view class="vip">
+    <image src="../image/vip2.png"></image>
+    <view class='main'>
+        <view class="main1">{{leveltext[1].level_name}}</view>
+        <view class="main2">{{leveltext[1].rights}}</view>
+        <view class="main3">
+            <view><text>{{leveltext[1].level_money}}</text>元/年</view>
+            <view><image src="../image/payplus.png"></image></view>
+            <view><text>{{leveltext[1].level_service}}</text>元/台</view>
+        </view>
+        <view class="main4" bindtap="confirm" data-type="{{level2}}">立即购买</view>
+    </view>
 </view>
