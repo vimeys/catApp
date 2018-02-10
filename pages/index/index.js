@@ -2,6 +2,7 @@
 //获取应用实例
 var app = getApp();
 // var url=require('../../utils/url');
+// import {url} from '../../utils/url';
 import url from '../../utils/url';
 import ajax from '../../utils/ajax'
 
@@ -54,7 +55,6 @@ Page({
                 changeShow2:false
             })
         }
-
     },
     cart: function (e) {
         // wx.navigateTo({
@@ -265,9 +265,25 @@ Page({
                             }
                         })
                     });
+                    function unique(arr){
+                        var res = [arr[0]];
+                        for(var i=1;i<arr.length;i++){
+                            var repeat = false;
+                            for(var j=0;j<res.length;j++){
+                                if(arr[i] == res[j]){
+                                    repeat = true;
+                                    break;
+                                }
+                            }
+                            if(!repeat){
+                                res.push(arr[i]);
+                            }
+                        }
+                        return res;
+                    }
+                    let arr3=unique(arr2)
                     that.setData({
-                        // promotion: res.data.data.commodity_goods_list
-                        promotion:arr2
+                        promotion:arr3
                     })
                 }
             }

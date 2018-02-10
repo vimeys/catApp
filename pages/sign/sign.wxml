@@ -10,7 +10,7 @@
     <view class="sign_input">
         <view class="sign_tel">
             <image src="../image/phonepeople.png"></image>
-            <input type="tel" placeholder="绑定手机号" placeholder-class="fff" bindinput="phoneNum"/>
+            <input type="tel" placeholder="绑定手机号" placeholder-class="fff" bindblur="phoneNum"/>
         </view>
         <view class="code">
             <image class="" src="../image/code.png"></image>

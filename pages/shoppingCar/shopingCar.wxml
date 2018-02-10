@@ -1,0 +1,14 @@
+<!--pages/shoppingCar/shopingCar.wxml-->
+<!--<view class="AD">-->
+    <!--<scroll-view scroll-x style="height:200rpx" class="scroll">-->
+
+        <!--<block wx:for="{{scroll}}">-->
+            <!--<view id="green" class="scroll-view-item bc_green">-->
+                <!--<image src="../image/vip2.png" data-type="{{item.is_type}}" bindtap="" data-href="{{item.href}}"></image>-->
+            <!--</view>-->
+        <!--</block>-->
+    <!--</scroll-view>-->
+<!--</view>-->
+<view id="id" class = "ball" bindtap = "handletap" bindtouchstart = "handletouchtart" bindtouchmove="handletouchmove" bindtouchend="handletouchend" style = "width : 100%; height :100%; background: {{color}}">
+    {{text}}
+</view>

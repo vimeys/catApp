@@ -55,6 +55,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 28rpx;
 }
 .Profit-Profit{
     font-size: 30rpx;

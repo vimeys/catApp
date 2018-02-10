@@ -1,0 +1,104 @@
+<!--pages/newIndex/newIndex.wxml-->
+<!--轮播-->
+<swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height: 420rpx" circular="true">
+    <block wx:for="{{img}}" class="swiper" wx:for-item="item">
+        <swiper-item>
+            <image src="{{item.image}}" class="slide-image" width="100%" height="420rpx" bindtap="hrefProduct"
+                   data-type="{{item.brand_id}}" data-factory="{{item.factory_id}}" data-status="{{item.is_type}}"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+
+<!--六大板块-->
+<view class="item">
+    <view class="items">
+        <view class="img">
+            <image  class='items_image'src="../image/recommend.png"></image>
+            <view class="text">本周推荐</view>
+        </view>
+    </view>
+    <view class="items">
+        <view class="img">
+            <image class='items_image' src="../image/carload.png"></image>
+            <view class="text">整车品牌区</view>
+        </view>
+    </view>
+    <view class="items">
+        <view class="img">
+            <image class='items_image' src="../image/aftersale.png"></image>
+            <view class="text">售后服务</view>
+        </view>
+    </view>
+    <view class="items">
+        <view class="img">
+            <image class='items_image' src="../image/parts.png"></image>
+            <view class="text">装备配件</view>
+        </view>
+    </view>
+    <view class="items">
+        <view class="img">
+            <image class='items_image' src="../image/specialty.png"></image>
+            <view class="text">特产</view>
+        </view>
+    </view>
+    <view class="items">
+        <view class="img">
+            <image class='items_image' src="../image/teamword.png"></image>
+            <view class="text">商务合作</view>
+        </view>
+    </view>
+</view>
+<!--众筹活动-->
+<view class="active">
+    <view class="left" bindtap="tMore">
+        <view  class="active_title_TBD">众筹</view>
+        <view class="active_text"> 低价买好货</view>
+        <view class="image">
+            <image src="../image/vip2.png" class="TBD_image"></image>
+        </view>
+    </view>
+    <view class="active_border"></view>
+    <view class="right" bindtap="pMore">
+        <view class="active_title_promotion">活动</view>
+        <view  class="active_text">优品大集合带你逛不停</view>
+        <view  class="image">
+            <image src="../image/vip2.png" class="promotion_image"></image>
+        </view>
+    </view>
+</view>
+
+<!--/*推荐*/-->
+<view class="recommend">
+
+    <view class="recommend_title">新的一年新的优惠</view>
+    <view>
+        <block wx:for="{{scroll}}">
+            <view class="goods">
+                <view class="image">
+                    <image class="image_name" src="{{item.image}}"></image>
+                </view>
+                <view class="list">
+                    <view class="list_item">
+                        <view class="goods_name">{{item.goods_name}}</view>
+                        <view class="goods_price">{{item.goods_price}}元</view>
+                    </view>
+                    <view class="list_item">
+                        <view class="goods_news">{{item.goods_describe}}</view>
+                        <view class="goods_Btn" bindtap="">立即购买</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="footer">
+        <view class="footer_title">合作厂家</view>
+        <view class="footer_list">
+            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
+            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
+            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
+            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
+        </view>
+    </view>
+</view>

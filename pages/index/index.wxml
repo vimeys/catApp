@@ -26,16 +26,16 @@
 <view bindtap="tMore" class="more" wx:if="{{changeShow2}}"> 更多商品</view>
 
 
-<!--<view class="AD">-->
-<!--<scroll-view scroll-x style="height:200rpx" class="scroll">-->
+<view class="AD">
+<scroll-view scroll-x style="height:200rpx" class="scroll">
 
-<!--<block wx:for="{{scroll}}">-->
-<!--<view id="green" class="scroll-view-item bc_green">-->
-<!--<image src="{{item.image}}" data-type="{{item.is_type}}" bindtap="" data-href="{{item.href}}"></image>-->
-<!--</view>-->
-<!--</block>-->
-<!--</scroll-view>-->
-<!--</view>-->
+<block wx:for="{{scroll}}">
+<view id="green" class="scroll-view-item bc_green">
+<image src="{{item.image}}" data-type="{{item.is_type}}" bindtap="" data-href="{{item.href}}"></image>
+</view>
+</block>
+</scroll-view>
+</view>
 <!--<web-view src="https://mp.weixin.qq.com/" wx:if="{{show}}">123</web-view>-->
 
 

@@ -36,6 +36,10 @@ url.delCart=allUrl+'goods/Shopping_cart_list_del';//删除购物车商品
 url.confirmCart=allUrl+'order/Confirm_order';//确认订单
 url.factory=allUrl+'user/factory_info';//工厂资料
 url.rest=allUrl+'user/user_update';//重新提交审核
+url.weekLoad=allUrl+'goods/week_groom';//本周推荐
+url.carlist=allUrl+'index/cate_list';//品牌分类
+url.cargoods=allUrl+'goods/cate_goods';//分类商品详情
+
 
 
 //余智仙
@@ -62,7 +66,7 @@ url.contact     = allUrl + 'user/contact';//联系平台
 
 
 
-
+// export {url}
 module.exports={
     url:url
 };

@@ -20,7 +20,24 @@ Page({
       })
     },this)
   },
-
+  save:function () {
+      console.log(this.data.data.qrcode)
+      // wx.saveImageToPhotosAlbum({
+      //
+      // })
+      wx.getImageInfo({
+          src: this.data.data.qrcode,
+          success: function (ret) {
+              var path = ret.path;
+              wx.saveImageToPhotosAlbum({
+                  filePath: path,
+                  success(result) {
+                      console.log(result)
+                  }
+              })
+          }
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

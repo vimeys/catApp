@@ -17,11 +17,12 @@
                             </view>
                       </view>
                       <view class='upgrade'  >
-                            <view class='upgrade-image'>
-                                  <image style='width:36rpx;height:40rpx;' class='upgrade-a' src='../image/upgrade.png'></image>
-                            </view>
-                            <navigator class='upgrade-shengji' wx:if="{{!is_user}}" url='../vip/vip'>请续费</navigator>
-                            <navigator class='upgrade-shengji' url='../vip/vip' wx:if="{{is_user }}">升级</navigator>
+                            <!--<view class='upgrade-image'>-->
+                                  <!--<image style='width:36rpx;height:40rpx;' class='upgrade-a' src='../image/upgrade.png'></image>-->
+                            <!--</view>-->
+                            <!--<navigator class='upgrade-shengji' wx:if="{{!is_user}}" url='../vip/vip'>请续费</navigator>-->
+                            <!--<navigator class='upgrade-shengji' url='../vip/vip' wx:if="{{is_user }}">升级</navigator>-->
+                            <navigator class='upgrade-shengji' url='../vip/vip' >我的会员卡</navigator>
                       </view>
                   </view>
             </view>

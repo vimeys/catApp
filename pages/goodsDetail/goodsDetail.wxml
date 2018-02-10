@@ -11,7 +11,7 @@
 <!--活动价-->
 <view class="goods_title" wx:if="{{promotion}}">
     <view class="title">{{goodsName}}</view>
-    <text class='chang-name'>{{factory}}-{{brand}}</text>
+    <text class='chang-name'>{{brand}}</text>
     <view class="main">
         <text class="new_price">活动价：￥{{goodsPrice}}</text>
         <text class="del_price">原价：{{goodsDelPrice}}</text>
@@ -23,7 +23,7 @@
 <!--普通-->
 <view class="goods_title" wx:if="{{normal}}">
     <view class="title">{{goodsName}}</view>
-    <text class='chang-name'>{{factory}}-{{brand}}</text>
+    <text class='chang-name'>{{brand}}</text>
     <view class="main">
         <text class="new_price">售价：¥{{goodsDelPrice}}</text>
         <text class="sales">销量：{{goodsSales}}</text>
@@ -39,7 +39,7 @@
          <text class='one' wx:if="{{text2}}">众筹已结束</text>
     </view>
     <view class="title">{{goodsName}}</view>
-    <text class='chang-name'>{{factory}}-{{brand}}</text>
+    <text class='chang-name'>{{brand}}</text>
     <view class="progress" wx:if="{{text1}}">
         <progress percent="{{percentage_funding}}" color="#00a79e" stroke-width="10" style="width: 600rpx; display: inline-block"/><text class="point">{{percentage_funding}}%</text>
     </view>

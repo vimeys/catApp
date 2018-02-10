@@ -38,40 +38,11 @@ Page({
         })
         this.getList();
     },
-    // change1:function (e) {
-    //     var that = this;
-    //     let Type = e.currentTarget.dataset.type;
-    //     that.setData({
-    //         check:Type
-    //     })
-    //     this.getListP();
-    // },
-    // //获取活动商品
-    // getListP:function (e) {
-    //     var that=this;
-    //     wx.request({
-    //         url:url.url.promotion,
-    //         method:'POST',
-    //         data:{
-    //             brand_id:that.data.id,
-    //             is_type:that.data.check,
-    //             // page:that.data.page,
-    //             // pageSize:10
-    //         },
-    //         success:res=>{
-    //             // console.log(res);
-    //             that.setData({
-    //                 Data:res.data.data.commodity_goods_list
-    //             })
-    //
-    //         }
-    //     })
-    // },
+
     //获取列表
 
     getList:function (e) {
         let that=this;
-        // ajax.postAjax(url.url.promotion,)
         let brandName=wx.getStorageSync('brandName');
         this.setData({
             brandName:brandName

@@ -28,7 +28,14 @@ Page({
         let time=json.data.create_time;
         // let reg=new RegExp('.')
         time=time.replace(/\./g,'-');
+        console.log(time);
         let timer=new Date(time).getTime();
+        console.log(timer.toString());
+        if (timer.toString()=='NaN'){
+            console.log(1)
+            time = time.replace(/\-/g, '/');
+            timer = new Date(time).getTime();
+        }
         let newtime=new Date().getTime();
         let lastTime=((172800000-(newtime-timer))/1000);
       that.setData({
@@ -43,7 +50,6 @@ Page({
   },
     intv:function () {
       let lastTime=this.data.lastTime;
-
       let that=this;
       setInterval(function () {
         lastTime=Math.floor(lastTime)-1;

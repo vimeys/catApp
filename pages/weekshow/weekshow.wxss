@@ -1,6 +1,7 @@
+/* pages/weekshow/weekshow.wxss */
 /* pages/chanping/chanping.wxss */
 .chanping{
-  margin-bottom: 100rpx;
+    margin-bottom: 100rpx;
 }
 .chanping-top{
     line-height: 88rpx;
@@ -40,86 +41,6 @@
     color: #EA4736;
 }
 
-/* pages/Further/Further.wxss */
-
-/*.promotion{*/
-    /*width: 100%;*/
-    /*margin-top: 20rpx;*/
-    /*margin-bottom: 20rpx;*/
-/*}*/
-/*.list{*/
-    /*display: flex;*/
-/*}*/
-/*.image{*/
-    /*width: 250rpx;*/
-    /*height: 250rpx;*/
-    /*position: relative;*/
-/*}*/
-/*.image .image_main{*/
-    /*width: 250rpx;*/
-    /*height: 250rpx;*/
-    /*position: absolute;*/
-    /*top:0;*/
-    /*left: 0;*/
-    /*z-index: 10;*/
-/*}*/
-/*.image .image_small{*/
-    /*width: 54rpx;*/
-    /*height: 54rpx;*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*z-index: 11;*/
-/*}*/
-/*.title{*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: space-between;*/
-    /*margin-left: 20rpx;*/
-    /*margin-right:20rpx ;*/
-    /*margin-top: 6rpx;*/
-    /*border-bottom: 1px solid #eee;*/
-    /*font-size: 36rpx;*/
-/*}*/
-/*.title .promotion_main{*/
-    /*font-size: 36rpx;*/
-/*}*/
-/*.title .promotion_scale{*/
-    /*font-size: 28rpx;*/
-    /*color:#ff9388;*/
-/*}*/
-/*.promotion_button{*/
-
-/*}*/
-/*.promotion_price{*/
-    /*color:#EA4736;*/
-    /*font-size: 32rpx;*/
-/*}*/
-/*.promotion_price_del{*/
-    /*color:#989898;*/
-    /*font-size: 22rpx;*/
-    /*margin-left: 5rpx;*/
-/*}*/
-/*.promotion_num{*/
-    /*color:#989898;*/
-    /*font-size: 22rpx;*/
-    /*float: right;*/
-/*}*/
-/*!*bottom*!*/
-/*.bottom{*/
-    /*width: 750rpx;*/
-    /*height: 98rpx;*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*position: fixed;*/
-    /*bottom: 0;*/
-    /*right: 0;*/
-    /*z-index: 15;*/
-    /*color: #ffffff;*/
-    /*line-height: 98rpx;*/
-    /*background-color: #00a79e;*/
-/*}*/
 .promotion{
     width: 100%;
     margin-top: 20rpx;

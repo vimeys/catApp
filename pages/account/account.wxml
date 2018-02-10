@@ -1,13 +1,31 @@
 <!--pages/account/account.wxml-->
-<view class='account' wx:for="{{list}}">
-     <view class='account-one'>
-          <image src='{{item.bank_ico}}'></image>
-          <view class='account-one-one'>{{item.bank_name}}</view>
-     </view>
-     <view class='account-two'>开户人：{{item.bank_user_name}}</view>
-     <view class='account-three'>账号：{{item.bank_number}}</view>
-     <view class='account-four'>开户行地址：{{item.bank_address}}</view>
+<!--<view class='account' wx:for="{{list}}">-->
+     <!--&lt;!&ndash;<view class='account-one'>&ndash;&gt;-->
+          <!--&lt;!&ndash;<image src='{{item.bank_ico}}'></image>&ndash;&gt;-->
+          <!--&lt;!&ndash;<view class='account-one-one'>{{item.bank_name}}</view>&ndash;&gt;-->
+     <!--&lt;!&ndash;</view>&ndash;&gt;-->
+     <!--&lt;!&ndash;<view class='account-two'>开户人：{{item.bank_user_name}}</view>&ndash;&gt;-->
+     <!--&lt;!&ndash;<view class='account-three'>账号：{{item.bank_number}}</view>&ndash;&gt;-->
+     <!--&lt;!&ndash;<view class='account-four'>开户行地址：{{item.bank_address}}</view>&ndash;&gt;-->
+    <!--<view class="account_1"><text>开户主体：</text>{{item.bank_user_name}}</view>-->
+    <!--<view class="account_2"><text>开户行：</text>{{item.bank_address}}啊色拉时发动阿斯顿飞拉屎的房间阿什顿发发送阿什顿发按时阿什</view>-->
+    <!--<view class="account_3"><text>账号：</text>{{item.bank_number}}</view>-->
+    <!--<view class="account_4"><image src="{{item.bank_ico}}"></image></view>-->
+<!--</view>-->
 
+<!--<view class="margin100"></view>-->
+<!--<view class="fix" bindtap="click">查看订单列表</view>-->
+<view class="account">
+    <view class="account1">
+        <view>开户主体：</view>
+        <view>{{list[0].bank_user_name}}</view>
+    </view>
+    <view class="account2">
+        <view>账号：</view>
+        <view>{{list[0].bank_number}}</view>
+    </view>
+    <view class="account3"><text>开户行：</text>{{list[0].bank_name}}</view>
+    <view class="account4">
+        <image src="{{list[0].bank_ico}}" style="height: {{height}}rpx" bindtap="big"></image>
+    </view>
 </view>
-<view class="margin100"></view>
-<view class="fix" bindtap="click">查看订单列表</view>

@@ -5,6 +5,14 @@ App({
   url:'https://mela.scmxkj.com/index.php/cat/',
     onLaunch: function () {
         var url=this.url;
+        // wx.authorize({
+        //     scope: 'scope.writePhotosAlbum',
+        //     success() {
+        //         console.log(1);
+        //         // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+        //         // wx.startRecord()
+        //     }
+        // })
         //调用API从本地缓存中获取数据
         wx.getUserInfo({
             success: function (res) {

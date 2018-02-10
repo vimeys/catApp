@@ -45,10 +45,11 @@ Page({
             wx.setStorageSync('inputBrand',arrselect);
             this.setData({
                 brand:arrselect,
+                showInput:false
                 // brandinput:arr
             })
         }
-        e.detail.value=''
+
     },
 
 

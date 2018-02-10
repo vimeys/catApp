@@ -44,15 +44,48 @@ Page({
             method:"POST",
             success:res=>{
                 if(res.data.code==200){
+                    // let data=res.data.data.province_list;
+                    // data.filter(function (item,index,arr) {
+                    //     return item
+                    // });
                     let arr=[];
                     let arr1=[];
+                    let Array=res.data.data.province_list.filter(function(e){
+                        if(e.areaName=='北京市'||e.areaName=='天津市'||e.areaName=='上海市'||e.areaName=='重庆市'){
+                            return false
+                        }else {
+                            return true
+                        }
+                    })
                     var push=(item,index)=>{
                         arr.push(item.areaName);
                         arr1.push(item.areaId)
                     };
-                    res.data.data.province_list.forEach(push);
+
+                    Array.forEach(push);
                     arr.unshift('选 择 省 份');
                     arr1.unshift('0');
+                    // arr=arr.filter(function (e) {
+                    //     console.log(e);
+                    //     if(e=='北京市'||e=='天津市'||e=='上海市'||e=='重庆市'){
+                    //         return false
+                    //     }else {
+                    //         return true
+                    //     }
+                    //     // if(e=='北京市'){
+                    //     //     return false
+                    //     // }else if(e=='天津市'){
+                    //     //     return false
+                    //     // }else if(e=='上海市'){
+                    //     //     return false
+                    //     // }else if(e=='重庆市'){
+                    //     //     return false
+                    //     // }else {
+                    //     //     return true
+                    //     // }
+                    //
+                    // })
+                    console.log(arr);
                     var select=that.data.select;
                     select.province=arr;
                     select.provinceId=arr1;
@@ -200,40 +233,57 @@ Page({
                 people:value
             })
         }else if(Type==2){
-            wx.setStorageSync('phone',value);
-            this.setData({
-                phone:value
-            })
+            if(/^((1[3,5,8,7,4][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/.test(value)){
+                wx.setStorageSync('phone',value);
+                this.setData({
+                    phone:value
+                })
+            }
+
         }
     },
     
     //点击跳转
     href:function () {
-        let obj = {};
-        obj.zhen = wx.getStorageSync('zhen');
-        obj.address = this.data.address;
-        obj.phone = this.data.phone;
-        obj.people = this.data.people;
-        let i = 0;
-        for (var key in obj) {
-            if (obj[key] == '') {
-                i++
-                wx.showModal({
-                    title: '提示',
-                    content: '请填写完成所有表格',
-                    showCancel: false,
-                    success: res => {
-                        if (res.confirm) {
-                        }
-                    }
-                })
+      if(!this.data.phone){
+          wx.showModal({
+            title: '提示',
+            content: '请填写正确的手机号码',
+              showCancel:false,
+            success: res=>{
+              if (res.confirm) {
+
+              }
             }
-        }
-        if (i < 1) {
-            wx.navigateTo({
-                url: '../login_2/login_2'
-            })
-        }
+          })
+      }else{
+          let obj = {};
+          obj.zhen = wx.getStorageSync('zhen');
+          obj.address = this.data.address;
+          obj.phone = this.data.phone;
+          obj.people = this.data.people;
+          let i = 0;
+          for (var key in obj) {
+              if (obj[key] == '') {
+                  i++
+                  wx.showModal({
+                      title: '提示',
+                      content: '请填写完成所有表格',
+                      showCancel: false,
+                      success: res => {
+                          if (res.confirm) {
+                          }
+                      }
+                  })
+              }
+          }
+          if (i < 1) {
+              wx.navigateTo({
+                  url: '../login_2/login_2'
+              })
+          }
+      }
+
     }
 
 

@@ -11,7 +11,7 @@
                 <view class="title">
                     <view class="promotion_all">
                         <view class="promotion_main">{{item.goods_name}}</view>
-                        <view class="promotion_scale"><text class='name-name'>{{item.factory}}—{{item.brand}}</text>降价{{item.percentage_discount}}%</view>
+                        <view class="promotion_scale"><text class='name-name'>{{item.brand}}</text>降价{{item.percentage_discount}}%</view>
                     </view>
                     <view class="promotion_button">
                         <view>

@@ -52,7 +52,7 @@
     </view>
     <view class="choose">
         <text>手机号</text>
-        <input data-type="2" type="text" placeholder="请输入电话号码" bindinput="output"/>
+        <input data-type="2" type="text" placeholder="请输入电话号码" bindblur="output"/>
     </view>
 </view>
 <button  bindtap="href" class="bottom">下 一 步 </button>
