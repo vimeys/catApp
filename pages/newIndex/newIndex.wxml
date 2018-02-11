@@ -13,13 +13,13 @@
 
 <!--六大板块-->
 <view class="item">
-    <view class="items">
+    <view class="items" bindtap="recommend">
         <view class="img">
             <image  class='items_image'src="../image/recommend.png"></image>
             <view class="text">本周推荐</view>
         </view>
     </view>
-    <view class="items">
+    <view class="items" bindtap="weekshow">
         <view class="img">
             <image class='items_image' src="../image/carload.png"></image>
             <view class="text">整车品牌区</view>
@@ -95,10 +95,10 @@
     <view class="footer">
         <view class="footer_title">合作厂家</view>
         <view class="footer_list">
-            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
-            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
-            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
-            <view><image  class="footer_image" src="../image/vip2.png"></image></view>
+            <block wx:for="{{factoryList}}">
+                <view><image  class="footer_image" src="../image/vip2.png"></image>{{item.name}}</view>
+            </block>
+
         </view>
     </view>
 </view>

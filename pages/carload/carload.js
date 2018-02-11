@@ -13,9 +13,15 @@ Page({
   // 切换分类
     toggle:function (e) {
         let value=e.currentTarget.dataset.idx;
+        let that=this;
         this.setData({
             active:value
         })
+        ajax.postAjax(url.url.cargoods,{cate_id:that.data.carlist[that.data.active].id},function (that,json) {
+            that.setData({
+                Data:json.data
+            });
+        },that)
     },
   /**
    * 生命周期函数--监听页面加载
@@ -44,7 +50,20 @@ Page({
           })
       },this)
   },
-
+    //链接跳转
+    href:(e)=>{
+        let id=e.currentTarget.dataset.id;
+        let type=e.currentTarget.dataset.type;
+        let arr=[id,type];
+        wx.navigateTo({
+          url: '../goodsDetail/goodsDetail?id='+arr
+        })
+    },
+    hrefSearch:(e)=>{
+        wx.navigateTo({
+          url: '../searchGoods/searchGoods'
+        })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

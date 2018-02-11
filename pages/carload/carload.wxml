@@ -1,5 +1,5 @@
 <!--pages/carload/carload.wxml-->
-<view class="search" bindtap="href">
+<view class="search" bindtap="hrefSearch">
     <view class="search_input"><input type="text" placeholder="商品搜索" placeholder-style="color:#ccc;font-size:32rpx;"/></view>
     <view class="btn">搜索</view>
 </view>
@@ -8,15 +8,11 @@
     <block wx:for="{{carlist}}" wx:for-index="key">
 
             <view data-value='' bindtap='toggle' class="li {{active==item.id?'active':''}}" data-idx="{{item.id}}" >{{item.cate_name}}</view>
-            <!--<view data-value='' class="li">撒娇地方</view>-->
-            <!--<view data-value='' class="li">爱上了放</view>-->
-            <!--<view data-value='' class="li">沙基拉放</view>-->
-
     </block>
     </view>
     <view>
         <block wx:for="{{Data}}">
-            <view class="goods_list">
+            <view class="goods_list" data-id="{{item.id}}" data-type="{{item.is_type}}" bindtap="href">
                 <view class="goods">
                     <view class="goods_image"><image src="{{item.cover}}"></image></view>
                     <view class="goods_news">

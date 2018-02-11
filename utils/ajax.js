@@ -6,7 +6,6 @@ function postAjax(url,data,fn,that){// post方法请求数据
         method:'POST',
         success:function(res){// 请求链接成功后执行过程
             var json=res.data;
-            console.log(json);
             if(json.code== 200){// 当请求数据成功后执行
                 return typeof fn=='function'&&fn(that,json);
             }else{

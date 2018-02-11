@@ -124,6 +124,11 @@ Page({
           that.setData({
               scroll: json.data.adv_list
           })
+      }, this);
+      ajax.postAjax(url.url.factoryList, {}, function (that, json) {
+          that.setData({
+              factoryList: json.data
+          })
       }, this)
   },
     //轮播跳转
@@ -153,6 +158,20 @@ Page({
         wx.navigateTo({
             url: '../TBD/TBD'
         })
+    },
+    //跳转链接
+
+    //本周推荐
+    recommend:(e)=>{
+        wx.navigateTo({
+          url: '../carload/carload'
+        })
+    },
+    //整车品牌
+    weekshow:()=>{
+      wx.navigateTo({
+        url: '../weekshow/weekshow'
+      })
     },
   /**
    * 生命周期函数--监听页面隐藏

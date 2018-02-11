@@ -11,12 +11,9 @@
 <view class="border"></view>
 <view class="main">
     <view class="main_name" bindtap="change" data-type="1">
-        <!--<image src="../image/hot.png"></image>-->
         爆款商品
-        <!--<text class="main_title">爆款商品</text>-->
     </view>
     <view class="main_name2" bindtap="change" data-type="2">众筹商品</view>
-    <!--<view class="main_more" bindtap="pMore">更多</view>-->
 </view>
 <import src="../../template/promotion"/>
 <template is="promotion_minus" data="{{promotion}}" wx:if="{{changeShow1}}"></template>

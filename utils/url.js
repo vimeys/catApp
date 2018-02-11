@@ -39,7 +39,7 @@ url.rest=allUrl+'user/user_update';//重新提交审核
 url.weekLoad=allUrl+'goods/week_groom';//本周推荐
 url.carlist=allUrl+'index/cate_list';//品牌分类
 url.cargoods=allUrl+'goods/cate_goods';//分类商品详情
-
+url.factoryList=allUrl+'other/brand_list';//合作厂商
 
 
 //余智仙
